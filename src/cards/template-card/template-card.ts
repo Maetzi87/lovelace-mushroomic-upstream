@@ -575,7 +575,6 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
       .container.horizontal {
         flex-direction: row;
       }
-
       .content {
         position: relative;
         display: flex;
@@ -588,7 +587,6 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
         pointer-events: none;
         gap: 10px;
       }
-
       .vertical {
         flex-direction: column;
         text-align: center;
@@ -598,44 +596,58 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
         width: 100%;
         flex: none;
       }
-
       .multiline {
         white-space: pre-wrap;
       }
 
       ha-tile-icon {
-        --tile-icon-color: var(--tile-color);
+        --tile-icon-size: 50px;
+        --tile-icon-width: 50px;
+        --tile-icon-height: 50px;
+        width: var(--tile-icon-width) !important;
+        height: var(--tile-icon-height) !important;
+        --mdc-icon-size: 33px;
         position: relative;
         padding: 6px;
         margin: -6px;
       }
+
       ha-tile-icon.weather svg {
-        width: 36px;
-        height: 36px;
+        width: 50px !important;
+        height: 50px !important;
         display: flex;
       }
+
       ha-tile-icon.weather {
         --tile-icon-opacity: 0;
         --tile-icon-hover-opacity: 0;
         --tile-icon-border-radius: 0;
       }
+
       ha-tile-badge {
+        --badge-size: 18px;
+        width: var(--badge-size) !important;
+        height: var(--badge-size) !important;
+        border-radius: 50% !important;
+        --tile-badge-background-color: var(
+          --badge-color,
+          var(--secondary-text-color)
+        );
+        --mdc-icon-size: 14px;
         position: absolute;
         top: 3px;
         right: 3px;
         inset-inline-end: 3px;
         inset-inline-start: initial;
-        --tile-badge-background-color: var(
-          --badge-color,
-          var(--secondary-text-color)
-        );
       }
+
       ha-tile-badge span {
         font-size: 0.8rem;
         font-weight: bold;
-        height: 16px;
-        line-height: 16px;
+        height: var(--badge-size);
+        line-height: var(--badge-size);
       }
+
       ha-tile-info {
         position: relative;
         min-width: 0;
@@ -675,7 +687,7 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
         flex: none;
       }
     `,
-  ];
+];
 }
 
 declare global {
