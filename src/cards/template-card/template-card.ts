@@ -63,6 +63,10 @@ const TEMPLATE_KEYS = [
   "badge_icon",
   "badge_color",
   "badge_text",
+  "tile_size",
+  "icon_size",
+  "badge_size",
+  "badge_icon_size",
 ] as const;
 
 type TemplateKey = (typeof TEMPLATE_KEYS)[number];
@@ -217,11 +221,6 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
     });
   }
 
-  private _getAdjVar(name: string, fallback: string): string {
-    const value = getComputedStyle(this).getPropertyValue(name).trim();
-    return (!value || value.length === 0) ? fallback : value;
-  }
-  
   private async _tryDisconnectKey(key: TemplateKey): Promise<void> {
     const unsubRenderTemplate = this._unsubRenderTemplates.get(key);
     if (!unsubRenderTemplate) {
@@ -385,18 +384,6 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
       return nothing;
     }
 
-    const adjTileSize = this._getAdjVar("--adj-tile-size", "50px");
-    const adjIconSize = this._getAdjVar("--adj-icon-size", "33px");
-    const adjBadgeSize = this._getAdjVar("--adj-badge-size", "18px");
-    const adjBadgeIconSize = this._getAdjVar("--adj-badge-icon-size", "14px");
-    const dynamicVars = {
-      "--tile-icon-size": adjTileSize,
-      "--tile-icon-width": adjTileSize,
-      "--tile-icon-height": adjTileSize,
-      "--mdc-icon-size": adjIconSize,
-      "--badge-size": adjBadgeSize,
-      "--badge-icon-size": adjBadgeIconSize,
-    };
     const icon = this.getValue("icon");
     const color = this.getValue("color");
     const cssColor = color ? computeCssColor(color) : undefined;
@@ -443,8 +430,8 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
     };
 
     return html`
-    <ha-card style=${styleMap({ ...style, ...dynamicVars })}>        
-       <div
+      <ha-card style=${styleMap(style)}>
+        <div
           class="background"
           @action=${this._handleAction}
           .actionHandler=${actionHandler({
@@ -622,19 +609,13 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
 
       ha-tile-icon {
         --tile-icon-color: var(--tile-color);
-        --tile-icon-size: var(--adj-tile-size, 50px);
-        width: var(--tile-icon-size) !important;
-        height: var(--tile-icon-size) !important; 
-        --tile-mdc-icon-size: var(--adj-icon-size, 33px);
-        --mdc-icon-size: var(--tile-mdc-icon-size) !important;
         position: relative;
-        flex-shrink: 0;
-        margin: 0px;
-        padding: 0px;
+        padding: 6px;
+        margin: -6px;
       }
       ha-tile-icon.weather svg {
-        width: var(--tile-icon-size) !important;
-        height: var(--tile-icon-size) !important;
+        width: 36px;
+        height: 36px;
         display: flex;
       }
       ha-tile-icon.weather {
@@ -648,18 +629,16 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
         right: 3px;
         inset-inline-end: 3px;
         inset-inline-start: initial;
-        --tile-badge-background-color: var(--badge-color, var(--secondary-text-color));
-        --badge-size: var(--adj-badge-size, 18px) !important;
-        --badge-mdc-icon-size: var(--adj-badge-icon-size, 14px);
-        --mdc-icon-size: var(--badge-mdc-icon-size) !important;
-        width: var(--badge-size) !important;
-        height: var(--badge-size) !important;
+        --tile-badge-background-color: var(
+          --badge-color,
+          var(--secondary-text-color)
+        );
       }
       ha-tile-badge span {
         font-size: 0.8rem;
         font-weight: bold;
-        height: var(--adj-badge-size, 18px) !important;
-        line-height: var(--adj-badge-size, 18px) !important;
+        height: 16px;
+        line-height: 16px;
       }
       ha-tile-info {
         position: relative;
