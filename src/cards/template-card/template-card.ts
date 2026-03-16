@@ -216,10 +216,10 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
       this._tryDisconnectKey(key);
     });
   }
-  
+
   private _getAdjVar(name: string, fallback: string): string {
     const value = getComputedStyle(this).getPropertyValue(name).trim();
-    return value || fallback;
+    return (!value || value.length === 0) ? fallback : value;
   }
   
   private async _tryDisconnectKey(key: TemplateKey): Promise<void> {
