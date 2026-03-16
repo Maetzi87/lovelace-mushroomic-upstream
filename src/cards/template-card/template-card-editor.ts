@@ -133,6 +133,18 @@ export class MushroomTemplateCardEditor
           ],
         },
         {
+          name: "sizes",
+          type: "expandable",
+          flatten: true,
+          icon: "mdi:resize",
+          schema: [
+            { name: "tile_size", selector: { template: {} } },
+            { name: "icon_size", selector: { template: {} } },
+            { name: "badge_size", selector: { template: {} } },
+            { name: "badge_icon_size", selector: { template: {} } },
+          ],
+        },
+        {
           name: "layout",
           type: "expandable",
           flatten: true,
