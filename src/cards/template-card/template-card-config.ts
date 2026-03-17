@@ -27,6 +27,7 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   badge_icon?: string;
   badge_text?: string;
   badge_color?: string;
+  badge_icon_color?: string;
   // Sizes
   tile_size?: string;
   icon_size?: string;
@@ -78,6 +79,7 @@ export const templateCardConfigStruct = assign(
     badge_icon: optional(string()),
     badge_text: optional(string()),
     badge_color: optional(string()),
+    badge_icon_color: optional(string()),
     // Sizes
     tile_size: optional(string()),
     icon_size: optional(string()),
