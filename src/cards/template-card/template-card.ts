@@ -702,6 +702,17 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
       .container.horizontal:not(:has(ha-tile-info)) .content {
         flex: none;
       }
+      
+      @keyframes charge {
+        0%  { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%,67% 24%, 67% 84%, 34% 84%, 34% 100%, 100% 100%, 100% 0%);}
+        20% { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%, 67% 24%, 67% 64%, 34% 64%, 34% 100%, 100% 100%, 100% 0%); }
+        40% { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%, 67% 24%, 67% 44%, 34% 44%, 34% 100%, 100% 100%, 100% 0%); }
+        60% { clip-path: polygon(0% 0%, 0% 100%, 34% 100%, 34% 24%, 67% 24%, 67% 24%, 34% 24%, 34% 100%, 100% 100%, 100% 0%); }
+      }
+      @keyframes send {
+        0%   { clip-path: circle(13.0% at 50% 50%); }
+        100% { clip-path: circle(50.0% at 50% 50%); }
+      }
     `,
   ];
 }
