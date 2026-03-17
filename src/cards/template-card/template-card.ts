@@ -489,19 +489,19 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
                               .icon=${icon}
                               .hass=${this.hass}
                             ></ha-state-icon>`}
-                    
+                            
                       ${badgeIcon || badgeText ? html`
-                        <ha-tile-badge
-                            style=${styleMap({
-                              "--badge-color": badgeCssColor,
-                              "--tile-badge-size": finalBadgeSize,
-                              "--tile-badge-icon-size": finalBadgeIconSize,
-                            })}
-                         >
+                        <div class="mush-badge"
+                             style=${styleMap({
+                               "--tile-badge-size": finalBadgeSize,
+                               "--tile-badge-icon-size": finalBadgeIconSize,
+                               "--badge-color": badgeCssColor,
+                             })}
+                        >
                           ${badgeText
                             ? html`<span>${badgeText}</span>`
                             : html`<ha-icon .icon=${badgeIcon}></ha-icon>`}
-                        </ha-tile-badge>
+                        </div>
                       ` : nothing}
                     </ha-tile-icon>
                     `
@@ -639,24 +639,27 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
         --tile-icon-hover-opacity: 0;
         --tile-icon-border-radius: 0;
       }
-      ha-tile-badge {
+      .mush-badge {
         position: absolute;
         top: 3px;
         right: 3px;
-        inset-inline-end: 3px;
-        inset-inline-start: initial;
-        --tile-badge-background-color: var(--badge-color, var(--secondary-text-color));
+        width: var(--tile-badge-size);
+        height: var(--tile-badge-size);
+        background: var(--badge-color, var(--secondary-text-color));;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+      }
+      .mush-badge ha-icon {
         --mdc-icon-size: var(--tile-badge-icon-size);
       }
-      ha-tile-badge .badge {
-        width: var(--tile-badge-size) !important;
-        height: var(--tile-badge-size) !important;
-      }     
-      ha-tile-badge span {
-        font-size: 0.8rem;
+      .mush-badge span {
+        font-size: calc(var(--tile-badge-size) * 0.5);
         font-weight: bold;
-        height: var(--tile-badge-size);
-        line-height: var(--tile-badge-size);
+        color: var(--badge-text-color, white);
+        line-height: 1;
       }
       ha-tile-info {
         position: relative;
