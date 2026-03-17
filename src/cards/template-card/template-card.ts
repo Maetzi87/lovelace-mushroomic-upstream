@@ -408,8 +408,8 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
     // --- Automatic fallback scaling ---
     const finalTileSize = tileSize || "50px";
     const finalIconSize = iconSize || `calc(${finalTileSize} * 0.66)`;
-    const finalBadgeSize = badgeSize || `calc(${finalTileSize} * 0.36)`;
-    const finalBadgeIconSize = badgeIconSize || `calc(${finalBadgeSize} * 0.77)`;
+    const finalBadgeSize = badgeSize || `calc(${finalTileSize} * 0.32)`;
+    const finalBadgeIconSize = badgeIconSize || `calc(${finalBadgeSize} * 0.75)`;
     
     const style = {
       "--tile-color": cssColor,
