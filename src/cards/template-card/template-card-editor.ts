@@ -130,6 +130,7 @@ export class MushroomTemplateCardEditor
             { name: "badge_icon", selector: { template: {} } },
             { name: "badge_text", selector: { template: {} } },
             { name: "badge_color", selector: { template: {} } },
+            { name: "badge_icon_color", selector: { template: {} } },
           ],
         },
         {
