@@ -67,6 +67,7 @@ const TEMPLATE_KEYS = [
   "icon_size",
   "badge_size",
   "badge_icon_size",
+  "badge_icon_color",
 ] as const;
 
 type TemplateKey = (typeof TEMPLATE_KEYS)[number];
@@ -394,6 +395,7 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
     const badgeColor = this.getValue("badge_color");
     const badgeText = this.getValue("badge_text");
     const badgeCssColor = badgeColor ? computeCssColor(badgeColor) : undefined;
+    const badgeIconColor = this.getValue("badge_icon_color");
 
     const weatherSvg = getWeatherSvgIcon(icon);
     
@@ -496,6 +498,7 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
                                "--tile-badge-size": finalBadgeSize,
                                "--tile-badge-icon-size": finalBadgeIconSize,
                                "--badge-color": badgeCssColor,
+                               "--badge-icon-color": badgeIconColor, 
                              })}
                         >
                           ${badgeText
@@ -653,6 +656,7 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
       }
       .mush-badge ha-icon {
         --mdc-icon-size: var(--tile-badge-icon-size);
+        color: var(--badge-icon-color, white);
       }
       .mush-badge span {
         font-size: calc(var(--tile-badge-size) * 0.5);
