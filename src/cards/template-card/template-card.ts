@@ -442,17 +442,7 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
     };
 
     return html`
-      <ha-card
-          style=${styleMap({
-            ...style,
-            "--tile-icon-size": finalTileSize,
-            "--tile-icon-width": finalTileSize,
-            "--tile-icon-height": finalTileSize,
-            "--mdc-icon-size": finalIconSize,
-            "--tile-badge-size": finalBadgeSize,
-            "--tile-badge-icon-size": finalBadgeIconSize,
-          })}
-        >
+      <ha-card>
         <div
           class="background"
           @action=${this._handleAction}
@@ -473,10 +463,12 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
                 ${icon || picture
                   ? html`
                     <ha-tile-icon
-                      style=${styleMap({
-                        "--tile-size": finalTileSize,
-                        "--icon-size": finalIconSize,
-                      })}
+                        style=${styleMap({
+                          ...style,
+                          "--tile-icon-size": finalTileSize,
+                          "--tile-mdc-icon-size": finalIconSize,
+                        })}
+                      >
                       role=${ifDefined(this._hasIconAction ? "button" : undefined)}
                       tabindex=${ifDefined(this._hasIconAction ? "0" : undefined)}
                       @action=${this._handleIconAction}
@@ -502,12 +494,12 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
                     
                       ${badgeIcon || badgeText ? html`
                         <ha-tile-badge
-                          style=${styleMap({
-                            "--badge-color": badgeCssColor,
-                            "--tile-badge-size": finalBadgeSize,
-                            "--tile-badge-icon-size": finalBadgeIconSize,
-                          })}
-                        >
+                            style=${styleMap({
+                              ...style,
+                              "--tile-badge-size": finalBadgeSize,
+                              "--tile-badge-icon-size": finalBadgeIconSize,
+                            })}
+                          >
                           ${badgeText
                             ? html`<span>${badgeText}</span>`
                             : html`<ha-icon .icon=${badgeIcon}></ha-icon>`}
@@ -629,15 +621,16 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
 
       ha-tile-icon {
         --tile-icon-color: var(--tile-color);
-        width: var(--tile-icon-size) !important;
-        height: var(--tile-icon-size) !important;
-        --mdc-icon-size: var(--mdc-icon-size) !important;
         position: relative;
-        background: red;
+        background: blue;
         margin: -6;
         padding: 6;
       }
-
+      ha-tile-icon .container {
+        width: var(--tile-icon-size);
+        height: var(--tile-icon-size);
+        --mdc-icon-size: var(--tile-mdc-icon-size);
+      }
       ha-tile-icon.weather svg {
         width: var(--tile-icon-size) !important;
         height: var(--tile-icon-size) !important;
@@ -655,9 +648,11 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
         inset-inline-end: 3px;
         inset-inline-start: initial;
         --tile-badge-background-color: var(--badge-color, var(--secondary-text-color));
-        width: var(--tile-badge-size) !important;
-        height: var(--tile-badge-size) !important;
-        --mdc-icon-size: var(--tile-badge-icon-size) !important;
+      }
+      ha-tile-badge .badge {
+        width: var(--tile-badge-size);
+        height: var(--tile-badge-size);
+        --mdc-icon-size: var(--tile-badge-icon-size);
       }     
       ha-tile-badge span {
         font-size: 0.8rem;
