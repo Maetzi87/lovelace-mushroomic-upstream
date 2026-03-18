@@ -6,7 +6,7 @@ export const mushroomKeyframes = css`
     100% { opacity: 0; }
   }
   @keyframes ping {
-    0%   { box-shadow: 0 0 0 0 rgba(from var(--tile-color) r g b / 0.7); }
+    0%   { box-shadow: 0 0 0 0 var(--tile-color-rgba07); }
     100% { box-shadow: 0 0 5px 7px transparent; }
   }
 
