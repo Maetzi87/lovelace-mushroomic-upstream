@@ -414,7 +414,7 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
     
     const style = {
      "--tile-color": cssColor,
-     "--tile-color-rgba": `${cssColor}00`,
+     "--tile-color-rgba0": `${cssColor}00`,
     };
 
     const featurePosition = this._featurePosition(this._config);
