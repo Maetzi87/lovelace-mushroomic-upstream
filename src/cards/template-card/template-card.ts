@@ -416,7 +416,6 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
      "--tile-color": cssColor,
      "--tile-color-rgba0": `${cssColor}00`,
      "--tile-color-rgba07": `${cssColor}B3`,
-     "--tile-animation": "none",
     };
 
     const featurePosition = this._featurePosition(this._config);
@@ -635,6 +634,7 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
       ha-tile-icon .container {
         width: var(--tile-icon-size);
         height: var(--tile-icon-size);
+        animation: var(--tile-animation);
       }
       ha-tile-icon.weather svg {
         width: var(--tile-icon-size) !important;
