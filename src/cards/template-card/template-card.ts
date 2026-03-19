@@ -416,6 +416,7 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
      "--tile-color": cssColor,
      "--tile-color-rgba0": `${cssColor}00`,
      "--tile-color-rgba07": `${cssColor}B3`,
+     "--tile-animation": "none",
     };
 
     const featurePosition = this._featurePosition(this._config);
@@ -644,6 +645,9 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
         --tile-icon-opacity: 0;
         --tile-icon-hover-opacity: 0;
         --tile-icon-border-radius: 0;
+      }
+      ha-tile-icon::part(container) {
+        animation: var(--tile-animation);
       }
       .mush-badge {
         position: absolute;
