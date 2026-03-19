@@ -45,7 +45,7 @@ export const mushroomKeyframes = css`
     100% { clip-path: circle(50% at 50% 50%); }
   }
   
-  /* RED GLOW FROM INSIDE OUT - radialflow = red glow from center to border - glow = overflow of radialflow
+  /* RED GLOW FROM INSIDE OUT - radialflow = red glow from center to border - glow = overflow of radialflow */
   @keyframes radialflow {
     0%   { background: radial-gradient(circle, rgba(255, 33, 33, 0.2)   0%, var(--tile-color-rgba0)  10% ); }
     5%   { background: radial-gradient(circle, rgba(255, 33, 33, 0.2)   0%, var(--tile-color-rgba0)  20% ); }
