@@ -551,7 +551,6 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
       :host {
         --tile-color: var(--state-inactive-color);
         -webkit-tap-highlight-color: transparent;
-        --tile-animation: none;
       }
       ha-card:has(.background:focus-visible) {
         --shadow-default: var(--ha-card-box-shadow, 0 0 0 0 transparent);
@@ -632,8 +631,7 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
         padding: 6px;
         --mdc-icon-size: var(--tile-mdc-icon-size);
       }
-      ha-tile-icon::part(container) {
-        animation: var(--tile-animation);
+      ha-tile-icon .container {
         width: var(--tile-icon-size);
         height: var(--tile-icon-size);
       }
