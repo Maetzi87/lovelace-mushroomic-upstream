@@ -14,7 +14,7 @@ import { LovelaceCardFeatureConfig } from "../../ha/panels/lovelace/card-feature
 import { lovelaceCardConfigStruct } from "../../shared/config/lovelace-card-config";
 import { layoutStruct } from "../../utils/layout";
 
-export type TemplateCardConfig = LovelaceCardConfig & {
+export type ResizeCardConfig = LovelaceCardConfig & {
   entity?: string;
   area?: string;
   // Content
@@ -74,7 +74,7 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   fill_container?: boolean;
 };
 
-export const templateCardConfigStruct = assign(
+export const resizeCardConfigStruct = assign(
   lovelaceCardConfigStruct,
   object({
     // Context
@@ -129,9 +129,9 @@ export const templateCardConfigStruct = assign(
   })
 );
 
-export const migrateTemplateCardConfig = (
-  config: TemplateCardConfig
-): TemplateCardConfig => {
+export const migrateResizeCardConfig = (
+  config: ResizeCardConfig
+): ResizeCardConfig => {
   const newConfig = { ...config };
   if (newConfig.icon_color) {
     delete newConfig.icon_color;
@@ -149,8 +149,8 @@ export const migrateTemplateCardConfig = (
   return newConfig;
 };
 
-export const templateCardNeedsMigration = (
-  config: TemplateCardConfig
+export const resizeCardNeedsMigration = (
+  config: ResizeCardConfig
 ): boolean => {
   return Boolean(config.icon_color || config.layout || config.fill_container);
 };
