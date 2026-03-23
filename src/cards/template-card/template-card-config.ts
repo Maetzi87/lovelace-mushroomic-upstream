@@ -33,6 +33,15 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   icon_size?: string;
   badge_size?: string;
   badge_icon_size?: string;
+  // Text Style
+  primary_font_size?: string;
+  primary_font_weight?: string;
+  primary_font_color?: string;
+  primary_line_height?: string;
+  primary_text_transform?: string;
+  secondary_font_size?: string;
+  secondary_font_weight?: string;
+  secondary_font_color?: string;
   // Style
   vertical?: boolean;
   multiline_secondary?: boolean;
@@ -85,6 +94,15 @@ export const templateCardConfigStruct = assign(
     icon_size: optional(string()),
     badge_size: optional(string()),
     badge_icon_size: optional(string()),
+    // Textstyles
+    primary_font_size: optional(string()),
+    primary_font_weight: optional(string()),
+    primary_font_color: optional(string()),
+    primary_line_height: optional(string()),
+    primary_text_transform: optional(string()),
+    secondary_font_size: optional(string()),
+    secondary_font_weight: optional(string()),
+    secondary_font_color: optional(string()),
     // Style
     vertical: optional(boolean()),
     multiline_secondary: optional(boolean()),
