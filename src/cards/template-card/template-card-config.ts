@@ -38,7 +38,7 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   primary_font_weight?: string;
   primary_font_color?: string;
   primary_line_height?: string;
-  primary_text_transform?: string;
+  primary_font_variant?: string;
   secondary_font_size?: string;
   secondary_font_weight?: string;
   secondary_font_color?: string;
@@ -99,7 +99,7 @@ export const templateCardConfigStruct = assign(
     primary_font_weight: optional(string()),
     primary_font_color: optional(string()),
     primary_line_height: optional(string()),
-    primary_text_transform: optional(string()),
+    primary_font_variant: optional(string()),
     secondary_font_size: optional(string()),
     secondary_font_weight: optional(string()),
     secondary_font_color: optional(string()),
