@@ -73,16 +73,16 @@ const TEMPLATE_KEYS = [
   "badge_icon_color",
 
   // Primary text
-  "primary_font_size",
-  "primary_font_weight",
-  "primary_font_color",
+  "primary_text_size",
+  "primary_text_weight",
+  "primary_text_color",
   "primary_line_height",
   "primary_letter_spacing",
 
   // Secondary text
-  "secondary_font_size",
-  "secondary_font_weight",
-  "secondary_font_color",
+  "secondary_text_size",
+  "secondary_text_weight",
+  "secondary_text_color",
   "secondary_line_height",
   "secondary_letter_spacing",
 ] as const;
@@ -432,15 +432,15 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
     const style = {
       "--tile-color": cssColor,
     
-      "--ha-tile-info-primary-font-size": this.getValue("primary_font_size"),
-      "--ha-tile-info-primary-font-weight": this.getValue("primary_font_weight"),
-      "--ha-tile-info-primary-color": this.getValue("primary_font_color"),
+      "--ha-tile-info-primary-font-size": this.getValue("primary_text_size"),
+      "--ha-tile-info-primary-font-weight": this.getValue("primary_text_weight"),
+      "--ha-tile-info-primary-color": this.getValue("primary_text_color"),
       "--ha-tile-info-primary-line-height": this.getValue("primary_line_height"),
       "--ha-tile-info-primary-letter-spacing": this.getValue("primary_letter_spacing"),
 
-      "--ha-tile-info-secondary-font-size": this.getValue("secondary_font_size"),
-      "--ha-tile-info-secondary-font-weight": this.getValue("secondary_font_weight"),
-      "--ha-tile-info-secondary-color": this.getValue("secondary_font_color"),
+      "--ha-tile-info-secondary-font-size": this.getValue("secondary_text_size"),
+      "--ha-tile-info-secondary-font-weight": this.getValue("secondary_text_weight"),
+      "--ha-tile-info-secondary-color": this.getValue("secondary_text_color"),
       "--ha-tile-info-secondary-line-height": this.getValue("secondary_line_height"),
       "--ha-tile-info-secondary-letter-spacing": this.getValue("secondary_letter_spacing"),
     };
