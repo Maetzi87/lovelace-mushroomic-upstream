@@ -424,7 +424,9 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
      "--primary-font-size": this.getValue("primary_font_size"),
      "--primary-font-weight": this.getValue("primary_font_weight"),
      "--primary-font-color": this.getValue("primary_font_color"),
-  
+     "--primary-line-height": this.getValue("primary_line_height"),
+     "--primary-font-variant": this.getValue("primary_font_variant"),
+
      "--secondary-font-size": this.getValue("secondary_font_size"),
      "--secondary-font-weight": this.getValue("secondary_font_weight"),
      "--secondary-font-color": this.getValue("secondary_font_color"),
@@ -694,6 +696,8 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
         font-size: var(--primary-font-size, 16px);
         font-weight: var(--primary-font-weight, 500);
         color: var(--primary-font-color, var(--primary-text-color));
+        line-height: var(--primary-line-height, 1.25);
+        font-variant: var(--primary-font-variant, normal);
       }
       ha-tile-info .secondary {
         font-size: var(--secondary-font-size, 14px);
