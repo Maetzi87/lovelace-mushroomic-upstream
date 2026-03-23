@@ -27,9 +27,9 @@ import { isTemplate } from "../../ha/common/string/has-template";
 import { CacheManager } from "../../utils/cache-manager";
 import { registerCustomCard } from "../../utils/custom-cards";
 import {
-  migrateTemplateCardConfig,
-  TemplateCardConfig,
-} from "./template-card-config";
+  migrateResizeCardConfig,
+  ResizeCardConfig,
+} from "./resize-card-config";
 import { getWeatherSvgIcon } from "../../utils/icons/weather-icon";
 import { weatherSVGStyles } from "../../utils/weather";
 import { mushroomKeyframes } from "../../utils/keyframes";
@@ -44,9 +44,9 @@ export const getEntityDefaultTileIconAction = (entityId: string) => {
 };
 
 registerCustomCard({
-  type: "mushroom-template-card",
-  name: "Mushroom Template",
-  description: "Build your own Mushroom card using templates",
+  type: "mushroom-resize-card",
+  name: "Mushroom Resize",
+  description: "Build your own Mushroom card with templates, including size and styling options",
 });
 
 const templateCache = new CacheManager<TemplateResults>(1000);
@@ -95,18 +95,18 @@ export interface LovelaceCardFeatureContext {
   area_id?: string;
 }
 
-@customElement("mushroom-template-card")
-export class MushroomTemplateCard extends LitElement implements LovelaceCard {
+@customElement("mushroom-resize-card")
+export class MushroomResizeCard extends LitElement implements LovelaceCard {
   public static async getConfigElement(): Promise<LovelaceCardEditor> {
-    await import("./template-card-editor");
+    await import("./resize-card-editor");
     return document.createElement(
-      "mushroom-template-card-editor"
+      "mushroom-resize-card-editor"
     ) as LovelaceCardEditor;
   }
 
-  public static getStubConfig(): TemplateCardConfig {
+  public static getStubConfig(): ResizeCardConfig {
     return {
-      type: `custom:mushroom-template-card`,
+      type: `custom:mushroom-resize-card`,
       primary: "Hello, {{user}}",
       secondary: "How are you?",
       icon: "mdi:mushroom",
@@ -115,7 +115,7 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
 
   @property({ attribute: false }) public hass?: HomeAssistant;
 
-  @state() private _config?: TemplateCardConfig;
+  @state() private _config?: ResizeCardConfig;
 
   @state() private _templateResults?: TemplateResults;
 
@@ -259,8 +259,8 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
     }
   }
 
-  public setConfig(config: TemplateCardConfig): void {
-    this._config = migrateTemplateCardConfig(config);
+  public setConfig(config: ResizeCardConfig): void {
+    this._config = migrateResizeCardConfig(config);
 
     if (this._config.entity) {
       if (!this._config.tap_action) {
@@ -275,7 +275,7 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
   }
 
   private _featureContext = memoizeOne(
-    (config: TemplateCardConfig): LovelaceCardFeatureContext => {
+    (config: ResizeCardConfig): LovelaceCardFeatureContext => {
       return {
         entity_id: config.entity,
         area_id: config.area,
@@ -381,14 +381,14 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
     );
   }
 
-  private _featurePosition = memoizeOne((config: TemplateCardConfig) => {
+  private _featurePosition = memoizeOne((config: ResizeCardConfig) => {
     if (config.vertical) {
       return "bottom";
     }
     return config.features_position || "bottom";
   });
 
-  private _displayedFeatures = memoizeOne((config: TemplateCardConfig) => {
+  private _displayedFeatures = memoizeOne((config: ResizeCardConfig) => {
     const features = config.features || [];
     const featurePosition = this._featurePosition(config);
 
@@ -742,6 +742,6 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "mushroom-template-card": MushroomTemplateCard;
+    "mushroom-resize-card": MushroomResizeCard;
   }
 }
