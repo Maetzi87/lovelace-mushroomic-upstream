@@ -69,6 +69,12 @@ const TEMPLATE_KEYS = [
   "badge_size",
   "badge_icon_size",
   "badge_icon_color",
+  "primary_font_size",
+  "primary_font_weight",
+  "primary_font_color",
+  "secondary_font_size",
+  "secondary_font_weight",
+  "secondary_font_color",
 ] as const;
 
 type TemplateKey = (typeof TEMPLATE_KEYS)[number];
@@ -414,6 +420,15 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
     
     const style = {
      "--tile-color": cssColor,
+  
+     "--primary-font-size": this.getValue("primary_font_size"),
+     "--primary-font-weight": this.getValue("primary_font_weight"),
+     "--primary-font-color": this.getValue("primary_font_color"),
+  
+     "--secondary-font-size": this.getValue("secondary_font_size"),
+     "--secondary-font-weight": this.getValue("secondary_font_weight"),
+     "--secondary-font-color": this.getValue("secondary_font_color"),
+
     };
 
     const featurePosition = this._featurePosition(this._config);
@@ -674,6 +689,16 @@ export class MushroomTemplateCard extends LitElement implements LovelaceCard {
         min-width: 0;
         transition: background-color 180ms ease-in-out;
         box-sizing: border-box;
+      }
+      ha-tile-info .primary {
+        font-size: var(--primary-font-size, 16px);
+        font-weight: var(--primary-font-weight, 500);
+        color: var(--primary-font-color, var(--primary-text-color));
+      }
+      ha-tile-info .secondary {
+        font-size: var(--secondary-font-size, 14px);
+        font-weight: var(--secondary-font-weight, 400);
+        color: var(--secondary-font-color, var(--secondary-text-color));
       }
       hui-card-features {
         --feature-color: var(--tile-color);
