@@ -257,7 +257,7 @@ export class MushroomResizeCard extends LitElement implements LovelaceCard {
   }
 
   public setConfig(config: ResizeCardConfig): void {
-    this._config = config;
+    this._config = {...config};
 
     if (this._config.entity) {
       if (!this._config.tap_action) {
