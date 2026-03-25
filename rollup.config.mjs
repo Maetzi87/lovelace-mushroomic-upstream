@@ -47,7 +47,7 @@ const plugins = [
 
 export default [
   {
-    input: "src/mushroom-resize-card.ts",
+    input: "src/mushroomic.ts",
     output: {
       dir: "dist",
       format: "es",
