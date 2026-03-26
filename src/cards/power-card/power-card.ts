@@ -464,6 +464,7 @@ public getGridOptions(): LovelaceGridOptions {
     const style = {
       // --- ICON ---
       "--tile-color": cssColor,
+      "--mushic-icon-color": cssColor,
       "--mushic-shape-color": shapeColor,
       "--tile-icon-size": finalShapeSize,
       "--tile-mdc-icon-size": finalIconSize,
@@ -710,6 +711,9 @@ public getGridOptions(): LovelaceGridOptions {
         --tile-icon-opacity: 0;
         --tile-icon-hover-opacity: 0;
         --tile-icon-border-radius: 0;
+      }
+      ha-state-icon {
+        color: var(--mushic-icon-color, var(--tile-color));
       }
       .mushic-badge {
         position: absolute;
