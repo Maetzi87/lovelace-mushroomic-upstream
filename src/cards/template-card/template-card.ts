@@ -433,7 +433,7 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
     
     const style = {
       "--tile-color": cssColor,
-      "--card-height": finalCardHeight,
+      "--mushic-card-height": finalCardHeight,
     
       "--ha-tile-info-primary-font-size": this.getValue("primary_text_size"),
       "--ha-tile-info-primary-font-weight": this.getValue("primary_text_weight"),
@@ -528,10 +528,10 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
                       ${badgeIcon || badgeText ? html`
                         <div class="mush-badge"
                              style=${styleMap({
-                               "--tile-badge-size": finalBadgeSize,
-                               "--tile-badge-icon-size": finalBadgeIconSize,
-                               "--badge-color": badgeCssColor,
-                               "--badge-icon-color": badgeIconColor, 
+                               "--mushic-badge-size": finalBadgeSize,
+                               "--mushic-badge-icon-size": finalBadgeIconSize,
+                               "--mushic-badge-color": badgeCssColor,
+                               "--mushic-badge-icon-color": badgeIconColor, 
                              })}
                         >
                           ${badgeText
@@ -592,8 +592,8 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
         --ha-ripple-color: var(--tile-color);
         --ha-ripple-hover-opacity: 0.04;
         --ha-ripple-pressed-opacity: 0.12;
-        min-height: var(--card-height);
-        height: var(--card-height);
+        min-height: var(--mushic-card-height);
+        height: var(--mushic-card-height);
         transition:
           box-shadow 180ms ease-in-out,
           border-color 180ms ease-in-out;
@@ -677,30 +677,30 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
         --tile-icon-hover-opacity: 0;
         --tile-icon-border-radius: 0;
       }
-      .mush-badge {
+      .mushic-badge {
         position: absolute;
         top: 3px;
         right: 3px;
-        width: var(--tile-badge-size);
-        height: var(--tile-badge-size);
-        background: var(--badge-color, var(--secondary-text-color));;
+        width: var(--mushic-badge-size);
+        height: var(--mushic-badge-size);
+        background: var(--mushic-badge-color, var(--secondary-text-color));;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         pointer-events: none;
       }
-      .mush-badge ha-icon {
-        --mdc-icon-size: var(--tile-badge-icon-size);
-        color: var(--badge-icon-color, white);
+      .mushic-badge ha-icon {
+        --mdc-icon-size: var(--mushic-badge-icon-size);
+        color: var(--mushic-badge-icon-color, white);
         display: flex;
         align-items: center;
         justify-content: center;
       }
-      .mush-badge span {
-        font-size: calc(var(--tile-badge-size) * 0.5);
+      .mushic-badge span {
+        font-size: calc(var(--mushic-badge-size) * 0.5);
         font-weight: bold;
-        color: var(--badge-text-color, white);
+        color: var(--mushic-badge-text-color, white);
         line-height: 1;
       }
       ha-tile-info {
