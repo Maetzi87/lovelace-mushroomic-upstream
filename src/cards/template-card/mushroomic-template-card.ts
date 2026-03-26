@@ -26,10 +26,10 @@ import { computeCssColor } from "../../ha/common/color/compute-color";
 import { isTemplate } from "../../ha/common/string/has-template";
 import { CacheManager } from "../../utils/cache-manager";
 import { registerCustomCard } from "../../utils/custom-cards";
-import { TemplateCardConfig } from "./mushic-template-card-config";
+import { TemplateCardConfig } from "./mushroomic-template-card-config";
 import { getWeatherSvgIcon } from "../../utils/icons/weather-icon";
 import { weatherSVGStyles } from "../../utils/weather";
-import { mushroomKeyframes } from "../../utils/keyframes";
+import { mushroomicKeyframes } from "../../utils/keyframes";
 
 export const getEntityDefaultTileIconAction = (entityId: string) => {
   const domain = computeDomain(entityId);
@@ -98,9 +98,9 @@ export interface LovelaceCardFeatureContext {
 @customElement("mushroomic-template-card")
 export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
   public static async getConfigElement(): Promise<LovelaceCardEditor> {
-    await import("./mushic-template-card-editor");
+    await import("./mushroomic-template-card-editor");
     return document.createElement(
-      "mushic-template-card-editor"
+      "mushroomic-template-card-editor"
     ) as LovelaceCardEditor;
   }
 
@@ -534,7 +534,7 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
                             ></ha-state-icon>`}
                             
                       ${badgeIcon || badgeText ? html`
-                        <div class="mush-badge"
+                        <div class="mushic-badge"
                              style=${styleMap({
                                "--mushic-badge-size": finalBadgeSize,
                                "--mushic-badge-icon-size": finalBadgeIconSize,
@@ -578,7 +578,7 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
 
   static styles = [
     weatherSVGStyles,
-    mushroomKeyframes,
+    mushroomicKeyframes,
     css`
       :host {
         --tile-color: var(--state-inactive-color);
