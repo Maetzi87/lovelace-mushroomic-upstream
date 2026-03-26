@@ -58,13 +58,16 @@ const TEMPLATE_KEYS = [
   "primary",
   "secondary",
   "picture",
+
+  // Sizes
+  "shape_size",
+  "icon_size",
+  "card_height",
+  
+  // Badge
   "badge_icon",
   "badge_color",
   "badge_text",
-  
-  // Sizes
-  "tile_size",
-  "icon_size",
   "badge_size",
   "badge_icon_size",
   "badge_icon_color",
@@ -415,19 +418,24 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
     const weatherSvg = getWeatherSvgIcon(icon);
     
 // --- Template variables (template-capable) ---
-    const tileSize = this.getValue("tile_size");
+    const shapeSize = this.getValue("shape_size");
     const iconSize = this.getValue("icon_size");
     const badgeSize = this.getValue("badge_size");
     const badgeIconSize = this.getValue("badge_icon_size");
+    const cardHeight = this.getValue("card_height");
     
 // --- Automatic fallback scaling ---
-    const finalTileSize = tileSize || "50px";
-    const finalIconSize = iconSize || `calc(${finalTileSize} * 0.66)`;
-    const finalBadgeSize = badgeSize || `calc(${finalTileSize} * 0.32)`;
+    const finalShapeSize = shapeSize || "50px";
+    const finalIconSize = iconSize || `calc(${finalShapeSize} * 0.66)`;
+    const finalBadgeSize = badgeSize || `calc(${finalShapeSize} * 0.32)`;
     const finalBadgeIconSize = badgeIconSize || `calc(${finalBadgeSize} * 0.75)`;
+    const finalCardHeight = cardHeight || `calc(${finalShapeSize} + 20px)`;
     
     const style = {
       "--tile-color": cssColor,
+      
+      "--shape-size": finalShapeSize,
+      "--card-height": finalCardHeight,
     
       "--ha-tile-info-primary-font-size": this.getValue("primary_text_size"),
       "--ha-tile-info-primary-font-weight": this.getValue("primary_text_weight"),
@@ -493,7 +501,7 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
                   ? html`
                     <ha-tile-icon
                       style=${styleMap({
-                          "--tile-icon-size": finalTileSize,
+                          "--shape-size": finalShapeSize,
                           "--tile-mdc-icon-size": finalIconSize,
                       })}
                       role=${ifDefined(this._hasIconAction ? "button" : undefined)}
@@ -586,7 +594,8 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
         --ha-ripple-color: var(--tile-color);
         --ha-ripple-hover-opacity: 0.04;
         --ha-ripple-pressed-opacity: 0.12;
-        height: 100%;
+        min-height: var(--card-height);
+        height: var(--card-height);
         transition:
           box-shadow 180ms ease-in-out,
           border-color 180ms ease-in-out;
@@ -594,6 +603,7 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
         flex-direction: column;
         justify-content: space-between;
       }
+
       [role="button"] {
         cursor: pointer;
         pointer-events: auto;
@@ -656,12 +666,12 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
         --mdc-icon-size: var(--tile-mdc-icon-size);
       }
       ha-tile-icon .container {
-        width: var(--tile-icon-size);
-        height: var(--tile-icon-size);
+        width: var(--shape-size);
+        height: var(--shape-size);
       }
       ha-tile-icon.weather svg {
-        width: var(--tile-icon-size) !important;
-        height: var(--tile-icon-size) !important;
+        width: var(--shape-size) !important;
+        height: var(--shape-size) !important;
         display: flex;
       }
       ha-tile-icon.weather {
