@@ -37,6 +37,12 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   icon_size?: string;
   card_height?: string;
 
+  // Style
+  shape_color?: string;
+  card_bg_color?: string;
+  border?: string;
+  vertical?: boolean;
+  
   // Text Style
   primary_text_size?: string;
   primary_text_weight?: string;
@@ -48,9 +54,6 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   secondary_text_color?: string;
   secondary_line_height?: string;
   secondary_letter_spacing?: string;
-  
-  // Style
-  vertical?: boolean;
   
   // Interactions
   tap_action?: ActionConfig;
@@ -74,14 +77,14 @@ export const templateCardConfigStruct = assign(
     // Context
     entity: optional(string()),
     area: optional(string()),
-    
+
     // Content
     primary: optional(string()),
     secondary: optional(string()),
     color: optional(string()),
     icon: optional(string()),
     picture: optional(string()),
-    
+
     // Badge
     badge_icon: optional(string()),
     badge_text: optional(string()),
@@ -89,12 +92,18 @@ export const templateCardConfigStruct = assign(
     badge_icon_color: optional(string()),
     badge_size: optional(string()),
     badge_icon_size: optional(string()),
-    
+
     // Sizes
     shape_size: optional(string()),
     icon_size: optional(string()),
     card_height: optional(string()),
-    
+
+    // Style
+    shape_color: optional(string()),
+    card_bg_color: optional(string()),
+    border: optional(string()),
+    vertical: optional(boolean()),
+
     // Text Style
     primary_text_size: optional(string()),
     primary_text_weight: optional(string()),
@@ -106,10 +115,7 @@ export const templateCardConfigStruct = assign(
     secondary_text_color: optional(string()),
     secondary_line_height: optional(string()),
     secondary_letter_spacing: optional(string()),
-    
-    // Style
-    vertical: optional(boolean()),
-    
+
     // Interactions
     tap_action: optional(actionConfigStruct),
     hold_action: optional(actionConfigStruct),
@@ -117,11 +123,11 @@ export const templateCardConfigStruct = assign(
     icon_tap_action: optional(actionConfigStruct),
     icon_hold_action: optional(actionConfigStruct),
     icon_double_tap_action: optional(actionConfigStruct),
-    
+
     // Features
     features: optional(array(any())),
     features_position: optional(enums(["bottom", "inline"])),
-    
+
     // Entity IDs for template
     entity_id: optional(union([string(), array(string())])),
   })
