@@ -13,7 +13,7 @@ import { ActionConfig, actionConfigStruct, LovelaceCardConfig } from "../../ha";
 import { LovelaceCardFeatureConfig } from "../../ha/panels/lovelace/card-features/types";
 import { lovelaceCardConfigStruct } from "../../shared/config/lovelace-card-config";
 
-export type ResizeCardConfig = LovelaceCardConfig & {
+export type TemplateCardConfig = LovelaceCardConfig & {
   entity?: string;
   area?: string;
   // Content
@@ -60,7 +60,7 @@ export type ResizeCardConfig = LovelaceCardConfig & {
   entity_id?: string | string[];
 };
 
-export const resizeCardConfigStruct = assign(
+export const templateCardConfigStruct = assign(
   lovelaceCardConfigStruct,
   object({
     // Context
