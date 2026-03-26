@@ -30,7 +30,7 @@ import {
   templateCardConfigStruct,
 } from "./power-card-config";
 
-export const RESIZE_CARD_LABELS = [
+export const POWER_CARD_LABELS = [
   "area",
   "badge_color",
   "badge_icon",
@@ -48,7 +48,7 @@ export const TILE_LABELS = [
   "icon_double_tap_action",
 ];
 
-export const RESIZE_CARD_HELPERS = [
+export const POWER_CARD_HELPERS = [
   "area",
   "entity",
   "badge_text",
@@ -85,6 +85,7 @@ export class MushroomicPowerCardEditor
   private _schema = memoizeOne(
     (localize: LocalizeFunc, entityId: string | undefined) =>
       [
+        // 1. CONTEXT
         {
           name: "context",
           flatten: true,
@@ -95,6 +96,22 @@ export class MushroomicPowerCardEditor
             { name: "area", selector: { area: {} } },
           ],
         },
+  
+        // 2. ICON
+        {
+          name: "icon",
+          flatten: true,
+          type: "expandable",
+          icon: "mdi:image-filter-center-focus",
+          schema: [
+            { name: "color", selector: { template: {} } },
+            { name: "icon", selector: { template: {} } },
+            { name: "picture", selector: { template: {} } },
+            { name: "shape_size", selector: { template: {} } },
+          ],
+        },
+  
+        // 3. CONTENT (nur Text)
         {
           name: "content",
           flatten: true,
@@ -103,40 +120,28 @@ export class MushroomicPowerCardEditor
           schema: [
             { name: "primary", selector: { template: {} } },
             { name: "secondary", selector: { template: {} } },
-            { name: "color", selector: { template: {} } },
-            { name: "icon", selector: { template: {} } },
-            { name: "picture", selector: { template: {} } },
           ],
         },
+  
+        // 4. BADGE
         {
           name: "badge",
-          type: "expandable",
           flatten: true,
+          type: "expandable",
           icon: "mdi:square-rounded-badge-outline",
-
           schema: [
             { name: "badge_icon", selector: { template: {} } },
             { name: "badge_text", selector: { template: {} } },
             { name: "badge_color", selector: { template: {} } },
-            { name: "badge_icon_color", selector: { template: {} } },
-          ],
-        },
-        {
-          name: "sizes",
-          type: "expandable",
-          flatten: true,
-          icon: "mdi:template",
-          schema: [
-            { name: "shape_size", selector: { template: {} } },
-            { name: "icon_size", selector: { template: {} } },
             { name: "badge_size", selector: { template: {} } },
-            { name: "badge_icon_size", selector: { template: {} } },
           ],
         },
+  
+        // 5. LAYOUT
         {
           name: "layout",
-          type: "expandable",
           flatten: true,
+          type: "expandable",
           icon: "mdi:image-text",
           schema: [
             {
@@ -159,12 +164,37 @@ export class MushroomicPowerCardEditor
                 },
               },
             },
+            {
+              name: "features_position",
+              required: true,
+              selector: {
+                select: {
+                  mode: "box",
+                  options: ["bottom", "inline"].map((value) => ({
+                    label: localize(
+                      `ui.panel.lovelace.editor.card.tile.features_position_options.${value}`
+                    ),
+                    description: localize(
+                      `ui.panel.lovelace.editor.card.tile.features_position_options.${value}_description`
+                    ),
+                    value,
+                    image: {
+                      src: `/static/images/form/tile_features_position_${value}.svg`,
+                      src_dark: `/static/images/form/tile_features_position_${value}_dark.svg`,
+                      flip_rtl: true,
+                    },
+                  })),
+                },
+              },
+            },
           ],
         },
+  
+        // 6a. CARD ACTIONS
         {
-          name: "interactions",
-          type: "expandable",
+          name: "card_interactions",
           flatten: true,
+          type: "expandable",
           icon: "mdi:gesture-tap",
           schema: [
             {
@@ -176,6 +206,32 @@ export class MushroomicPowerCardEditor
               },
             },
             {
+              name: "hold_action",
+              selector: {
+                ui_action: {
+                  default_action: "none",
+                },
+              },
+            },
+            {
+              name: "double_tap_action",
+              selector: {
+                ui_action: {
+                  default_action: "none",
+                },
+              },
+            },
+          ],
+        },
+  
+        // 6b. ICON ACTIONS
+        {
+          name: "icon_interactions",
+          flatten: true,
+          type: "expandable",
+          icon: "mdi:gesture-tap-button",
+          schema: [
+            {
               name: "icon_tap_action",
               selector: {
                 ui_action: {
@@ -186,29 +242,26 @@ export class MushroomicPowerCardEditor
               },
             },
             {
-              name: "",
-              type: "optional_actions",
-              flatten: true,
-              schema: (
-                [
-                  "hold_action",
-                  "icon_hold_action",
-                  "double_tap_action",
-                  "icon_double_tap_action",
-                ] as const
-              ).map((action) => ({
-                name: action,
-                selector: {
-                  ui_action: {
-                    default_action: "none" as const,
-                  },
+              name: "icon_hold_action",
+              selector: {
+                ui_action: {
+                  default_action: "none",
                 },
-              })),
+              },
+            },
+            {
+              name: "icon_double_tap_action",
+              selector: {
+                ui_action: {
+                  default_action: "none",
+                },
+              },
             },
           ],
         },
       ] as const satisfies readonly HaFormSchema[]
   );
+
 
   private _featuresSchema = memoizeOne(
     (localize: LocalizeFunc, vertical: boolean) =>
@@ -249,7 +302,7 @@ export class MushroomicPowerCardEditor
     if (GENERIC_LABELS.includes(schema.name)) {
       return customLocalize(`editor.card.generic.${schema.name}`);
     }
-    if (RESIZE_CARD_LABELS.includes(schema.name)) {
+    if (POWER_CARD_LABELS.includes(schema.name)) {
       return customLocalize(`editor.card.template.${schema.name}`);
     }
     if (TILE_LABELS.includes(schema.name)) {
@@ -270,7 +323,7 @@ export class MushroomicPowerCardEditor
     if (GENERIC_HELPERS.includes(schema.name)) {
       return customLocalize(`editor.card.generic.${schema.name}_helper`);
     }
-    if (RESIZE_CARD_HELPERS.includes(schema.name)) {
+    if (POWER_CARD_HELPERS.includes(schema.name)) {
       return customLocalize(`editor.card.template.${schema.name}_helper`);
     }
     return undefined;
