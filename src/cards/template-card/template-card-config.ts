@@ -16,12 +16,14 @@ import { lovelaceCardConfigStruct } from "../../shared/config/lovelace-card-conf
 export type TemplateCardConfig = LovelaceCardConfig & {
   entity?: string;
   area?: string;
+  
   // Content
   primary?: string;
   secondary?: string;
   color?: string;
   icon?: string;
   picture?: string;
+  
   // Badge
   badge_icon?: string;
   badge_text?: string;
@@ -46,9 +48,11 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   secondary_text_color?: string;
   secondary_line_height?: string;
   secondary_letter_spacing?: string;
+  
   // Style
   vertical?: boolean;
   multiline_secondary?: boolean;
+  
   // Interactions
   tap_action?: ActionConfig;
   hold_action?: ActionConfig;
@@ -56,9 +60,11 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   icon_tap_action?: ActionConfig;
   icon_hold_action?: ActionConfig;
   icon_double_tap_action?: ActionConfig;
+  
   // Features
   features?: LovelaceCardFeatureConfig[];
   features_position?: "bottom" | "inline";
+  
   // Entity IDs for template
   entity_id?: string | string[];
 };
@@ -69,12 +75,14 @@ export const templateCardConfigStruct = assign(
     // Context
     entity: optional(string()),
     area: optional(string()),
+    
     // Content
     primary: optional(string()),
     secondary: optional(string()),
     color: optional(string()),
     icon: optional(string()),
     picture: optional(string()),
+    
     // Badge
     badge_icon: optional(string()),
     badge_text: optional(string()),
@@ -99,9 +107,11 @@ export const templateCardConfigStruct = assign(
     secondary_text_color: optional(string()),
     secondary_line_height: optional(string()),
     secondary_letter_spacing: optional(string()),
+    
     // Style
     vertical: optional(boolean()),
     multiline_secondary: optional(boolean()),
+    
     // Interactions
     tap_action: optional(actionConfigStruct),
     hold_action: optional(actionConfigStruct),
@@ -109,9 +119,11 @@ export const templateCardConfigStruct = assign(
     icon_tap_action: optional(actionConfigStruct),
     icon_hold_action: optional(actionConfigStruct),
     icon_double_tap_action: optional(actionConfigStruct),
+    
     // Features
     features: optional(array(any())),
     features_position: optional(enums(["bottom", "inline"])),
+    
     // Entity IDs for template
     entity_id: optional(union([string(), array(string())])),
   })
