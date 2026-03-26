@@ -24,11 +24,11 @@ import {
   EditDetailElementEvent,
   EditSubElementEvent,
 } from "../../utils/lovelace/editor/types";
-import { getEntityDefaultTileIconAction } from "./resize-card";
+import { getEntityDefaultTileIconAction } from "./template-card";
 import {
-  ResizeCardConfig,
-  resizeCardConfigStruct,
-} from "./resize-card-config";
+  TemplateCardConfig,
+  templateCardConfigStruct,
+} from "./template-card-config";
 
 export const RESIZE_CARD_LABELS = [
   "area",
@@ -56,27 +56,27 @@ export const RESIZE_CARD_HELPERS = [
   "multiline_secondary",
 ];
 
-@customElement("mushroomic-resize-card-editor")
-export class MushroomicResizeCardEditor
+@customElement("mushroomic-template-card-editor")
+export class MushroomicTemplateCardEditor
   extends LitElement
   implements LovelaceCardEditor
 {
   @property({ attribute: false }) public hass!: HomeAssistant;
 
-  @state() private _config?: ResizeCardConfig;
+  @state() private _config?: TemplateCardConfig;
 
   connectedCallback() {
     super.connectedCallback();
     void loadHaComponents();
   }
 
-  public setConfig(config: ResizeCardConfig): void {
-    assert(config, resizeCardConfigStruct);
+  public setConfig(config: TemplateCardConfig): void {
+    assert(config, templateCardConfigStruct);
     this._config = config;
   }
 
   private _featureContext = memoizeOne(
-    (config: ResizeCardConfig): LovelaceCardFeatureContext => {
+    (config: TemplateCardConfig): LovelaceCardFeatureContext => {
       return {
         entity_id: config.entity,
         area_id: config.area,
@@ -127,7 +127,7 @@ export class MushroomicResizeCardEditor
           name: "sizes",
           type: "expandable",
           flatten: true,
-          icon: "mdi:resize",
+          icon: "mdi:template",
           schema: [
             { name: "tile_size", selector: { template: {} } },
             { name: "icon_size", selector: { template: {} } },
@@ -352,7 +352,7 @@ export class MushroomicResizeCardEditor
     }
 
     const features = ev.detail.features as LovelaceCardFeatureConfig[];
-    const config: ResizeCardConfig = {
+    const config: TemplateCardConfig = {
       ...this._config,
       features,
     };
@@ -396,9 +396,9 @@ export class MushroomicResizeCardEditor
       return;
     }
 
-    const newConfig = ev.detail.value as ResizeCardConfig;
+    const newConfig = ev.detail.value as TemplateCardConfig;
 
-    const config: ResizeCardConfig = {
+    const config: TemplateCardConfig = {
       features: this._config.features,
       ...newConfig,
     };
@@ -467,6 +467,6 @@ export class MushroomicResizeCardEditor
 
 declare global {
   interface HTMLElementTagNameMap {
-    "mushroomic-resize-card-editor": MushroomicResizeCardEditor;
+    "mushroomic-template-card-editor": MushroomicTemplateCardEditor;
   }
 }
