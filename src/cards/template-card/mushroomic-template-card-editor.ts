@@ -24,11 +24,11 @@ import {
   EditDetailElementEvent,
   EditSubElementEvent,
 } from "../../utils/lovelace/editor/types";
-import { getEntityDefaultTileIconAction } from "./mushroomic-template-card";
+import { getEntityDefaultTileIconAction } from "./template-card";
 import {
   TemplateCardConfig,
   templateCardConfigStruct,
-} from "./mushroomic-template-card-config";
+} from "./template-card-config";
 
 export const RESIZE_CARD_LABELS = [
   "area",
@@ -37,6 +37,7 @@ export const RESIZE_CARD_LABELS = [
   "badge_text",
   "primary",
   "secondary",
+  "multiline_secondary",
 ];
 
 export const TILE_LABELS = [
@@ -52,6 +53,7 @@ export const RESIZE_CARD_HELPERS = [
   "area",
   "entity",
   "badge_text",
+  "multiline_secondary",
 ];
 
 @customElement("mushroomic-template-card-editor")
@@ -127,7 +129,7 @@ export class MushroomicTemplateCardEditor
           flatten: true,
           icon: "mdi:template",
           schema: [
-            { name: "shape_size", selector: { template: {} } },
+            { name: "tile_size", selector: { template: {} } },
             { name: "icon_size", selector: { template: {} } },
             { name: "badge_size", selector: { template: {} } },
             { name: "badge_icon_size", selector: { template: {} } },
@@ -158,6 +160,10 @@ export class MushroomicTemplateCardEditor
                   })),
                 },
               },
+            },
+            {
+              name: "multiline_secondary",
+              selector: { boolean: {} },
             },
           ],
         },
