@@ -458,8 +458,9 @@ public getGridOptions(): LovelaceGridOptions {
       cardHeight ||
       (this._config?.vertical
         ? verticalHeight
-        : `calc(${finalShapeSize} + 20px)`);
-
+        : icon || picture
+          ? `calc(${finalShapeSize} + 20px)`
+          : `calc(36px + 20px)`);
     
     const style = {
       // --- ICON ---
