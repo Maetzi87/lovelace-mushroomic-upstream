@@ -690,7 +690,6 @@ public getGridOptions(): LovelaceGridOptions {
         width: 100%;
         flex: none;
       }
-
       ha-tile-icon {
         --tile-icon-color: var(--mushic-shape-color, var(--tile-color));
         position: relative;
@@ -712,10 +711,7 @@ public getGridOptions(): LovelaceGridOptions {
         --tile-icon-hover-opacity: 0;
         --tile-icon-border-radius: 0;
       }
-      .container ha-icon {
-        color: var(--mushic-icon-color, var(--tile-color));
-      }
-      .container ha-svg-icon {
+      ha-state-icon {
         color: var(--mushic-icon-color, var(--tile-color));
       }
       .mushic-badge {
