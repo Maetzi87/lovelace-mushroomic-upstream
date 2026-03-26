@@ -4,6 +4,7 @@ import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
+import "./power-card-editor";
 import memoizeOne from "memoize-one";
 import hash from "object-hash/dist/object_hash";
 import {
@@ -98,12 +99,9 @@ export interface LovelaceCardFeatureContext {
 @customElement("mushroomic-power-card")
 export class MushroomicPowerCard extends LitElement implements LovelaceCard {
   public static async getConfigElement(): Promise<LovelaceCardEditor> {
-    await import("./power-card-editor");
-    return document.createElement(
-      "mushroomic-power-card-editor"
-    ) as LovelaceCardEditor;
+    return document.createElement("mushroomic-power-card-editor");
   }
-
+  
   public static getStubConfig(): TemplateCardConfig {
     return {
       type: `custom:mushroomic-power-card`,
