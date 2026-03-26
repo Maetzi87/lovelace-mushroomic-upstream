@@ -434,7 +434,7 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
     const style = {
       "--tile-color": cssColor,
       
-      "--tile-size": finalShapeSize,
+      "--tile-icon-size": finalShapeSize,
       "--card-height": finalCardHeight,
     
       "--ha-tile-info-primary-font-size": this.getValue("primary_text_size"),
@@ -501,7 +501,7 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
                   ? html`
                     <ha-tile-icon
                       style=${styleMap({
-                          "--tile-size": finalShapeSize,
+                          "--tile-icon-size": finalShapeSize,
                           "--tile-mdc-icon-size": finalIconSize,
                       })}
                       role=${ifDefined(this._hasIconAction ? "button" : undefined)}
@@ -666,12 +666,12 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
         --mdc-icon-size: var(--tile-mdc-icon-size);
       }
       ha-tile-icon .container {
-        width: var(--tile-size);
-        height: var(--tile-size);
+        width: var(--tile-icon-size);
+        height: var(--tile-icon-size);
       }
       ha-tile-icon.weather svg {
-        width: var(--tile-size) !important;
-        height: var(--tile-size) !important;
+        width: var(--tile-icon-size) !important;
+        height: var(--tile-icon-size) !important;
         display: flex;
       }
       ha-tile-icon.weather {
