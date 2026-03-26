@@ -291,22 +291,15 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
   }
 
   public getCardSize(): number {
-    const featuresPosition =
-      this._config && this._featurePosition(this._config);
+    const featuresPosition = this._featurePosition(this._config!);
     const featuresCount = this._config?.features?.length || 0;
 
-    const hasContent = Boolean(
-      this._config?.icon ||
-        this._config?.picture ||
-        this._config?.primary ||
-        this._config?.secondary
-    );
+    const baseRows = this._config?.vertical ? 2 : 1;
 
-    return (
-      (hasContent || featuresPosition === "inline" ? 1 : 0) +
-      (this._config?.vertical ? 1 : 0) +
-      (featuresPosition === "inline" ? 0 : featuresCount)
-    );
+    const featureRows =
+      featuresPosition === "inline" ? 0 : featuresCount;
+  
+    return baseRows + featureRows;
   }
 
   public getGridOptions(): LovelaceGridOptions {
@@ -340,9 +333,6 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
       ) {
         rows++;
       }
-    }
-    if (this._config?.multiline_secondary) {
-      rows = undefined;
     }
     return {
       columns,
@@ -429,7 +419,27 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
     const finalIconSize = iconSize || `calc(${finalShapeSize} * 0.66)`;
     const finalBadgeSize = badgeSize || `calc(${finalShapeSize} * 0.32)`;
     const finalBadgeIconSize = badgeIconSize || `calc(${finalBadgeSize} * 0.75)`;
-    const finalCardHeight = cardHeight || `calc(${finalShapeSize} + 20px)`;
+
+    const shape = parseInt(finalShapeSize);
+
+    const primarySize = parseInt(this.getValue("primary_text_size") || "16");
+    const primaryLH = parseFloat(this.getValue("primary_line_height") || "1.6");
+    
+    const secondarySize = parseInt(this.getValue("secondary_text_size") || "14");
+    const secondaryLH = parseFloat(this.getValue("secondary_line_height") || "1.2");
+    
+    const verticalHeight = `${
+      shape +
+      primarySize * primaryLH +
+      secondarySize * secondaryLH +
+      41.6
+    }px`;
+    
+    const finalCardHeight =
+      cardHeight ||
+      (this._config?.vertical
+        ? verticalHeight
+        : `calc(${finalShapeSize} + 20px)`);
     
     const style = {
       "--tile-color": cssColor,
@@ -450,8 +460,6 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
 
     const featurePosition = this._featurePosition(this._config);
     const features = this._displayedFeatures(this._config);
-
-    const multilineSecondary = this._config.multiline_secondary;
 
     const featureContext = this._featureContext(this._config);
 
@@ -546,13 +554,7 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
                   ? html`
                       <ha-tile-info id="info">
                         <span slot="primary">${primary}</span>
-                        <span
-                          slot="secondary"
-                          class=${classMap({
-                            multiline: Boolean(multilineSecondary),
-                          })}
-                          >${secondary}</span
-                        >
+                        <span slot="secondary">${secondary}</span>
                       </ha-tile-info>
                     `
                   : nothing}
@@ -650,10 +652,6 @@ export class MushroomicTemplateCard extends LitElement implements LovelaceCard {
       .vertical ha-tile-info {
         width: 100%;
         flex: none;
-      }
-
-      .multiline {
-        white-space: pre-wrap;
       }
 
       ha-tile-icon {
