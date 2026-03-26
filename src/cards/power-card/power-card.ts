@@ -295,7 +295,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
   
     const height = card.getBoundingClientRect().height;
   
-    return Math.ceil(height / 56);
+    return Math.ceil(height / 60);
   }
 
 public getGridOptions(): LovelaceGridOptions {
@@ -304,7 +304,7 @@ public getGridOptions(): LovelaceGridOptions {
 
   if (card) {
     const height = card.getBoundingClientRect().height;
-    measuredRows = Math.max(1, Math.ceil(height / 56)); // 56px = Tile-Row
+    measuredRows = Math.max(1, Math.ceil(height / 60)); 
   }
 
   let columns: number | undefined = 6;
