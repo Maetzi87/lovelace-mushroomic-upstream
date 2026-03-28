@@ -89,6 +89,10 @@ const TEMPLATE_KEYS = [
   "card_bg_color",
   "border",
 
+  // Overlay
+  "overlay_icon",
+  "overlay_color",
+
   // Animation
   "icon_animation",
   "shape_animation",
@@ -498,6 +502,10 @@ public getGridOptions(): LovelaceGridOptions {
       "--mushic-card-height": finalCardHeight,
       "--mushic-card-bg-color": cardBgColor,
       "--mushic-card-border": border,
+
+      // --- OVERLAY ---
+      "--mushic-overlay-icon": this.getValue("overlay_icon"),
+      "--mushic-overlay-color": this.getValue("overlay_color"),
 
       // --- ANIMATIONS ---
       "--mushic-icon-animation": this.getValue("icon_animation"),
