@@ -441,6 +441,7 @@ public getGridOptions(): LovelaceGridOptions {
     const badgeSize = this.getValue("badge_size");
     const badgeIconSize = this.getValue("badge_icon_size");
     const badgeIconColor = this.getValue("badge_icon_color");
+    const badgeTextColor = this.getValue("badge_text_color");
     
     // --- CARD STYLING ---
     const cardHeight = this.getValue("card_height");
@@ -497,6 +498,7 @@ public getGridOptions(): LovelaceGridOptions {
       "--mushic-badge-icon-size": finalBadgeIconSize,
       "--mushic-badge-color": badgeCssColor,
       "--mushic-badge-icon-color": badgeIconColor,
+      "--mushic-badge-text-color": badgeTextColor,
     
       // --- CARD STYLING ---
       "--mushic-card-height": finalCardHeight,
@@ -638,12 +640,7 @@ public getGridOptions(): LovelaceGridOptions {
       :host {
         --tile-color: var(--state-inactive-color);
         -webkit-tap-highlight-color: transparent;
-      }
-      ha-card:has(.background:focus-visible) {
-        --shadow-default: var(--ha-card-box-shadow, 0 0 0 0 transparent);
-        --shadow-focus: 0 0 0 1px var(--tile-color);
-        box-shadow: var(--shadow-default), var(--shadow-focus);
-      }
+      }     
       :host > ha-card {
         --ha-ripple-color: var(--tile-color);
         --ha-ripple-hover-opacity: 0.04;
@@ -659,6 +656,11 @@ public getGridOptions(): LovelaceGridOptions {
         background: var(--mushic-card-bg-color, var(--ha-card-background, var(--card-background-color)));
         border: var(--mushic-card-border, var(--ha-card-border-width, 1px) solid var(--ha-card-border-color, var(--divider-color)));
       }
+      ha-card:has(.background:focus-visible) {
+        --shadow-default: var(--ha-card-box-shadow, 0 0 0 0 transparent);
+        --shadow-focus: 0 0 0 1px var(--tile-color);
+        box-shadow: var(--shadow-default), var(--shadow-focus);
+      }
 
       [role="button"] {
         cursor: pointer;
@@ -667,6 +669,7 @@ public getGridOptions(): LovelaceGridOptions {
       [role="button"]:focus {
         outline: none;
       }
+      
       .background {
         position: absolute;
         top: 0;
@@ -677,6 +680,7 @@ public getGridOptions(): LovelaceGridOptions {
         margin: calc(-1 * var(--ha-card-border-width, 1px));
         overflow: hidden;
       }
+      
       .container {
         margin: calc(-1 * var(--ha-card-border-width, 1px));
         display: flex;
@@ -709,19 +713,21 @@ public getGridOptions(): LovelaceGridOptions {
         width: 100%;
         flex: none;
       }
+      
       ha-tile-icon {
         --tile-icon-color: var(--mushic-shape-color, var(--tile-color));
         position: relative;
         margin: -6px;
         padding: 6px;
-        --mdc-icon-size: var(--tile-mdc-icon-size);
-        animation: var(--mushic-shape-animation);        
+        --mdc-icon-size: var(--tile-mdc-icon-size);    
       }
       ha-tile-icon .container {
         width: var(--tile-icon-size);
         height: var(--tile-icon-size);
-
       }
+      ha-tile-icon .icon-container {
+        animation: var(--mushic-shape-animation);
+      }      
       ha-tile-icon.weather svg {
         width: var(--tile-icon-size) !important;
         height: var(--tile-icon-size) !important;
@@ -732,10 +738,12 @@ public getGridOptions(): LovelaceGridOptions {
         --tile-icon-hover-opacity: 0;
         --tile-icon-border-radius: 0;
       }
+
       ha-state-icon {
         color: var(--mushic-icon-color, var(--tile-color));
         animation: var(--mushic-icon-animation);
       }
+      
       .mushic-badge {
         position: absolute;
         top: 3px;
@@ -762,12 +770,14 @@ public getGridOptions(): LovelaceGridOptions {
         color: var(--mushic-badge-text-color, white);
         line-height: 1;
       }
+      
       ha-tile-info {
         position: relative;
         min-width: 0;
         transition: background-color 180ms ease-in-out;
         box-sizing: border-box;
       }
+      
       hui-card-features {
         --feature-color: var(--tile-color);
         padding: 0 12px 12px 12px;
@@ -779,6 +789,7 @@ public getGridOptions(): LovelaceGridOptions {
         padding: 0 12px;
         padding-inline-start: 0;
       }
+      
       .container.feature-only {
         justify-content: flex-end;
       }
