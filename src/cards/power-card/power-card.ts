@@ -83,6 +83,7 @@ const TEMPLATE_KEYS = [
   "badge_size",
   "badge_icon_size",
   "badge_icon_color",
+  "badge_text_color",
 
   // Card-Styling
   "card_height",
@@ -96,6 +97,8 @@ const TEMPLATE_KEYS = [
   // Animation
   "icon_animation",
   "shape_animation",
+  "badge_animation",
+  "badge_icon_animation",
   "overlay_animation"
   
 ] as const;
@@ -512,6 +515,8 @@ public getGridOptions(): LovelaceGridOptions {
       // --- ANIMATIONS ---
       "--mushic-icon-animation": this.getValue("icon_animation"),
       "--mushic-shape-animation": this.getValue("shape_animation"),
+      "--mushic-badge-animation": this.getValue("badge_animation"),
+      "--mushic-badge-icon-animation": this.getValue("badge_icon_animation"),
       "--mushic-overlay-animation": this.getValue("overlay_animation"),
     };
 
@@ -725,9 +730,9 @@ public getGridOptions(): LovelaceGridOptions {
         width: var(--tile-icon-size);
         height: var(--tile-icon-size);
       }
-      ha-tile-icon .icon-container {
+      ha-tile-icon .container.background::before {
         animation: var(--mushic-shape-animation);
-      }      
+      }   
       ha-tile-icon.weather svg {
         width: var(--tile-icon-size) !important;
         height: var(--tile-icon-size) !important;
@@ -756,6 +761,7 @@ public getGridOptions(): LovelaceGridOptions {
         align-items: center;
         justify-content: center;
         pointer-events: none;
+        animation: var(--mushic-badge-animation);
       }
       .mushic-badge ha-icon {
         --mdc-icon-size: var(--mushic-badge-icon-size);
@@ -763,6 +769,7 @@ public getGridOptions(): LovelaceGridOptions {
         display: flex;
         align-items: center;
         justify-content: center;
+        animation: var(--mushic-badge-icon-animation);
       }
       .mushic-badge span {
         font-size: calc(var(--mushic-badge-size) * 0.5);
