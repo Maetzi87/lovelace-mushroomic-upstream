@@ -29,6 +29,7 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   badge_text?: string;
   badge_color?: string;
   badge_icon_color?: string;
+  badge_text_color?: string;
   badge_size?: string;
   badge_icon_size?: string;
   
@@ -74,6 +75,8 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   // Animations
   icon_animation?: string;
   shape_animation?: string;
+  badge_animation?: string;
+  badge_icon_animation?: string;
   overlay_animation?: string;
   
   // Entity IDs for template
@@ -99,6 +102,7 @@ export const templateCardConfigStruct = assign(
     badge_text: optional(string()),
     badge_color: optional(string()),
     badge_icon_color: optional(string()),
+    badge_text_color: optional(string()),
     badge_size: optional(string()),
     badge_icon_size: optional(string()),
 
@@ -144,6 +148,8 @@ export const templateCardConfigStruct = assign(
     // Animations
     icon_animation: optional(string()),
     shape_animation: optional(string()),
+    badge_animation: optional(string()),
+    badge_icon_animation: optional(string()),
     overlay_animation: optional(string()),
 
     // Entity IDs for template
