@@ -66,6 +66,15 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   // Features
   features?: LovelaceCardFeatureConfig[];
   features_position?: "bottom" | "inline";
+
+  // Overlay
+  overlay_icon?: string;
+  overlay_color?: string;
+  
+  // Animations
+  icon_animation?: string;
+  shape_animation?: string;
+  overlay_animation?: string;
   
   // Entity IDs for template
   entity_id?: string | string[];
@@ -127,6 +136,15 @@ export const templateCardConfigStruct = assign(
     // Features
     features: optional(array(any())),
     features_position: optional(enums(["bottom", "inline"])),
+
+    // Overlay
+    overlay_icon: optional(string()),
+    overlay_color: optional(string()),
+
+    // Animations
+    icon_animation: optional(string()),
+    shape_animation: optional(string()),
+    overlay_animation: optional(string()),
 
     // Entity IDs for template
     entity_id: optional(union([string(), array(string())])),
