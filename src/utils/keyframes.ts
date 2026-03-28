@@ -159,6 +159,14 @@ export const mushroomicKeyframes = css`
     100% { clip-path: inset(0% 0 0 0);  }
     50%  { clip-path: inset(35% 0 0 0); }
  }
+
+/* ANIMATED PURIFIER - use with mdi: air-purifier */
+ @keyframes purify {
+    0%, 100% { clip-path: inset(0 0 0 0);                                                                }
+    25%      { clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0, 98% 32%, 63% 42%, 65% 58%, 100% 43%);  }
+    75%      { clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0, 100% 44%, 64% 61%, 64% 73%, 100% 72%); }
+    50%      { clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0, 78% 38%, 64% 43%, 64% 72%, 100% 73%);  }
+ }
  
  /* SIGNAL-ANIMATION - use with mdi:wifi */
  @keyframes good_signal {
