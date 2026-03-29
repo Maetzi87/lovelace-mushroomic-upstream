@@ -778,7 +778,10 @@ public getGridOptions(): LovelaceGridOptions {
         z-index: 0;
         pointer-events: none;
       }
-      ha-card:hover ha-tile-icon .mushic-shape {
+      ha-tile-icon:hover .mushic-shape {
+        opacity: var(--mushic-shape-hover-opacity, 0.35);
+      }
+      ha-tile-icon.weather:hover .mushic-shape {
         opacity: var(--mushic-shape-hover-opacity, 0.35);
       }
 
