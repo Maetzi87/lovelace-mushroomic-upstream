@@ -601,11 +601,9 @@ public getGridOptions(): LovelaceGridOptions {
                       <div class="mushic-shape"></div>
                       ${this.getValue("overlay_icon")
                         ? html`
-                          <ha-icon
-                            class="mushic-overlay"
-                            slot="icon"
-                            .icon=${this.getValue("overlay_icon")}
-                          ></ha-icon>
+                          <div class="mushic-overlay" slot="icon">
+                              <ha-icon class="mushic-overlay-svg" .icon=${this.getValue("overlay_icon")} ></ha-icon>
+                          </div>
                           `
                         : nothing}
                       ${picture
@@ -794,20 +792,28 @@ public getGridOptions(): LovelaceGridOptions {
       }
       
       .mushic-overlay {
-        position: absolute;
-        inset: 0;
-        margin: auto;
-        width: var(--mushic-overlay-size, var(--tile-mdc-icon-size));
-        height: var(--mushic-overlay-size, var(--tile-mdc-icon-size));
-        color: var(--mushic-overlay-color, var(--tile-color));
-        opacity: var(--mushic-overlay-opacity, 1);
-        --mdc-icon-size: var(--mushic-overlay-size, var(--tile-mdc-icon-size));
-        animation: var(--mushic-overlay-animation);
-        transform-style: preserve-3d;
-        backface-visibility: hidden;
-        pointer-events: none;
-        z-index: 3;
+         position: absolute;
+         inset: 0;
+         margin: auto;
+         width: var(--mushic-overlay-size, var(--tile-mdc-icon-size));
+         height: var(--mushic-overlay-size, var(--tile-mdc-icon-size));
+         pointer-events: none;
+         z-index: 3;
+         display: flex;
+         align-items: center;
+         justify-content: center;
       }
+      .mushic-overlay-svg {
+         width: 100%;
+         height: 100%;
+         color: var(--mushic-overlay-color, var(--tile-color));
+         opacity: var(--mushic-overlay-opacity, 1);
+         --mdc-icon-size: var(--mushic-overlay-size, var(--tile-mdc-icon-size));
+         animation: var(--mushic-overlay-animation);
+         transform-origin: 50% 50%;
+         transform-style: preserve-3d;
+         backface-visibility: hidden;
+       }
 
       .mushic-badge {
         position: absolute;
