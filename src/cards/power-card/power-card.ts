@@ -54,7 +54,7 @@ type TemplateResults = Partial<
 >;
 
 const TEMPLATE_KEYS = [
-  // Icon
+  // --- ICON ---
   "icon",
   "picture",
   "color",
@@ -63,7 +63,7 @@ const TEMPLATE_KEYS = [
   "shape_opacity",
   "icon_size",
 
-  // Text
+  // --- TEXT ---
   "primary",
   "primary_text_size",
   "primary_text_weight",
@@ -77,7 +77,7 @@ const TEMPLATE_KEYS = [
   "secondary_line_height",
   "secondary_letter_spacing",
   
-  // Badge
+  // --- BADGE ---
   "badge_icon",
   "badge_color",
   "badge_text",
@@ -86,19 +86,19 @@ const TEMPLATE_KEYS = [
   "badge_icon_color",
   "badge_text_color",
 
-  // Card-Styling
+  // --- CARD STYLING ---
   "card_height",
   "card_bg_color",
   "border",
 
-  // Overlay
+  // --- OVERLAY ---
   "overlay_icon",
   "overlay_color",
   "overlay_opacity",
   "overlay_size",
   "overlay_margin",
 
-  // Animation
+  // --- ANIMATIONS ---
   "icon_animation",
   "shape_animation",
   "badge_animation",
@@ -484,7 +484,7 @@ public getGridOptions(): LovelaceGridOptions {
       "--tile-color": cssColor,
       "--mushic-icon-color": cssColor,
       "--mushic-shape-color": shapeColor,
-      "--mushic-shape-opacity": this.getValue("shape_opacity")
+      "--mushic-shape-opacity": this.getValue("shape_opacity"),
       "--tile-icon-size": finalShapeSize,
       "--tile-mdc-icon-size": finalIconSize,
     
