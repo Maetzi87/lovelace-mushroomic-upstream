@@ -482,6 +482,12 @@ public getGridOptions(): LovelaceGridOptions {
           ? `calc(${finalShapeSize} + 20px)`
           : `calc(36px + 20px)`);
     
+    // --- SHAPE ---
+    const showShape =
+      this._hasIconAction ||
+      Boolean(this.getValue("shape_color")) ||
+      Boolean(this.getValue("shape_opacity"));
+
     const style = {
       // --- ICON ---
       "--tile-color": cssColor,
@@ -558,6 +564,22 @@ public getGridOptions(): LovelaceGridOptions {
       hasHold: hasAction(this._config!.icon_hold_action),
       hasDoubleClick: hasAction(this._config!.icon_double_tap_action),
     };
+    
+    let pictureSvg: string | undefined;
+    let isSvg = false;
+    if (picture) {
+      const lower = picture.trim().toLowerCase();
+      isSvg = lower.endsWith(".svg");
+    
+      if (isSvg) {
+        try {
+          const url = this.hass.hassUrl(picture);
+          pictureSvg = await fetch(url).then(r => r.text());
+        } catch (e) {
+          console.error("Failed to load SVG", e);
+        }
+      }
+    }
 
     return html`
       <ha-card style=${styleMap(style)}>
@@ -595,8 +617,11 @@ public getGridOptions(): LovelaceGridOptions {
                         ? actionHandler(iconActionHandlerOptions)
                         : undefined}
                       .interactive=${this._hasIconAction}
-                      .imageUrl=${picture ? this.hass.hassUrl(picture) : undefined}
-                      class=${weatherSvg ? "weather" : ""}
+                      .imageUrl=${picture && !isSvg ? this.hass.hassUrl(picture) : undefined}
+                      class=${classMap({
+                        weather: weatherSvg,
+                        "no-shape": !showShape,
+                      })}
                     >
                       <div class="mushic-shape-wrapper">
                         <div class="mushic-shape"></div>
@@ -608,15 +633,22 @@ public getGridOptions(): LovelaceGridOptions {
                           </div>
                           `
                         : nothing}
-                      ${picture
-                        ? nothing
-                        : weatherSvg
-                          ? html`<div slot="icon">${weatherSvg}</div>`
-                          : html`<ha-state-icon
-                              slot="icon"
-                              .icon=${icon}
-                              .hass=${this.hass}
-                            ></ha-state-icon>`}
+                        
+                      ${isSvg && pictureSvg
+                        ? html`
+                            <div class="mushic-picture" slot="icon">
+                              ${unsafeSVG(pictureSvg)}
+                            </div>
+                          `
+                        : picture && !isSvg
+                          ? nothing
+                          : weatherSvg
+                            ? html`<div slot="icon">${weatherSvg}</div>`
+                            : html`<ha-state-icon
+                                slot="icon"
+                                .icon=${icon}
+                                .hass=${this.hass}
+                              ></ha-state-icon>`}
                             
                       ${badgeIcon || badgeText ? html`
                         <div class="mushic-badge"
@@ -741,7 +773,7 @@ public getGridOptions(): LovelaceGridOptions {
         width: 100%;
         flex: none;
       }
-      
+/* --- ICON CONTAINER --- */      
       ha-tile-icon {
         --tile-icon-color: var(--mushic-shape-color, var(--tile-color));
         position: relative;
@@ -764,7 +796,8 @@ public getGridOptions(): LovelaceGridOptions {
         --tile-icon-hover-opacity: 0;
         --tile-icon-border-radius: 0;
       }
-      
+
+/* --- COLORABLE SHAPE --- */
       .mushic-shape-wrapper {
          position: absolute;
          inset: 0;
@@ -791,17 +824,44 @@ public getGridOptions(): LovelaceGridOptions {
       ha-tile-icon:hover .mushic-shape {
         opacity: var(--mushic-shape-hover-opacity, 0.35);
       }
+      ha-tile-icon.no-shape .mushic-shape {
+        opacity: 0 !important;
+      }
       ha-tile-icon.weather:hover .mushic-shape {
         opacity: var(--mushic-shape-hover-opacity, 0.35);
       }
+      ha-tile-icon.no-shape:hover .mushic-shape {
+        opacity: 0 !important;
+      }
 
+/* --- ICON --- */
       ha-state-icon {
         color: var(--mushic-icon-color, var(--tile-color));
         animation: var(--mushic-icon-animation);
         position: relative;
         z-index: 2;
       }
-      
+
+/* --- COLORABLE PICTURE if svg --- */
+      .mushic-picture {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: var(--tile-icon-size);
+        height: var(--tile-icon-size); 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--mushic-icon-color);
+        z-index: 1;
+      }
+      .mushic-picture svg {
+        width: 100%;
+        height: 100%;
+        color: inherit;
+      }
+
+/* --- OVERLAY-ICON for dual animations --- */
       .mushic-overlay {
          position: absolute;
          top: 50%;
@@ -827,6 +887,7 @@ public getGridOptions(): LovelaceGridOptions {
          backface-visibility: hidden;
        }
 
+/* --- BADGE --- */
       .mushic-badge {
         position: absolute;
         top: 3px;
@@ -857,13 +918,15 @@ public getGridOptions(): LovelaceGridOptions {
         line-height: 1;
       }
       
+ /* --- TEXT CONTAINER --- */     
       ha-tile-info {
         position: relative;
         min-width: 0;
         transition: background-color 180ms ease-in-out;
         box-sizing: border-box;
       }
-      
+
+/* --- FEATURES --- */
       hui-card-features {
         --feature-color: var(--tile-color);
         padding: 0 12px 12px 12px;
