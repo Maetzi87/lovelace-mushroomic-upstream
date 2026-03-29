@@ -31,8 +31,8 @@ export const mushroomicKeyframes = css`
   
   /* OPENING DOOR – use with mdi:door */
   @keyframes open {
-    0%, 66% { transform: rotateY(0deg);    }
-    33%     { transform: rotateY(-120deg); }
+    0%, 66% { transform: rotateY(0deg);    transform-origin: 30%; }
+    33%     { transform: rotateY(-120deg); transform-origin: 30%; }
   }
 
   /* SEND ANIMATION – use with mdi:access-point */
