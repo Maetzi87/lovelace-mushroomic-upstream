@@ -428,6 +428,7 @@ public getGridOptions(): LovelaceGridOptions {
     
     const shapeSize = this.getValue("shape_size");
     const shapeColor = this.getValue("shape_color");
+    const shapeOpacity = this.getValue("shape_opacity");
     const iconSize = this.getValue("icon_size");
     
     const weatherSvg = getWeatherSvgIcon(icon);
@@ -485,13 +486,13 @@ public getGridOptions(): LovelaceGridOptions {
     // --- SHAPE ---
     const showShape =
       this._hasIconAction ||
-      Boolean(this.getValue("shape_color")) ||
-      Boolean(this.getValue("shape_opacity"));
+      (shapeColor !== "") ||
+      (shapeOpacity !== "");
 
     const style = {
       // --- ICON ---
       "--tile-color": cssColor,
-      "--mushic-icon-color": cssColor,
+      "--mushic-icon-color": cssColor ?? "var(--tile-color)",
       "--mushic-shape-color": shapeColor,
       "--mushic-shape-opacity": this.getValue("shape_opacity"),
       "--mushic-shape-hover-opacity": this.getValue("shape_hover_opacity"),
@@ -873,7 +874,7 @@ public getGridOptions(): LovelaceGridOptions {
          display: flex;
          align-items: center;
          justify-content: center;
-         transform: translate(-50%, -52%);
+         transform: translate(-50%, -51%);
       }
       .mushic-overlay-svg {
          width: 100%;
