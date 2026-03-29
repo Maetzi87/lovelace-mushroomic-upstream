@@ -24,6 +24,7 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   shape_size?: string;
   shape_color?: string;
   shape_opacity?: string;
+  shape_hover_opacity?: string;
   icon_size?: string;
 
   // --- TEXT ---
@@ -55,6 +56,7 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   card_bg_color?: string;
   border?: string;
   vertical?: boolean;
+  ripple_color?: string;
 
   // --- OVERLAY ---
   overlay_icon?: string;
@@ -101,6 +103,7 @@ export const templateCardConfigStruct = assign(
     shape_size: optional(string()),
     shape_color: optional(string()),
     shape_opacity: optional(string()),
+    shape_hover_opacity: optional(string()),
     icon_size: optional(string()),
 
     // --- TEXT ---
@@ -132,6 +135,7 @@ export const templateCardConfigStruct = assign(
     card_bg_color: optional(string()),
     border: optional(string()),
     vertical: optional(boolean()),
+    ripple_color: optional(string()),
 
     // --- OVERLAY ---
     overlay_icon: optional(string()),
