@@ -71,6 +71,9 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   // Overlay
   overlay_icon?: string;
   overlay_color?: string;
+  overlay_opacity?: string;
+  overlay_size?: string;
+  overlay_margin?: string;
   
   // Animations
   icon_animation?: string;
@@ -144,6 +147,9 @@ export const templateCardConfigStruct = assign(
     // Overlay
     overlay_icon: optional(string()),
     overlay_color: optional(string()),
+    overlay_opacity: optional(string()),
+    overlay_size: optional(string()),
+    overlay_margin: optional(string()),
 
     // Animations
     icon_animation: optional(string()),
