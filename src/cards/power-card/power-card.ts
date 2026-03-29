@@ -60,6 +60,7 @@ const TEMPLATE_KEYS = [
   "color",
   "shape_size",
   "shape_color",
+  "shape_opacity",
   "icon_size",
 
   // Text
@@ -483,6 +484,7 @@ public getGridOptions(): LovelaceGridOptions {
       "--tile-color": cssColor,
       "--mushic-icon-color": cssColor,
       "--mushic-shape-color": shapeColor,
+      "--mushic-shape-opacity": this.getValue("shape_opacity")
       "--tile-icon-size": finalShapeSize,
       "--tile-mdc-icon-size": finalIconSize,
     
@@ -767,6 +769,7 @@ public getGridOptions(): LovelaceGridOptions {
         transform: translate(-50%, -50%);
         border-radius: 50%;
         background: var(--mushic-shape-color, var(--tile-color));
+        opacity: var(--mushic-shape-opacity, 0.2);
         animation: var(--mushic-shape-animation);
         z-index: 0;
         pointer-events: none;
