@@ -643,11 +643,13 @@ public getGridOptions(): LovelaceGridOptions {
                         "no-shape": !showShape,
                       })}
                     >
-                      <div class="mushic-shape-wrapper">
-                        ${isSvg && this._pictureSvg
-                          ? unsafeSVG(this._pictureSvg)
-                          : html`<div class="mushic-shape"></div>`}
-                      </div>
+                    <div class="mushic-shape-wrapper">
+                      <div class="mushic-shape"></div>
+                    
+                      ${isSvg && this._pictureSvg
+                        ? unsafeSVG(this._pictureSvg)
+                        : nothing}
+                    </div>
 
                       ${this.getValue("overlay_icon")
                         ? html`
@@ -837,6 +839,7 @@ public getGridOptions(): LovelaceGridOptions {
          transform-origin: 50% 50%;
          transform-style: preserve-3d;
          backface-visibility: hidden;
+         z-index: 0;
       }
       ha-tile-icon.no-shape .mushic-shape {
         opacity: 0 !important;
@@ -851,7 +854,7 @@ public getGridOptions(): LovelaceGridOptions {
         opacity: 0 !important;
       }
       
-      /* --- ...OR COLORABLE SVG --- */
+      /* --- ...AND COLORABLE SVG --- */
       .mushic-shape-wrapper svg {
         position: absolute;
         width: 100%;
@@ -859,6 +862,7 @@ public getGridOptions(): LovelaceGridOptions {
         fill: currentColor;
         stroke: currentColor;
         color: inherit;
+        z-index: 1;
         border-radius: 50%;
       }
       .mushic-shape-wrapper svg {
