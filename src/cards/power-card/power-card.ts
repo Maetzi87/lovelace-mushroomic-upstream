@@ -643,17 +643,11 @@ public getGridOptions(): LovelaceGridOptions {
                         "no-shape": !showShape,
                       })}
                     >
-                    ${isSvg && this._pictureSvg
-                      ? html`
-                          <div class="mushic-svg-wrapper">
-                            ${unsafeSVG(this._pictureSvg)}
-                          </div>
-                        `
-                      : html`
-                          <div class="mushic-shape-wrapper">
-                            <div class="mushic-shape"></div>
-                          </div>
-                        `}
+                      <div class="mushic-shape-wrapper">
+                        ${isSvg && this._pictureSvg
+                          ? unsafeSVG(this._pictureSvg)
+                          : html`<div class="mushic-shape"></div>`}
+                      </div>
 
                       ${this.getValue("overlay_icon")
                         ? html`
@@ -819,7 +813,7 @@ public getGridOptions(): LovelaceGridOptions {
         --tile-icon-border-radius: 0;
       }
 
-/* --- COLORABLE SHAPE --- */
+/* --- SHAPE WRAPPER FOR... --- */
       .mushic-shape-wrapper {
          position: absolute;
          inset: 0;
@@ -832,6 +826,7 @@ public getGridOptions(): LovelaceGridOptions {
          align-items: center;
          justify-content: center;
       }
+      /* --- ...COLORABLE SHAPE... --- */
       .mushic-shape {
          width: 100%;
          height: 100%;
@@ -856,20 +851,9 @@ public getGridOptions(): LovelaceGridOptions {
         opacity: 0 !important;
       }
       
-/* --- COLORABLE SVG --- */
-      .mushic-svg-wrapper {
+      /* --- ...OR COLORABLE SVG --- */
+      .mushic-shape-wrapper svg {
         position: absolute;
-        inset: 0;
-        margin: auto;
-        width: var(--tile-icon-size);
-        height: var(--tile-icon-size);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1;
-        pointer-events: none;
-      }
-      .mushic-svg-wrapper svg {
         width: 100%;
         height: 100%;
         fill: currentColor;
@@ -877,10 +861,10 @@ public getGridOptions(): LovelaceGridOptions {
         color: inherit;
         border-radius: 50%;
       }
-      .mushic-svg-wrapper svg {
+      .mushic-shape-wrapper svg {
         --svg-bg-opacity: var(--mushic-shape-opacity, 0.2);
       }
-      ha-tile-icon:hover .mushic-svg-wrapper svg {
+      ha-tile-icon:hover .mushic-shape-wrapper svg {
         --svg-bg-opacity: var(--mushic-shape-hover-opacity, 0.35);
       }
 
