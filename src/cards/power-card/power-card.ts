@@ -4,6 +4,7 @@ import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
+import { unsafeSVG } from "lit/directives/unsafe-svg.js";
 import "./power-card-editor";
 import memoizeOne from "memoize-one";
 import hash from "object-hash/dist/object_hash";
@@ -136,6 +137,8 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
   @property({ attribute: false }) public hass?: HomeAssistant;
 
   @state() private _config?: TemplateCardConfig;
+
+  @state() private _pictureSvg?: string;
 
   @state() private _templateResults?: TemplateResults;
 
@@ -277,6 +280,15 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       } else {
         throw err;
       }
+    }
+  }
+  
+  private async _loadSvg(url: string): Promise<string | undefined> {
+    try {
+      const resp = await fetch(url);
+      return await resp.text();
+    } catch {
+      return undefined;
     }
   }
 
@@ -571,6 +583,7 @@ public getGridOptions(): LovelaceGridOptions {
     
     let pictureSvg: string | undefined;
     let isSvg = false;
+    
     if (picture) {
       const lower = picture.trim().toLowerCase();
       isSvg = lower.endsWith(".svg");
@@ -578,7 +591,10 @@ public getGridOptions(): LovelaceGridOptions {
       if (isSvg) {
         try {
           const url = this.hass.hassUrl(picture);
-          pictureSvg = await fetch(url).then(r => r.text());
+          this._loadSvg(url).then(svg => {
+            this._pictureSvg = svg;
+            this.requestUpdate();
+          });
         } catch (e) {
           console.error("Failed to load SVG", e);
         }
@@ -638,12 +654,11 @@ public getGridOptions(): LovelaceGridOptions {
                           `
                         : nothing}
                         
-                      ${isSvg && pictureSvg
-                        ? html`
-                            <div class="mushic-picture" slot="icon">
-                              ${unsafeSVG(pictureSvg)}
-                            </div>
-                          `
+                      ${isSvg && this._pictureSvg ? html`
+                        <div class="mushic-picture" slot="icon">
+                          ${unsafeSVG(this._pictureSvg)}
+                        </div>
+                      `
                         : picture && !isSvg
                           ? nothing
                           : weatherSvg
