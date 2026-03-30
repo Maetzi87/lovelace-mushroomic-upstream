@@ -508,8 +508,8 @@ public getGridOptions(): LovelaceGridOptions {
       // --- ICON ---
       "--tile-color": cssColor,
       "--mushic-icon-color": cssColor ?? "var(--tile-color)",
-      "--mushic-shape-color": shapeColor,
-      "--mushic-shape-opacity": this.getValue("shape_opacity"),
+      "--mushic-shape-color": ...(shapeColor ? { "--mushic-shape-color": shapeColor } : {}),
+      "--mushic-shape-opacity": ...(shapeOpacity ? { "--mushic-shape-opacity": shapeOpacity } : {}),
       "--mushic-shape-hover-opacity": this.getValue("shape_hover_opacity"),
       "--tile-icon-size": finalShapeSize,
       "--tile-mdc-icon-size": finalIconSize,
