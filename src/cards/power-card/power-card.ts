@@ -653,22 +653,22 @@ public getGridOptions(): LovelaceGridOptions {
                           </div>
                           `
                         : nothing}
-                        
+
                       ${isSvg && this._pictureSvg ? html`
-                        <div class="mushic-picture" slot="icon">
+                        <div class="mushic-picture-inline">
                           ${unsafeSVG(this._pictureSvg)}
                         </div>
-                      `
+                      ` : nothing}
+                    
+                      ${picture && isSvg
+                        ? nothing
                         : picture && !isSvg
                           ? nothing
                           : weatherSvg
                             ? html`<div slot="icon">${weatherSvg}</div>`
-                            : html`<ha-state-icon
-                                slot="icon"
-                                .icon=${icon}
-                                .hass=${this.hass}
-                              ></ha-state-icon>`}
-                            
+                            : html`<ha-state-icon slot="icon" .icon=${icon} .hass=${this.hass}></ha-state-icon>`
+                      }
+
                       ${badgeIcon || badgeText ? html`
                         <div class="mushic-badge"
                              style=${styleMap({
