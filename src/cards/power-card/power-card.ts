@@ -643,9 +643,18 @@ public getGridOptions(): LovelaceGridOptions {
                         "no-shape": !showShape,
                       })}
                     >
-                      <div class="mushic-shape-wrapper">
-                        <div class="mushic-shape"></div>
-                      </div>
+                    ${isSvg && this._pictureSvg
+                      ? html`
+                          <div class="mushic-svg-wrapper">
+                            ${unsafeSVG(this._pictureSvg)}
+                          </div>
+                        `
+                      : html`
+                          <div class="mushic-shape-wrapper">
+                            <div class="mushic-shape"></div>
+                          </div>
+                        `}
+
                       ${this.getValue("overlay_icon")
                         ? html`
                           <div class="mushic-overlay" slot="icon">
@@ -653,12 +662,6 @@ public getGridOptions(): LovelaceGridOptions {
                           </div>
                           `
                         : nothing}
-
-                      ${isSvg && this._pictureSvg ? html`
-                        <div class="mushic-picture-inline">
-                          ${unsafeSVG(this._pictureSvg)}
-                        </div>
-                      ` : nothing}
                     
                       ${picture && isSvg
                         ? nothing
@@ -840,17 +843,45 @@ public getGridOptions(): LovelaceGridOptions {
          transform-style: preserve-3d;
          backface-visibility: hidden;
       }
-      ha-tile-icon:hover .mushic-shape {
-        opacity: var(--mushic-shape-hover-opacity, 0.35);
-      }
       ha-tile-icon.no-shape .mushic-shape {
         opacity: 0 !important;
+      }
+      ha-tile-icon:hover .mushic-shape {
+        opacity: var(--mushic-shape-hover-opacity, 0.35);
       }
       ha-tile-icon.weather:hover .mushic-shape {
         opacity: var(--mushic-shape-hover-opacity, 0.35);
       }
       ha-tile-icon.no-shape:hover .mushic-shape {
         opacity: 0 !important;
+      }
+      
+/* --- COLORABLE SVG --- */
+      .mushic-svg-wrapper {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: var(--tile-icon-size);
+        height: var(--tile-icon-size);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .mushic-svg-wrapper svg {
+        width: 100%;
+        height: 100%;
+        fill: currentColor;
+        stroke: currentColor;
+        color: inherit;
+        border-radius: 50%;
+      }
+      .mushic-svg-wrapper svg {
+        --svg-bg-opacity: var(--mushic-shape-opacity, 0.2);
+      }
+      ha-tile-icon:hover .mushic-svg-wrapper svg {
+        --svg-bg-opacity: var(--mushic-shape-hover-opacity, 0.35);
       }
 
 /* --- ICON --- */
