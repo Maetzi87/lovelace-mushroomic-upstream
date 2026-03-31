@@ -479,10 +479,10 @@ public getGridOptions(): LovelaceGridOptions {
     const cardHeight = this.getValue("card_height");
     
     // --- Automatic fallback scaling ---
-    const finalShapeSize = shapeSize || `var(--mushic-shape-size, 36px)`;
-    const finalIconSize = iconSize || `var(--mushic-icon-size, calc(${finalShapeSize} * 0.666))`;
-    const finalBadgeSize = badgeSize || `var(--mushic-badge-size, calc(${finalShapeSize} * 0.444))`;
-    const finalBadgeIconSize = badgeIconSize || `var(--mushic-badge-icon-size, calc(${finalBadgeSize} * 0.75))`;
+    const finalShapeSize = shapeSize || `36px`;
+    const finalIconSize = iconSize || `calc(${finalShapeSize} * 0.666)`;
+    const finalBadgeSize = badgeSize || `calc(${finalShapeSize} * 0.444)`;
+    const finalBadgeIconSize = badgeIconSize || `calc(${finalBadgeSize} * 0.75)`;
     
     const shape = parseInt(finalShapeSize);
     
@@ -518,8 +518,10 @@ public getGridOptions(): LovelaceGridOptions {
       "--mushic-shape-color": shapeColor ? shapeColor : undefined,
       "--mushic-shape-opacity": shapeOpacity ? shapeOpacity : undefined,
       "--mushic-shape-hover-opacity": this.getValue("shape_hover_opacity"),
-      "--tile-icon-size": finalShapeSize,
-      "--tile-mdc-icon-size": finalIconSize,
+      "--mushic-shape-size": finalShapeSize,
+      "--tile-icon-size": "var(--mushic-shape-size)",
+      "--mushic-icon-size": finalShapeSize,
+      "--tile-mdc-icon-size": "var(--mushic-icon-size)",
     
       // --- TEXT ---
       "--ha-tile-info-primary-font-size": this.getValue("primary_text_size"),
