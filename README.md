@@ -1,5 +1,5 @@
 private testing repo, do not download
 
-working versions can be found at 
+for working versions see
 
-https://github.com/Maetzi87/lovelace-mushroomic-cards
+ 🍄  https://github.com/Maetzi87/lovelace-mushroomic-cards 
