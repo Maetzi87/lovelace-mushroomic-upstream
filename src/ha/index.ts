@@ -1,4 +1,5 @@
 export * from "./common/const";
+export * from "./common/dom/fire_event";
 export * from "./common/entity/compute_domain";
 export * from "./panels/lovelace/card-features/types";
 export * from "./panels/lovelace/common/directives/action-handler-directive";
