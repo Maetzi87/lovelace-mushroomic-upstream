@@ -14,10 +14,6 @@ import {
   LovelaceCardFeatureContext,
 } from "../../ha/panels/lovelace/card-features/types";
 import setupCustomlocalize from "../../localize";
-import {
-  GENERIC_HELPERS,
-  GENERIC_LABELS,
-} from "../../utils/form/generic-fields";
 import { HaFormSchema } from "../../utils/form/ha-form";
 import { loadHaComponents } from "../../utils/loader";
 import {
@@ -293,41 +289,35 @@ export class MushroomicPowerCardEditor
       ] as const satisfies readonly HaFormSchema[]
   );
 
-  private _computeLabel = (schema: HaFormSchema) => {
-    const customLocalize = setupCustomlocalize(this.hass!);
+private _computeLabel = (schema: HaFormSchema) => {
+  const customLocalize = setupCustomlocalize(this.hass!);
 
-    if (schema.type === "expandable") {
-      return customLocalize(`editor.section.${schema.name}`);
-    }
-    if (GENERIC_LABELS.includes(schema.name)) {
-      return customLocalize(`editor.card.generic.${schema.name}`);
-    }
-    if (POWER_CARD_LABELS.includes(schema.name)) {
-      return customLocalize(`editor.card.template.${schema.name}`);
-    }
-    if (TILE_LABELS.includes(schema.name)) {
-      return this.hass!.localize(
-        `ui.panel.lovelace.editor.card.tile.${schema.name}`
-      );
-    }
+  if (schema.type === "expandable") {
+    return customLocalize(`editor.section.${schema.name}`);
+  }
+  if (POWER_CARD_LABELS.includes(schema.name)) {
+    return customLocalize(`editor.card.template.${schema.name}`);
+  }
+  if (TILE_LABELS.includes(schema.name)) {
     return this.hass!.localize(
-      `ui.panel.lovelace.editor.card.generic.${schema.name}`
+      `ui.panel.lovelace.editor.card.tile.${schema.name}`
     );
-  };
+  }
+  return this.hass!.localize(
+    `ui.panel.lovelace.editor.card.generic.${schema.name}`
+  );
+};
 
-  private _computeHelper = (schema: HaFormSchema) => {
-    if (schema.type === "expandable") {
-      return undefined;
-    }
-    const customLocalize = setupCustomlocalize(this.hass!);
-    if (GENERIC_HELPERS.includes(schema.name)) {
-      return customLocalize(`editor.card.generic.${schema.name}_helper`);
-    }
-    if (POWER_CARD_HELPERS.includes(schema.name)) {
-      return customLocalize(`editor.card.template.${schema.name}_helper`);
-    }
+private _computeHelper = (schema: HaFormSchema) => {
+  if (schema.type === "expandable") {
     return undefined;
-  };
+  }
+  const customLocalize = setupCustomlocalize(this.hass!);
+  if (POWER_CARD_HELPERS.includes(schema.name)) {
+    return customLocalize(`editor.card.template.${schema.name}_helper`);
+  }
+  return undefined;
+};
 
   protected render() {
     if (!this.hass || !this._config) {
