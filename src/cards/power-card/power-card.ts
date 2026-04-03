@@ -119,9 +119,12 @@ const TEMPLATE_KEYS = [
   "overlay_animation",
 
   // --- FEATURES ---
-  "feature_padding",
-  "feature_height",
   "feature_color",
+  "feature_height",
+  "feature_padding",
+  "feature_gap",
+  
+  
   
 ] as const;
 
@@ -581,9 +584,10 @@ public getGridOptions(): LovelaceGridOptions {
       "--mushic-overlay-animation": this.getValue("overlay_animation"),
 
       // --- FEATURES ---
-      "--mushic-feature-padding": this.getValue("feature_padding"),
-      "--mushic-feature-height": this.getValue("feature_height"),
       "--mushic-feature-color": this.getValue("feature_color"),
+      "--mushic-feature-height": this.getValue("feature_height"),
+      "--mushic-feature-padding": this.getValue("feature_padding"),
+      "--mushic-feature-gap": this.getValue("feature_gap"),
     };
 
     const featurePosition = this._featurePosition(this._config);
