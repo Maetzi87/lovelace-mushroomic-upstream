@@ -92,19 +92,13 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   // --- FEATURES ---
   features?: LovelaceCardFeatureConfig[];
   features_position?: "bottom" | "inline";
-  feature_color?: string;
-  feature1_color?: string;
-  feature2_color?: string;
-  feature3_color?: string;
-  feature_height?: string;   
-  feature_padding?: string;
-
-
+  features_color?: string;
+  features_height?: string;   
+  features_padding?: string;
 
   // --- TEMPLATE ENTITIES ---
   entity_id?: string | string[];
 };
-
 
 export const templateCardConfigStruct = assign(
   lovelaceCardConfigStruct,
@@ -188,13 +182,9 @@ export const templateCardConfigStruct = assign(
     // --- FEATURES ---
     features: optional(array(any())),
     features_position: optional(enums(["bottom", "inline"])),
-    feature_color: optional(string()), 
-    feature1_color: optional(string()), 
-    feature2_color: optional(string()), 
-    feature3_color: optional(string()), 
-    feature_height: optional(string()),  
-    feature_padding: optional(string()), 
-    feature_gap: optional(string()), 
+    features_color: optional(string()), 
+    features_height: optional(string()),  
+    features_padding: optional(string()), 
 
     // --- TEMPLATE ENTITIES ---
     entity_id: optional(union([string(), array(string())])),
