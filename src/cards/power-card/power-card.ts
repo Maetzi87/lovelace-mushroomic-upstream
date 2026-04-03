@@ -740,3 +740,4 @@ public getGridOptions(): LovelaceGridOptions {
   }
   
 static styles = powerCardStyles;
+}
