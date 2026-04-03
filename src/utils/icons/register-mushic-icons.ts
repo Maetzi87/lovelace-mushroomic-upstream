@@ -1,3 +1,4 @@
+console.log("Mushic Icon Registry LOADED");
 import { customIconset } from "../../ha";
 import { mushicIcons } from "./mushic-icons";
 
