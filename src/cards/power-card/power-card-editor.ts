@@ -293,7 +293,7 @@ private _computeLabel = (schema: HaFormSchema) => {
   const customLocalize = setupCustomlocalize(this.hass!);
 
   if (schema.type === "expandable") {
-    return customLocalize(`editor.section.${schema.name}`);
+    return customLocalize(`editor.mushic.section.${schema.name}`);
   }
   if (POWER_CARD_LABELS.includes(schema.name)) {
     return customLocalize(`editor.card.template.${schema.name}`);
