@@ -19,7 +19,7 @@ const basePath = (() => {
   } catch {}
 
   // Fallback (Repo-Name anpassen falls nötig)
-  return "/local/community/mushroomic-cards-upstream";
+  return "/local/community/lovelace-mushroomic-upstream";
 })();
 
 // Icons automatisch scannen
