@@ -738,7 +738,7 @@ public getGridOptions(): LovelaceGridOptions {
                         .hass=${this.hass}
                         .config=${f}
                         style=${styleMap({
-                          "--feature-color": f.color,
+                          "--feature-color": f.color || cssColor,
                         })}
                       ></hui-card-feature>
                   `)}            
