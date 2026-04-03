@@ -13,5 +13,9 @@ customIconset("mushic", {
     } catch {
       return undefined;
     }
+  },
+
+  getIconList() {
+    return Object.keys(mushicIcons);
   }
 });
