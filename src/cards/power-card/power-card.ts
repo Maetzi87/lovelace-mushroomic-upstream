@@ -227,10 +227,8 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
     
       if (!color) return;
     
-      // Wurzel für die Suche
       const root: ParentNode = wrapper.shadowRoot ?? wrapper;
     
-      // Suche nach einem Element, das eine .color Property besitzt
       const all = root.querySelectorAll("*");
     
       for (const el of Array.from(all)) {
@@ -240,6 +238,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
         }
       }
     });
+
 
   }
   
