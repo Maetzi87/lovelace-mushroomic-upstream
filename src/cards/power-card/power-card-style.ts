@@ -259,15 +259,6 @@ export const powerCardStyles = [
         --feature-color: var(--feature-color, var(--mushic-feature-color, var( --tile-color, var(--state-inactive-color))));
         padding: var(--mushic-feature-padding, 0 12px 12px 12px);
       }
-      hui-card-feature:nth-child(1) {
-        --feature-color: var(--feature1-color, var(--feature-color, var(--mushic-feature-color, var( --tile-color, var(--state-inactive-color)))));
-      }
-      hui-card-feature:nth-child(2) {
-        --feature-color: var(--feature2-color, var(--feature-color, var(--mushic-feature-color, var( --tile-color, var(--state-inactive-color)))));
-      }
-      hui-card-feature:nth-child(3) {
-        --feature-color: var(--feature3-color, var(--feature-color, var(--mushic-feature-color, var( --tile-color, var(--state-inactive-color)))));
-      }
       .container.horizontal hui-card-features {
         width: calc(50% - var(--column-gap, 0px) / 2 - 12px);
         flex: none;
