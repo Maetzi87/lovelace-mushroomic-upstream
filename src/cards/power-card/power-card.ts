@@ -103,8 +103,6 @@ const TEMPLATE_KEYS = [
   "ripple_color",
   "card_padding",
   "content_gap",
-  "feature_padding",
-  "feature_height",
 
   // --- OVERLAY ---
   "overlay_icon",
@@ -118,7 +116,12 @@ const TEMPLATE_KEYS = [
   "shape_animation",
   "badge_animation",
   "badge_icon_animation",
-  "overlay_animation"
+  "overlay_animation",
+
+  // --- FEATURES ---
+  "feature_padding",
+  "feature_height",
+  "feature_color",
   
 ] as const;
 
@@ -576,6 +579,11 @@ public getGridOptions(): LovelaceGridOptions {
       "--mushic-badge-animation": this.getValue("badge_animation"),
       "--mushic-badge-icon-animation": this.getValue("badge_icon_animation"),
       "--mushic-overlay-animation": this.getValue("overlay_animation"),
+
+      // --- FEATURES ---
+      "--mushic-feature-padding": this.getValue("feature_padding"),
+      "--mushic-feature-height": this.getValue("feature_height"),
+      "--mushic-feature-color": this.getValue("feature_color"),
     };
 
     const featurePosition = this._featurePosition(this._config);
