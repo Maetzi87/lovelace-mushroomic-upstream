@@ -8,7 +8,7 @@ import { unsafeSVG } from "lit/directives/unsafe-svg.js";
 import "./power-card-editor";
 import memoizeOne from "memoize-one";
 import hash from "object-hash/dist/object_hash";
-import "./utils/icons/register-mushic-icons";
+import "../../utils/icons/register-mushic-icons";
 import {
   actionHandler,
   ActionHandlerEvent,
