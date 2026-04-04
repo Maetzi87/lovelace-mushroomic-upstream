@@ -14,11 +14,11 @@ const basePath = (() => {
     const idx = parts.indexOf("community");
 
     if (idx !== -1) {
-      return `/local/community/${parts[idx + 1]}`;
+      return `/hacsfiles/${parts[idx + 1]}`;
     }
   } catch {}
 
-  return "/local/community/lovelace-mushroomic-upstream";
+  return "/hacsfiles/lovelace-mushroomic-upstream";
 })();
 
 for (const [name, file] of Object.entries(iconList)) {
