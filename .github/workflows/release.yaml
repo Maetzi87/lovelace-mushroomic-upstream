@@ -24,7 +24,7 @@ jobs:
           cp -r dist package/dist
           cp -r icons package/icons
           cd package
-          zip -r ../lovelace-mushroomic-upstream.zip .
+          zip -r ../mushroomic.zip .
 
       - name: Upload ZIP as release asset
         uses: softprops/action-gh-release@v1
@@ -32,4 +32,4 @@ jobs:
         with:
           draft: true
           generate_release_notes: true
-          files: lovelace-mushroomic-upstream.zip
+          files: mushroomic.zip
