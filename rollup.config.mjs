@@ -1,5 +1,3 @@
-import fs from "fs";
-import path from "path";
 import {
   getBabelInputPlugin,
   getBabelOutputPlugin,
@@ -24,27 +22,6 @@ const serveOptions = {
 };
 
 const plugins = [
-  {
-    name: "generate-mushic-icon-list",
-    buildStart() {
-      const iconDir = path.resolve("icons/mushic");
-      const files = fs.readdirSync(iconDir)
-        .filter((f) => f.endsWith(".svg"));
-
-      const out = {};
-      for (const file of files) {
-        const name = file.replace(".svg", "");
-        out[name] = file;
-      }
-
-      fs.writeFileSync(
-        path.resolve("src/utils/icons/mushic-icons.json"),
-        JSON.stringify(out, null, 2)
-      );
-
-      console.log(`Generated mushic-icons.json with ${files.length} icons`);
-    }
-  },
   typescript({
     declaration: false,
   }),
@@ -94,13 +71,4 @@ export default [
       }
     },
   },
-  // Icon set as additional resource
-  {
-    input: "src/mushic-icons-loader.ts",
-    output: {
-      file: "dist/mushic-icons.js",
-      format: "es",
-    },
-    plugins,
-  }
 ];
