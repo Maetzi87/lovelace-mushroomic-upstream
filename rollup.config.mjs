@@ -94,4 +94,13 @@ export default [
       }
     },
   },
+  // Icon set as additional resource
+  {
+    input: "src/mushic-icons-entry.ts",
+    output: {
+      file: "dist/mushic-icons.js",
+      format: "es",
+    },
+    plugins,
+  }
 ];
