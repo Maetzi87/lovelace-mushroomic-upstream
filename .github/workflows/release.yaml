@@ -1,24 +1,35 @@
 name: Release
+
 on:
-    push:
-        tags:
-            - "v*.*.*"
+  push:
+    tags:
+      - "v*.*.*"
+
 jobs:
-    release:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v2
-            - name: Install
-              run: npm ci
-            - name: Build
-              run: npm run build
-            - name: Release
-              uses: softprops/action-gh-release@v1
-              if: startsWith(github.ref, 'refs/tags/')
-              with:
-                  draft: true
-                  generate_release_notes: true
-                  files: |
-                    dist/**
-                    icons/**
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Create ZIP with folder structure
+        run: |
+          mkdir release
+          cp -r dist release/dist
+          cp -r icons release/icons
+          cd release
+          zip -r ../mushroomic.zip .
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          draft: true
+          generate_release_notes: true
+          files: mushroomic.zip
