@@ -495,23 +495,23 @@ public getGridOptions(): LovelaceGridOptions {
 //    const finalBadgeIconSize = badgeIconSize || "var(--mushic-badge-icon-size, calc(var(--mushic-shape-size, 36px) * 0.444 * 0.75))";
 //    const finalBadgeTextSize = badgeTextSize || "var(--mushic-badge-text-size, calc(var(--mushic-shape-size, 36px) * 0.444 * 0.5))";
     
-    const shape = parseInt(finalShapeSize);
+    const shape = parseInt(shapeSize);
     
     // --- Vertical height calculation ---
-    const verticalHeight = `${
-      shape +
-      primarySize * primaryLH +
-      secondarySize * secondaryLH +
-      41.6
-    }px`;
+//    const verticalHeight = `${
+ //     shape +
+//      primarySize * primaryLH +
+//      secondarySize * secondaryLH +
+//      41.6
+//    }px`;
     
-    const finalCardHeight =
-      cardHeight ||
-      (this._config?.vertical
-        ? verticalHeight
-        : icon || picture
-          ? `calc(${finalShapeSize} + 20px)`
-          : `calc(36px + 20px)`);
+//    const finalCardHeight =
+ //     cardHeight ||
+//      (this._config?.vertical
+//        ? verticalHeight
+//        : icon || picture
+ //         ? `calc(var(--mushic-shape-size) + 20px)`
+//          : `calc(36px + 20px)`);
     
     // --- SHAPE ---
     const shapeColorValue = this.getValue("shape_color")?.trim();
@@ -663,8 +663,8 @@ public getGridOptions(): LovelaceGridOptions {
                   ? html`
                     <ha-tile-icon
                       style=${styleMap({
-                          "--tile-icon-size": finalShapeSize,
-                          "--tile-mdc-icon-size": finalIconSize,
+                          "--tile-icon-size": "var(--mushic-shape-size)",
+                          "--tile-mdc-icon-size": "var(--mushic-icon-size)"
                       })}
                       role=${ifDefined(this._hasIconAction ? "button" : undefined)}
                       tabindex=${ifDefined(this._hasIconAction ? "0" : undefined)}
