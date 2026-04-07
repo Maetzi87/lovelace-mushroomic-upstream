@@ -535,8 +535,8 @@ public getGridOptions(): LovelaceGridOptions {
       "--mushic-shape-hover-opacity": this.getValue("shape_hover_opacity"),
       "--mushic-final-shape-size": shapeSize || "var(--mushic-shape-size, 36px)",
       "--tile-icon-size": "var(--mushic-final-shape-size)",
-      "--mushic-icon-size": iconSize || "var(--mushic-icon-size, " + scaledIconSize + ")",
-      "--tile-mdc-icon-size": "var(--mushic-icon-size)",
+      "--mushic-final-icon-size": iconSize || "var(--mushic-icon-size, " + scaledIconSize + ")",
+      "--tile-mdc-icon-size": "var(--mushic-final-icon-size)",
     
       // --- TEXT ---
       "--ha-tile-info-primary-font-size": this.getValue("primary_text_size") || "var(--mushic-primary-text-size)",
@@ -663,8 +663,8 @@ public getGridOptions(): LovelaceGridOptions {
                   ? html`
                     <ha-tile-icon
                       style=${styleMap({
-                          "--tile-icon-size": "var(--mushic-shape-size)",
-                          "--tile-mdc-icon-size": "var(--mushic-icon-size)"
+                          "--tile-icon-size": "var(--mushic-final-shape-size)",
+                          "--tile-mdc-icon-size": "var(--mushic-final-icon-size)"
                       })}
                       role=${ifDefined(this._hasIconAction ? "button" : undefined)}
                       tabindex=${ifDefined(this._hasIconAction ? "0" : undefined)}
