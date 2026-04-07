@@ -495,7 +495,7 @@ public getGridOptions(): LovelaceGridOptions {
     const scaledBadgeIconSize = badgeIconSize || `calc(${scaledBadgeSize} * 0.75)`;
     const scaledBadgeTextSize = badgeTextSize || `calc(${scaledBadgeSize} * 0.5)`;
     
-    const shape = parseInt(finalshapeSize);
+    const shape = parseInt(finalShapeSize);
     
    //  --- Vertical height calculation ---
     const verticalHeight = `${
@@ -553,9 +553,9 @@ public getGridOptions(): LovelaceGridOptions {
     
       // --- BADGE ---
       "--mushic-final-badge-size": badgeSize || "var(--mushic-badge-size, " + scaledBadgeSize + ")",
-      "--mushic-final-badge-icon-size": badgeIconSize || "var(--mushic-badge-icon-size, calc(var(--mushic-badge-size, ${scaledBadgeSize}) * 0.75))", 
-      "--mushic-final-badge-text-size": badgeTextSize || "var(--mushic-badge-text-size, calc(var(--mushic-badge-size, ${scaledBadgeSize}) * 0.5))", 
-      "--mushic-badge-color": badgeCssColor,
+      "--mushic-final-badge-icon-size": badgeIconSize || `var(--mushic-badge-icon-size, calc(var(--mushic-badge-size, ${scaledBadgeSize}) * 0.75))`, 
+      "--mushic-final-badge-text-size": badgeTextSize || `var(--mushic-badge-text-size, calc(var(--mushic-badge-size, ${scaledBadgeSize}) * 0.5))`, 
+      "--mushic-final-badge-color": badgeCssColor || "var(--mushic-badge-color, var(--state-inactive-color))",
       "--mushic-badge-icon-color": badgeIconColor,
       "--mushic-badge-text-color": badgeTextColor,
       "--mushic-badge-margin-top": this.getValue("badge_margin_top"),
