@@ -1,6 +1,6 @@
 import { css } from "lit";
 import { weatherSVGStyles } from "../../utils/weather";
-import { mushroomicKeyframes } from "../../utils/keyframes";
+import { mushroomicKeyframes } from "../../utils/animations/keyframes";
 
 export const powerCardStyles = [
   weatherSVGStyles,
