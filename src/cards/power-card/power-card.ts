@@ -489,29 +489,29 @@ public getGridOptions(): LovelaceGridOptions {
     const cardHeight = this.getValue("card_height");
     
     // --- Automatic fallback scaling ---
-   // const finalShapeSize = shapeSize || "var(--mushic-shape-size, 36px)";
- //   const finalIconSize = iconSize || "var(--mushic-icon-size, calc(var(--mushic-shape-size, 36px) * 0.666))";
-//    const finalBadgeSize = badgeSize || "var(--mushic-badge-size, calc(var(--mushic-shape-size, 36px) * 0.444))";
-//    const finalBadgeIconSize = badgeIconSize || "var(--mushic-badge-icon-size, calc(var(--mushic-shape-size, 36px) * 0.444 * 0.75))";
-//    const finalBadgeTextSize = badgeTextSize || "var(--mushic-badge-text-size, calc(var(--mushic-shape-size, 36px) * 0.444 * 0.5))";
+    const finalShapeSize = shapeSize || `36px`;
+    const scaledIconSize = `calc(${finalShapeSize} * 0.666)`;
+    const scaledBadgeSize = badgeSize || `calc(${finalShapeSize} * 0.444)`;
+    const scaledBadgeIconSize = badgeIconSize || `calc(${scaledBadgeSize} * 0.75)`;
+    const scaledBadgeTextSize = badgeTextSize || `calc(${scaledBadgeSize} * 0.5)`;
     
     const shape = parseInt(shapeSize);
     
-    // --- Vertical height calculation ---
-//    const verticalHeight = `${
- //     shape +
-//      primarySize * primaryLH +
-//      secondarySize * secondaryLH +
-//      41.6
-//    }px`;
+   //  --- Vertical height calculation ---
+    const verticalHeight = `${
+      shape +
+      primarySize * primaryLH +
+      secondarySize * secondaryLH +
+      41.6
+    }px`;
     
-//    const finalCardHeight =
- //     cardHeight ||
-//      (this._config?.vertical
-//        ? verticalHeight
-//        : icon || picture
- //         ? `calc(var(--mushic-shape-size) + 20px)`
-//          : `calc(36px + 20px)`);
+    const finalCardHeight =
+      cardHeight ||
+      (this._config?.vertical
+        ? verticalHeight
+        : icon || picture
+          ? `calc(${finalShapeSize} + 20px)`
+          : `calc(36px + 20px)`);
     
     // --- SHAPE ---
     const shapeColorValue = this.getValue("shape_color")?.trim();
@@ -533,9 +533,9 @@ public getGridOptions(): LovelaceGridOptions {
       "--mushic-shape-color": shapeColor ? shapeColor : undefined,
       "--mushic-shape-opacity": shapeOpacity ? shapeOpacity : undefined,
       "--mushic-shape-hover-opacity": this.getValue("shape_hover_opacity"),
-      "--mushic-shape-size": shapeSize || undefined,
-      "--tile-icon-size": "var(--mushic-shape-size)",
-      "--mushic-icon-size": iconSize || undefined,
+      "--mushic-final-shape-size": shapeSize || "var(--mushic-shape-size, 36px)",
+      "--tile-icon-size": "var(--mushic-final-shape-size)",
+      "--mushic-icon-size": iconSize, || "var(--mushic-icon-size, " + scaledIconSize + ")",
       "--tile-mdc-icon-size": "var(--mushic-icon-size)",
     
       // --- TEXT ---
@@ -552,9 +552,9 @@ public getGridOptions(): LovelaceGridOptions {
       "--ha-tile-info-secondary-letter-spacing": this.getValue("secondary_letter_spacing") || "var(--mushic-secondary-letter-spacing)",
     
       // --- BADGE ---
-      "--mushic-badge-size": badgeSize || undefined,
-      "--mushic-badge-icon-size": badgeIconSize || undefined,
-      "--mushic-badge-text-size": badgeTextSize || undefined,  
+      "--mushic-badge-size": finalBadgeSize,
+      "--mushic-badge-icon-size": finalBadgeIconSize,
+      "--mushic-badge-text-size": finalBadgeTextSize,  
       "--mushic-badge-color": badgeCssColor,
       "--mushic-badge-icon-color": badgeIconColor,
       "--mushic-badge-text-color": badgeTextColor,
@@ -562,7 +562,7 @@ public getGridOptions(): LovelaceGridOptions {
       "--mushic-badge-margin-right": this.getValue("badge_margin_right"),      
     
       // --- CARD STYLING ---
-//      "--mushic-card-min-height": finalCardHeight,
+      "--mushic-card-min-height": finalCardHeight,
       "--mushic-card-height": this.getValue("card_height"),
       "--mushic-card-bg-color": this.getValue("card_bg_color"),
       "--mushic-card-border-color": this.getValue("border_color"),
