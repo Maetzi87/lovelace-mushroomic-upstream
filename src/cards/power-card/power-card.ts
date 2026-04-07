@@ -562,7 +562,7 @@ public getGridOptions(): LovelaceGridOptions {
       "--mushic-badge-margin-right": this.getValue("badge_margin_right"),      
     
       // --- CARD STYLING ---
-      "--mushic-card-min-height": finalCardHeight,
+//      "--mushic-card-min-height": finalCardHeight,
       "--mushic-card-height": this.getValue("card_height"),
       "--mushic-card-bg-color": this.getValue("card_bg_color"),
       "--mushic-card-border-color": this.getValue("border_color"),
@@ -708,14 +708,7 @@ public getGridOptions(): LovelaceGridOptions {
                       }
 
                       ${badgeIcon || badgeText ? html`
-                        <div class="mushic-badge"
-                             style=${styleMap({
-                               "--mushic-badge-size": finalBadgeSize,
-                               "--mushic-badge-icon-size": finalBadgeIconSize,
-                               "--mushic-badge-color": badgeCssColor,
-                               "--mushic-badge-icon-color": badgeIconColor, 
-                             })}
-                        >
+                        <div class="mushic-badge" >
                           ${badgeText
                             ? html`<span>${badgeText}</span>`
                             : html`<ha-icon .icon=${badgeIcon}></ha-icon>`}
