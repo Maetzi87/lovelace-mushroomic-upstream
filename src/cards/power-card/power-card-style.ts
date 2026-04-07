@@ -4,13 +4,17 @@ import { mushroomicKeyframes } from "../../utils/keyframes";
 
 export const powerCardStyles = [
   weatherSVGStyles,
-  mushroomicKeyframes,
   css`
       :host {
         --tile-color: var(--state-inactive-color);
         -webkit-tap-highlight-color: transparent;
         z-index: 0;
-      }     
+        var(--mushic-card-keyframes);
+        var(--mushic-keyframes);
+      }
+  `,
+  mushroomicKeyframes,
+  css`
       ha-card {
         --ha-ripple-color: var(--mushic-ripple-color, var(--tile-color));
         --ha-ripple-hover-opacity: 0.04;
