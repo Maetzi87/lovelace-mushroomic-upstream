@@ -31,7 +31,7 @@ import { registerCustomCard } from "../../utils/custom-cards";
 import { TemplateCardConfig } from "./power-card-config";
 import { getWeatherSvgIcon } from "../../utils/icons/weather-icon";
 import { weatherSVGStyles } from "../../utils/weather";
-import { mushroomicKeyframes } from "../../utils/keyframes";
+import { mushroomicKeyframes } from "../../utils/animations/keyframes";
 import { powerCardStyles } from "./power-card-style";
 
 export const getEntityDefaultTileIconAction = (entityId: string) => {
