@@ -80,6 +80,7 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   badge_animation?: string;
   badge_icon_animation?: string;
   overlay_animation?: string;
+  keyframes?: string;
 
   // --- INTERACTIONS ---
   tap_action?: ActionConfig;
@@ -170,6 +171,7 @@ export const templateCardConfigStruct = assign(
     badge_animation: optional(string()),
     badge_icon_animation: optional(string()),
     overlay_animation: optional(string()),
+    keyframes: optional(string()),
 
     // --- INTERACTIONS ---
     tap_action: optional(actionConfigStruct),
