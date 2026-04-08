@@ -8,7 +8,6 @@ export const powerCardStyles = [
       :host {
         --tile-color: var(--state-inactive-color);
         -webkit-tap-highlight-color: transparent;
-        z-index: 0;
         var(--mushic-card-keyframes);
         var(--mushic-keyframes);
       }
@@ -16,6 +15,8 @@ export const powerCardStyles = [
   mushroomicKeyframes,
   css`
       ha-card {
+        position: relative;
+        z-index: 0;
         --ha-ripple-color: var(--mushic-ripple-color, var(--tile-color));
         --ha-ripple-hover-opacity: 0.04;
         --ha-ripple-pressed-opacity: 0.12;
