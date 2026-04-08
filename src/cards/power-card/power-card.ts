@@ -712,12 +712,12 @@ public getGridOptions(): LovelaceGridOptions {
                         : nothing}
                     </div>
 
-                      ${this.getValue("overlay_icon")
+                      ${overlayIcon
                         ? html`
                           <div class="mushic-overlay" slot="icon">
-                              <ha-icon class="mushic-overlay-svg" .icon=${this.getValue("overlay_icon")} ></ha-icon>
+                            <ha-icon class="mushic-overlay-svg" .icon=${overlayIcon}></ha-icon>
                           </div>
-                          `
+                        `
                         : nothing}
                     
                       ${picture && isSvg
