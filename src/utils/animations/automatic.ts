@@ -20,67 +20,19 @@ export const AUTO_ANIMATIONS: Record<
   Partial<{
     icon: string;
     shape: string;
-    overlay: string;
-    speed: {
-      attribute: string;
-      direction_attr?: string;
-      baseDuration: number;
-      factor: number;
-      minDuration: number;
-      template: string;
-    }
   }>
 > = {
   "mushic:fire": alertAnimation,
   "mushic:water": alertAnimation,
-  "mushic:air-freshener": {
-    icon: "mushic-air 3s ease-in-out infinite",
-  },  
-  "mushic:fan": {
-    speed: {
-      attribute: "percentage",
-      baseDuration: 2.5,
-      factor: 0.02,
-      minDuration: 0.2,
-      template: "mushic-rotate {duration}s linear infinite",
-    },
-  },
-  "mushic:ceiling-fan-wind": {
-    speed: {
-      attribute: "percentage",
-      direction_attr: "direction",
-      baseDuration: 1.692,
-      factor: 0.012,
-      minDuration: 0.2,
-      template: "mushic-wind-{direction} {duration}s ease-in-out infinite",
-    },
-  },
+  "mushic:air-freshener":    { icon: "mushic-air 3s ease-in-out infinite", },  
+  "mushic:fan":              { icon: "mushic-rotate 1.5s linear infinite", },
+  "mushic:ceiling-fan-wind": { icon: "mushic-wind-forward 1.1s ease-in-out infinite", },
 };
 
 /* OVERLAY */
 
-export const AUTO_OVERLAY_ANIMATIONS: Record<
-  string,
-  Partial<{
-    overlay: string;
-    speed: {
-      attribute: string;
-      baseDuration: number;
-      factor: number;
-      minDuration: number;
-      template: string;
-    }
-  }>
-> = {
-  "mushic:ceiling-fan-blades": {
-    speed: {
-      attribute: "percentage",
-      baseDuration: 0.796,
-      factor: 0.006,
-      minDuration: 0.2,
-      template: "mushic-blade-rotation {duration}s linear infinite",
-    },
-  },
+export const AUTO_OVERLAY_ANIMATIONS: Record<string, string> = {
+  "mushic:ceiling-fan-blades": "mushic-blade-rotation 0.5s linear infinite",
 };  
 
 /* BADGE */
@@ -99,47 +51,15 @@ export function getAutoOverlay(icon?: string): string | undefined {
 }
 
 /* Icon-Animation*/
-
-export function getAutoAnimations(icon?: string, stateObj?: any) {
+export function getAutoAnimations(icon?: string) {
   if (!icon) return {};
-  const base = AUTO_ANIMATIONS[icon] || {};
-  const result: any = { ...base };
-  if (base.speed && stateObj) {
-    const attr = base.speed.attribute;
-    const dirAttr = base.speed.direction_attr;
-    const raw = stateObj.attributes?.[attr];
-    const direction = dirAttr ? stateObj.attributes?.[dirAttr] : undefined;
-    const v = raw !== undefined ? Number(raw) || 0 : 50;
-    const duration = Math.max(
-      base.speed.minDuration,
-      base.speed.baseDuration - v * base.speed.factor
-    );
-    const dirToken =
-      direction === "reverse"
-        ? "reverse"
-        : "forward";
-    result.icon = base.speed.template
-      .replace("{duration}", duration.toFixed(1))
-      .replace("{direction}", dirToken);
-  }
-  return result;
+  return AUTO_ANIMATIONS[icon] || {};
 }
 
 /* Overlay-Animation */
-export function getAutoOverlayAnimations(icon?: string, stateObj?: any) {
-  if (!icon) return undefined;
-  const base = AUTO_OVERLAY_ANIMATIONS[icon] || {};
-  if (base.speed && stateObj) {
-    const attr = base.speed.attribute;
-    const raw = stateObj.attributes?.[attr];
-    const v = raw !== undefined ? Number(raw) || 0 : 50;
-    const duration = Math.max(
-      base.speed.minDuration,
-      base.speed.baseDuration - v * base.speed.factor
-    );
-    return base.speed.template.replace("{duration}", duration.toFixed(1));
-  }
-  return base.overlay;
+export function getAutoOverlayAnimation(overlayIcon?: string): string | undefined {
+  if (!overlayIcon) return undefined;
+  return AUTO_OVERLAY_ANIMATIONS[overlayIcon];
 }
 
 /* Badge-Animation */
