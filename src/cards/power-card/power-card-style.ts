@@ -263,8 +263,9 @@ export const powerCardStyles = [
 /* --- FEATURES --- */
       hui-card-features {
         --feature-color: var(--mushic-features-color, var(--mushic-icon-color, var(--state-inactive-color)));
-        padding: var(--mushic-features-padding, 0 12px 12px 12px);
+        padding: var(--mushic-features-padding, 0 12px 12px 12px) !important;
         --feature-height: var(--mushic-features-height, 42px) !important;
+        --ha-card-feature-gap: var(--mushic-features-gap, 12px) !important;
       }
       .container.horizontal hui-card-features {
         width: calc(50% - var(--column-gap, 0px) / 2 - 12px);
