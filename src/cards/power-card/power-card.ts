@@ -643,7 +643,7 @@ public getGridOptions(): LovelaceGridOptions {
         "calc(var(--mushic-final-shape-size) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px )";
     } else {
       style["--mushic-card-auto-height"] = 
-        "calc(var(--mushic-final-shape-size) + calc(var(--mushic-final-card-padding, 10px) * 2) + calc(var(--mushic-final-features-height) * var(--mushic-features-count))- 0.5px)";
+        "calc(var(--mushic-final-shape-size) + calc(var(--mushic-final-card-padding, 10px) * 2) + calc(var(--mushic-final-features-height) * var(--mushic-features-count)) - 0.5px)";
     }
     
     style["--mushic-final-card-min-height"] = this.getValue("card_min_height") ||  "var(--mushic-min-card-height, var(--mushic-card-auto-height))";
