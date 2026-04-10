@@ -561,8 +561,8 @@ public getGridOptions(): LovelaceGridOptions {
       // --- ICON ---  
       "--mushic-final-icon-color": cssColor || "var(--mushic-icon-color, var(--state-inactive-color))",
       "--mushic-final-shape-color": shapeCssColor || "var(--mushic-shape-color, var(--mushic-icon-color))",
-      "--mushic-final-shape-opacity": this.getValue("shape_opacity") || "var(--mushic-shape-opacity)",
-      "--mushic-final-shape-hover-opacity": this.getValue("shape_hover_opacity") || "var(--mushic-shape-hover-opacity)",
+      "--mushic-shape-opacity": this.getValue("shape_opacity"),
+      "--mushic-shape-hover-opacity": this.getValue("shape_hover_opacity"),
       "--mushic-final-shape-size": shapeSize || "var(--mushic-shape-size, 36px)", 
       "--mushic-final-icon-size": iconSize || "var(--mushic-icon-size, calc(var(--mushic-final-shape-size) * 0.666))",
       "--tile-color": "var(--mushic-final-icon-color)",
@@ -586,28 +586,28 @@ public getGridOptions(): LovelaceGridOptions {
       "--mushic-final-badge-size": badgeSize ||  "var(--mushic-badge-size, calc(var(--mushic-final-shape-size) * 0.444))",
       "--mushic-final-badge-icon-size": badgeIconSize || "var(--mushic-badge-icon-size, calc(var(--mushic-final-badge-size) * 0.75))", 
       "--mushic-final-badge-text-size": badgeTextSize || "var(--mushic-badge-text-size, calc(var(--mushic-final-badge-size) * 0.5))", 
-      "--mushic-final-badge-color": badgeCssColor || "var(--mushic-badge-color, var(--state-inactive-color))",
-      "--mushic-final-badge-icon-color": badgeIconCssColor || "var(--mushic-badge-icon-color)",
-      "--mushic-final-badge-text-color": badgeTextCssColor || "var(--mushic-badge-text-color)",
-      "--mushic-final-badge-margin-top": this.getValue("badge_margin_top") || "var(--mushic-badge-margin-top)",
-      "--mushic-final-badge-margin-right": this.getValue("badge_margin_right") || "var(--mushic-badge-margin-right)",  
+      "--mushic-badge-color": badgeCssColor,
+      "--mushic-badge-icon-color": badgeIconCssColor,
+      "--mushic-badge-text-color": badgeTextCssColor,
+      "--mushic-badge-margin-top": this.getValue("badge_margin_top"),
+      "--mushic-badge-margin-right": this.getValue("badge_margin_right"),  
     
       // --- CARD STYLING ---
-      "--mushic-final-card-bg-color": cardBgCssColor || "var(--mushic-card-bg-color)",
-      "--mushic-final-border-color": borderCssColor || "var(--mushic-border-color)",
-      "--mushic-final-border-width": this.getValue("border_width") || "var(--mushic-border-width)",
-      "--mushic-final-border-radius": this.getValue("border_radius") || "var(--mushic-border-radius)",
-      "--mushic-final-border-style": this.getValue("border_style") || "var(--mushic-border-style"),
-      "--mushic-final-ripple-color": rippleCssColor || "var(--mushic-ripple-color)",
-      "--mushic-final-card-padding": this.getValue("card_padding") || "var(--mushic-card-padding"),
-      "--mushic-final-content-gap": this.getValue("content_gap") || "var(--mushic-content-gap"),
+      "--mushic-card-bg-color": cardBgCssColor,
+      "--mushic-ripple-color": rippleCssColor,
+      "--mushic-border-color": borderCssColor,
+      "--mushic-border-width": this.getValue("border_width"),
+      "--mushic-border-radius": this.getValue("border_radius"),
+      "--mushic-border-style": this.getValue("border_style"),
+      "--mushic-card-padding": this.getValue("card_padding"),
+      "--mushic-content-gap": this.getValue("content_gap"),
       
       // --- OVERLAY ---
       "--mushic-overlay-icon": overlayIcon,
-      "--mushic-final-overlay-color": overlayCssColor || "var(--mushic-overlay-color, var(--mushic-icon-color))",
-      "--mushic-final-overlay-opacity": this.getValue("overlay_opacity") || "var(--mushic-overlay-opacity)",
-      "--mushic-final-overlay-size": this.getValue("overlay_size") || "var(--mushic-overlay-size)",
-      "--mushic-final-overlay-margin": this.getValue("overlay_margin") || "var(--mushic-overlay-margin)",
+      "--mushic-overlay-color": overlayCssColor,
+      "--mushic-overlay-opacity": this.getValue("overlay_opacity"),
+      "--mushic-overlay-size": this.getValue("overlay_size"),
+      "--mushic-overlay-margin": this.getValue("overlay_margin"),
 
       // --- ANIMATIONS ---
       "--mushic-icon-animation": this.getValue("icon_animation") || autoAnim.icon,
@@ -619,18 +619,18 @@ public getGridOptions(): LovelaceGridOptions {
 
       // --- FEATURES ---
       "--mushic-features-count": featuresCount,
-      "--mushic-final-features-color": featuresCssColor || "var(--mushic-features-color, var(--mushic-icon-color))",
-      "--mushic-final-features-height": this.getValue("features_height") || "var(--mushic-features-height)",
-      "--mushic-final-features-padding": this.getValue("features_padding") || "var(--mushic-features-padding)",
+      "--mushic-features-color": featuresCssColor,
+      "--mushic-features-height": this.getValue("features_height"),
+      "--mushic-features-padding": this.getValue("features_padding"),
       "--mushic-final-features-gap": this.getValue("features_gap") || "var(--mushic-features-gap, 12px)",
       "--ha-card-feature-gap": "var(--mushic-final-features-gap)",
 
       // --- CARD HEIGHT ---
-      "--mushic-final-card-height": this.getValue("card_height")|| "var(--mushic-card-height)",
+      "--mushic-card-height": this.getValue("card_height"),
       "--mushic-card-auto-height": useAutoHeight
          ? (this._config.vertical
-             ? "calc(var(--mushic-final-shape-size) + calc(var(--ha-tile-info-primary-font-size) * var(--ha-tile-info-primary-line-height)) + calc(var(--ha-tile-info-secondary-font-size) * var(--ha-tile-info-secondary-line-height)) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px)"
-             : "calc(var(--mushic-final-shape-size) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px )" 
+             ? "calc(var(--mushic-final-shape-size) + calc(var(--ha-tile-info-primary-font-size) * var(--ha-tile-info-primary-line-height)) + calc(var(--ha-tile-info-secondary-font-size) * var(--ha-tile-info-secondary-line-height)) + calc(var(--mushic-card-padding, 10px) * 2) - 0.5px)"
+             : "calc(var(--mushic-final-shape-size) + calc(var(--mushic-card-padding, 10px) * 2) - 0.5px )" 
            )
          : undefined,
     };
@@ -647,7 +647,7 @@ public getGridOptions(): LovelaceGridOptions {
     // --- Dynamic height ---
 //    if (this._config.vertical) {
   //    style["--mushic-card-auto-height"] = 
-    //    "calc(var(--mushic-final-shape-size) + calc(var(--ha-tile-info-primary-font-size) * var(--ha-tile-info-primary-line-height)) + calc(var(--ha-tile-info-secondary-font-size) * var(--ha-tile-info-secondary-line-height)) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px)"
+    //    "calc(var(--mushic-final-shape-size) + calc(var(--ha-tile-info-primary-font-size) * var(--ha-tile-info-primary-line-height)) + calc(var(--ha-tile-info-secondary-font-size) * var(--ha-tile-info-secondary-line-height)) + calc(var(--mushic-card-padding, 10px) * 2) - 0.5px)"
 //    } else if (featurePosition === "inline") {
 //      style["--mushic-card-auto-height"] =
 //        "calc(var(--mushic-final-shape-size) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px )";
