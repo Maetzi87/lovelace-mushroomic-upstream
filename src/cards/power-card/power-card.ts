@@ -78,7 +78,7 @@ const TEMPLATE_KEYS = [
   "primary_text_weight",
   "primary_text_color",
   "primary_line_height",
-  "primary_letter_spacing",
+  "primary_letter_spacing", 
   
   "secondary",
   "secondary_text_size",
