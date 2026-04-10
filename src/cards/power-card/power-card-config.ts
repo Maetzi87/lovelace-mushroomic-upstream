@@ -96,6 +96,7 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   features_color?: string;
   features_height?: string;   
   features_padding?: string;
+  features_gap?: string;
 
   // --- TEMPLATE ENTITIES ---
   entity_id?: string | string[];
@@ -187,6 +188,7 @@ export const templateCardConfigStruct = assign(
     features_color: optional(string()), 
     features_height: optional(string()),  
     features_padding: optional(string()), 
+    features_gap: optional(string()),
 
     // --- TEMPLATE ENTITIES ---
     entity_id: optional(union([string(), array(string())])),
