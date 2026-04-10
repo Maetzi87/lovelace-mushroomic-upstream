@@ -559,8 +559,8 @@ public getGridOptions(): LovelaceGridOptions {
     
     const style = {
       // --- ICON ---  
-      "--mushic-final-icon-color": cssColor || "var(--mushic-icon-color, var(--state-inactive-color))",
-      "--mushic-final-shape-color": shapeCssColor || "var(--mushic-shape-color, var(--mushic-icon-color))",
+      "--mushic-icon-color": cssColor,
+      "--mushic-shape-color": shapeCssColor,
       "--mushic-shape-opacity": this.getValue("shape_opacity"),
       "--mushic-shape-hover-opacity": this.getValue("shape_hover_opacity"),
       "--mushic-final-shape-size": shapeSize || "var(--mushic-shape-size, 36px)", 
@@ -622,8 +622,8 @@ public getGridOptions(): LovelaceGridOptions {
       "--mushic-features-color": featuresCssColor,
       "--mushic-features-height": this.getValue("features_height"),
       "--mushic-features-padding": this.getValue("features_padding"),
-      "--mushic-final-features-gap": this.getValue("features_gap") || "var(--mushic-features-gap, 12px)",
-      "--ha-card-feature-gap": "var(--mushic-final-features-gap)",
+      "--mushic-features-gap": this.getValue("features_gap"),
+      "--ha-card-feature-gap": "var(--mushic-features-gap, 12px)",
 
       // --- CARD HEIGHT ---
       "--mushic-card-height": this.getValue("card_height"),
