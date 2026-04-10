@@ -565,7 +565,7 @@ public getGridOptions(): LovelaceGridOptions {
       "--mushic-shape-hover-opacity": this.getValue("shape_hover_opacity"),
       "--mushic-final-shape-size": shapeSize || "var(--mushic-shape-size, 36px)", 
       "--mushic-final-icon-size": iconSize || "var(--mushic-icon-size, calc(var(--mushic-final-shape-size) * 0.666))",
-      "--tile-color": "var(--mushic-final-icon-color)",
+      "--tile-color": "var(--mushic-icon-color)",
       "--tile-mdc-icon-size": "var(--mushic-final-icon-size)",
       "--tile-icon-size": "var(--mushic-final-shape-size)",
     
