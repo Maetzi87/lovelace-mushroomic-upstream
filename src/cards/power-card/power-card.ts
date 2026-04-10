@@ -127,6 +127,7 @@ const TEMPLATE_KEYS = [
   "features_color",
   "features_height",
   "features_padding",
+  "features_gap",
   
 ] as const;
 
