@@ -512,6 +512,8 @@ public getGridOptions(): LovelaceGridOptions {
     // --- FEATURES ---
     const featuresColor = this.getValue("features_color");
     const featuresCssColor = featuresColor ? computeCssColor(featuresColor) : undefined;
+    const featurePosition = this._config && this._featurePosition(this._config);
+    const featuresCount = this._config?.features?.length || 0;
     
     // --- Automatic fallback scaling ---
     const finalShapeSize = shapeSize || `36px`;
@@ -590,7 +592,6 @@ public getGridOptions(): LovelaceGridOptions {
       "--mushic-final-badge-margin-right": this.getValue("badge_margin_right") || "var(--mushic-badge-margin-right)",  
     
       // --- CARD STYLING ---
-      "--mushic-card-height": this.getValue("card_height"),
       "--mushic-final-card-bg-color": cardBgCssColor || "var(--mushic-card-bg-color)",
       "--mushic-final-border-color": borderCssColor || "var(--mushic-border-color)",
       "--mushic-final-border-width": this.getValue("border_width") || "var(--mushic-border-width)",
@@ -622,10 +623,15 @@ public getGridOptions(): LovelaceGridOptions {
       "--mushic-final-features-padding": this.getValue("features_padding") || "var(--mushic-features-padding)",
       "--mushic-final-features-gap": this.getValue("features_gap") || "var(--mushic-features-gap, 12px)",
       "--ha-card-feature-gap": "var(--mushic-final-features-gap)",
-    };
 
-    const featurePosition = this._featurePosition(this._config);
-    const featuresCount = this._config?.features?.length || 0;
+      // --- CARD HEIGHT ---
+      "--mushic-card-height": this.getValue("card_height"),
+      "--mushic-card-auto-height": this._config.vertical
+         ? "calc(var(--mushic-final-shape-size) + calc(var(--ha-tile-info-primary-font-size) * var(--ha-tile-info-primary-line-height)) + calc(var(--ha-tile-info-secondary-font-size) * var(--ha-tile-info-secondary-line-height)) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px)"
+         : "calc(var(--mushic-final-shape-size) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px )",
+      "--mushic-final-card-min-height": this.getValue("card_min_height") ||  "var(--mushic-min-card-height, var(--mushic-card-auto-height))",
+    };
+    
     const features = this._displayedFeatures(this._config);
     const featureContext = this._featureContext(this._config);
     const featureOnly =
@@ -636,18 +642,18 @@ public getGridOptions(): LovelaceGridOptions {
     });
     
     // --- Dynamic height ---
-    if (this._config.vertical) {
-      style["--mushic-card-auto-height"] = 
-        "calc(var(--mushic-final-shape-size) + calc(var(--ha-tile-info-primary-font-size) * var(--ha-tile-info-primary-line-height)) + calc(var(--ha-tile-info-secondary-font-size) * var(--ha-tile-info-secondary-line-height)) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px)"
-    } else if (featurePosition === "inline") {
-      style["--mushic-card-auto-height"] =
-        "calc(var(--mushic-final-shape-size) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px )";
-    } else {
-      style["--mushic-card-auto-height"] = 
-        "calc(var(--mushic-final-shape-size) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px)";
-    }
+//    if (this._config.vertical) {
+  //    style["--mushic-card-auto-height"] = 
+    //    "calc(var(--mushic-final-shape-size) + calc(var(--ha-tile-info-primary-font-size) * var(--ha-tile-info-primary-line-height)) + calc(var(--ha-tile-info-secondary-font-size) * var(--ha-tile-info-secondary-line-height)) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px)"
+//    } else if (featurePosition === "inline") {
+//      style["--mushic-card-auto-height"] =
+//        "calc(var(--mushic-final-shape-size) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px )";
+//    } else {
+//      style["--mushic-card-auto-height"] = 
+//        "calc(var(--mushic-final-shape-size) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px)";
+//    }
     
-    style["--mushic-final-card-min-height"] = this.getValue("card_min_height") ||  "var(--mushic-min-card-height, var(--mushic-card-auto-height))";
+//    style["--mushic-final-card-min-height"] = this.getValue("card_min_height") ||  "var(--mushic-min-card-height, var(--mushic-card-auto-height))";
 
     const contentClasses = classMap({
       vertical: Boolean(this._config.vertical),
