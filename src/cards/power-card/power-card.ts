@@ -632,7 +632,7 @@ public getGridOptions(): LovelaceGridOptions {
              ? "calc(var(--mushic-final-shape-size) + calc(var(--ha-tile-info-primary-font-size) * var(--ha-tile-info-primary-line-height)) + calc(var(--ha-tile-info-secondary-font-size) * var(--ha-tile-info-secondary-line-height)) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px)"
              : "calc(var(--mushic-final-shape-size) + calc(var(--mushic-final-card-padding, 10px) * 2) - 0.5px )" 
            )
-         : "auto",
+         : undefined,
     };
     
     const features = this._displayedFeatures(this._config);
