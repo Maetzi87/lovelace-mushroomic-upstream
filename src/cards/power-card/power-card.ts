@@ -302,7 +302,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       }
     }
   }
-  
+  // SVG
   private async _loadSvg(url: string): Promise<string | undefined> {
     try {
       const resp = await fetch(url);
