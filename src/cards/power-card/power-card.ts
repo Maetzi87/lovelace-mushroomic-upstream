@@ -627,12 +627,7 @@ public getGridOptions(): LovelaceGridOptions {
 
       // --- CARD HEIGHT ---
       "--mushic-card-height": this.getValue("card_height"),
-      "--mushic-card-auto-height": useAutoHeight
-         ? (this._config.vertical
-             ? "calc(var(--mushic-final-shape-size) + calc(var(--ha-tile-info-primary-font-size) * var(--ha-tile-info-primary-line-height)) + calc(var(--ha-tile-info-secondary-font-size) * var(--ha-tile-info-secondary-line-height)) + calc(var(--mushic-card-padding, 10px) * 2) - 0.5px)"
-             : "calc(var(--mushic-final-shape-size) + calc(var(--mushic-card-padding, 10px) * 2) - 0.5px )" 
-           )
-         : undefined,
+      "--mushic-card-auto-height": "calc(var(--mushic-final-shape-size) + calc(var(--mushic-card-padding, 10px) * 2) - 0.5px )" 
     };
     
     const features = this._displayedFeatures(this._config);
