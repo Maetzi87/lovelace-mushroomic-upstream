@@ -239,7 +239,7 @@ export const powerCardStyles = [
       }
       .mushic-badge ha-icon {
         --mdc-icon-size: var(--mushic-final-badge-icon-size);
-        color: var(--mushic-badge-icon-color, var(--primary-text-color));
+        color: var(--mushic-badge-icon-color, var(--tile-badge-icon-color, white));
         display: flex;
         align-items: center;
         justify-content: center;
