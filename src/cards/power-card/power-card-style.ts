@@ -31,13 +31,7 @@ export const powerCardStyles = [
         border-width: var(--mushic-border-width, var(--ha-card-border-width, 1px));
         border-style: var(--mushic-border-style, solid);
         border-color: var(--mushic-border-color, var(--ha-card-border-color, var(--divider-color)));
-        height: var(--mushic-card-height, var(--mushic-card-auto-height));
-        min-height: 0;
-      }
-
-      :host-context(ha-sections-dashboard) ha-card {
-        height: 100%;
-        min-height: 0;
+        height: var(--mushic-card-height, 100%);
       }
 
       ha-card:has(.background:focus-visible) {
