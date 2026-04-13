@@ -34,7 +34,7 @@ import { weatherSVGStyles } from "../../utils/weather";
 import { mushroomicKeyframes } from "../../utils/animations/keyframes";
 import {
   getAutoOverlay,
-  getAutoAnimations,
+  getAutoAnimations, 
   getAutoOverlayAnimation, 
   getAutoBadgeAnimation
 } from "../../utils/animations/automatic";
