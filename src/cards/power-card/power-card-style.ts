@@ -173,6 +173,7 @@ export const powerCardStyles = [
       ha-state-icon {
         color: var(--mushic-icon-color, var(--state-inactive-color));
         animation: var(--mushic-icon-animation);
+        transform-origin: var(--mushic-icon-origin, 50% 50%);
         position: relative;
         z-index: 2;
         backface-visibility: hidden;
@@ -252,6 +253,7 @@ export const powerCardStyles = [
         justify-content: center;
         pointer-events: none;
         animation: var(--mushic-badge-animation);
+        transform-origin: var(--mushic-badge-icon-origin, 50% 50%);
         z-index: 4;
       }
       .mushic-badge ha-icon {
