@@ -71,6 +71,7 @@ export const AUTO_ANIMATIONS: Record<
   "mushic:air-freshener":    { icon: "mushic-air 3s ease-in-out infinite",  }, 
   "mushic:robot-vacuum":     { icon: "mushic-vacuum 10s linear infinite",   },
   "mushic:door":             { icon: "mushic-door 6s ease-in-out infinite", },
+  "mushic:dishwasher":       { icon: "bounce 1.5s ease-in-out infinite, wash 1s ease-in-out infinite", icon_origin: "50% 75%" },
   
   /* Fan */
   "mushic:fan":              { icon: "mushic-rotate 1.5s linear infinite", },
