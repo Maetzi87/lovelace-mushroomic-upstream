@@ -125,6 +125,8 @@ const TEMPLATE_KEYS = [
   "badge_icon_animation",
   "overlay_animation",
   "animation_color",
+  "icon_origin",
+  "badge_icon_origin",
 
   // --- FEATURES ---
   "features_color",
@@ -571,11 +573,14 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
 
       // --- ANIMATIONS ---
       "--mushic-icon-animation": this._resolveAnim(this.getValue("icon_animation"), autoAnim.icon),
+      "--mushic-icon-origin": this.getValue("icon_origin") || autoAnim.icon_origin,
       "--mushic-shape-animation": this._resolveAnim(this.getValue("shape_animation"), autoAnim.shape),
       "--mushic-screen-animation": screenAnimation,
       "--mushic-badge-animation": this.getValue("badge_animation"),
-      "--mushic-badge-icon-animation": this._resolveAnim(this.getValue("badge_icon_animation"), autoBadgeAnim),
+      "--mushic-badge-icon-animation": this._resolveAnim(this.getValue("badge_icon_animation"), autoBadgeAnim.icon),
+      "--mushic-badge-icon-origin": this.getValue("badge_icon_origin") || autoBadgeAnim.icon_origin,
       "--mushic-overlay-animation": this._resolveAnim(this.getValue("overlay_animation"), autoOverlayAnim),
+      "--mushic-overlay-icon-origin": this.getValue("overlay_icon_origin") || autoOverlayAnim.icon_origin,
       "--mushic-card-keyframes": this.getValue("keyframes"),
       "--mushic-animation-color": this.getValue("animation_color"),
 
