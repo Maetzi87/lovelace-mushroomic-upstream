@@ -91,7 +91,7 @@ export const mushroomicKeyframes = css`
     100%        { transform: translate(0%, 0%) rotate(0);         }
   }
 
-  /* ANIMATED CEILING FAN 1 – WIND - use with local:center-and-wind */
+  /* ANIMATED CEILING FAN 1 – WIND - use with mushic:center-and-wind */
   @keyframes mushic-wind-forward {
     0%        { clip-path: polygon(0% 60%, 50% 73%, 100% 60%, 100% 0%, 0% 0%); }
     50%       { clip-path: inset(0 0% 30% 0);                                  }
@@ -103,12 +103,10 @@ export const mushroomicKeyframes = css`
     100%    { clip-path: polygon(0% 60%, 50% 73%, 100% 60%, 100% 0%, 0% 0%); }
   }
 
-  /* ANIMATED CEILING FAN 2 – ROTATION - use with local:blades */
+  /* ANIMATED CEILING FAN 2 – ROTATION - use with mushic:blades */
   @keyframes mushic-blade-rotation {
-    0%, 100%  { transform: rotateY(0deg);    }
-    25%       { transform: rotateY(-90deg);  }
-    50%       { transform: rotateY(-180deg); }
-    75%       { transform: rotateY(-90deg);  }
+    0%   { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
   }
 
   /* ANIMATED FAN (or whatever) - makes icon rotate */
@@ -117,7 +115,7 @@ export const mushroomicKeyframes = css`
     100% { transform: rotate(360deg); }
   }
   
-  /* ANIMATED WASHING MACHINE 1 - SHAKE and BUBBLE - use with mdi:washing-machine and local:wash */
+  /* ANIMATED WASHING MACHINE 1 - SHAKE and BUBBLE - use with mdi:washing-machine and mushic:wash */
   @keyframes mushic-shake {
     0%, 100% { transform: translate(0, 0)           rotate(0);     }
     20%      { transform: translate(0.4px, -0.4px)  rotate(-4deg); }
@@ -135,7 +133,7 @@ export const mushroomicKeyframes = css`
     75%       { clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 34% 74%, 27% 60%, 34% 60%, 43% 57%, 46% 46%, 52% 47%, 58% 53%, 67% 46%, 73% 62%, 63% 77%, 47% 81%, 34% 74%, 35% 100%, 100% 100%, 100% 0%); }
     87.5%     { clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 34% 74%, 27% 60%, 33% 46%, 45% 40%, 57% 52%, 67% 47%, 74% 61%, 63% 77%, 47% 81%, 34% 74%, 35% 100%, 100% 100%, 100% 0%);                   }
   }
-  /* ANIMATED WASHING MACHINE 2 - WASH and RINSE-DRY - use with local:waves and mdi:dishwasher or mdi:tumble-dryer */
+  /* ANIMATED WASHING MACHINE 2 - WASH and RINSE-DRY - use with mushic:waves and mdi:dishwasher or mdi:tumble-dryer */
   @keyframes mushic-wash {
     0%, 100% { transform: translateX(20%);  clip-path: circle(21.7% at 30% 58%); }
     30%      { transform: translateX(-15%); clip-path: circle(21.7% at 65% 58%); }
@@ -156,7 +154,7 @@ export const mushroomicKeyframes = css`
     50%  { clip-path: polygon(0 0, 0 100%, 35% 100%, 36% 74%, 31% 43%, 61% 40%, 71% 69%, 62% 78%, 36% 73%, 35% 100%, 100% 100%, 100% 0); }
  }
 
- /* COURIOUS DOG - use with local:frenchie (or any other face-like icon) */
+ /* COURIOUS DOG - use with mushic:frenchie (or any other face-like icon) */
  @keyframes mushic-huh {
     0%, 10%, 75%, 100% { transform: rotate(0deg);   }
     15%                { transform: rotate(-25deg); }
@@ -165,7 +163,7 @@ export const mushroomicKeyframes = css`
     65%                { transform: rotate(-8deg);  }
  }
 
- /* AIR-ANIMATION - use with local:air-freshener */
+ /* AIR-ANIMATION - use with mushic:air-freshener */
  @keyframes mushic-air {
     100% { clip-path: inset(0% 0 0 0);  }
     50%  { clip-path: inset(35% 0 0 0); }
