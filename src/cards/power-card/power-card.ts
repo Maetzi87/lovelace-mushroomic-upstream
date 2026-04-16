@@ -343,45 +343,55 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       : value;
   }
 
-  // --- CARD HEIGHT ---
-  private _computeAutoHeightPx(): number {
-    const h = getComputedStyle(this).getPropertyValue("--mushic-card-auto-height");
-    const px = parseFloat(h);
-    if (isNaN(px)) return 56;
-    return Math.floor(px);
+  public getCardSize(): number {
+    const card = this.shadowRoot?.querySelector("ha-card");
+    if (!card) return 3;
+    const height = card.getBoundingClientRect().height;
+    return Math.ceil(height / 60);
   }
 
-  private _heightToRows(h: number): number {
-    if (h < 57) return 1;
-    return 1 + Math.ceil((h - 56) / 64);
-  }
-  
-  public getCardSize(): number {
-    const px = this._computeAutoHeightPx();
-    return Math.max(1, Math.ceil(px / 60));
-  }
-  
   public getGridOptions(): LovelaceGridOptions {
-    let columns = 6;
-    let rows = 1;
+    const card = this.shadowRoot?.querySelector("ha-card");
+    let measuredRows: number | undefined;
+    if (card) {
+      const height = card.getBoundingClientRect().height;
+      measuredRows = Math.max(1, Math.ceil(height / 60)); 
+    }
+  
+    let columns: number | undefined = 6;
+    let rows: number | undefined = measuredRows;
+  
+    const hasContent = Boolean(
+      this._config?.icon ||
+        this._config?.picture ||
+        this._config?.primary ||
+        this._config?.secondary
+    );
   
     const featurePosition = this._config && this._featurePosition(this._config);
     const featuresCount = this._config?.features?.length || 0;
   
-    // Inline Features → 12 columns
     if (featuresCount && featurePosition === "inline") {
       columns = 12;
     }
   
-    // Sections Dashboard → Height Snapping
-    if (this.closest("ha-sections-dashboard")) {
-      const px = this._computeAutoHeightPx();
-      rows = this._heightToRows(px);
-      return { columns, rows };
-    }
+    if (!rows) {
+      rows = hasContent ? 1 : 0;
   
-    // Andere Layouts ignorieren rows
-    return { columns };
+      if (featuresCount && featurePosition !== "inline") {
+        rows += featuresCount;
+      }
+  
+      if (this._config?.vertical) {
+        if (
+          this._config.primary ||
+          (this._config.secondary && !this._config.icon)
+        ) {
+          rows++;
+        }
+      }
+    }
+    return { columns, rows };
   }
 
   
