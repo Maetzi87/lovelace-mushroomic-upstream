@@ -197,4 +197,30 @@ export const mushroomicKeyframes = css`
     0%  { clip-path: circle(0% at 50% 85%);  }
     20% { clip-path: circle(30% at 50% 85%); }
  }
+ 
+ /* ANIMATED PRINTER 1 - use with mdi:printer */
+ @keyframes mushic-print {
+    3%, 31%   { clip-path: polygon(30% 32%, 30% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 0%, 70% 0%, 70% 32%);                                                                           }
+    32%, 39%  { clip-path: polygon(0% 0%, 0% 100%, 30% 100%, 30% 15%, 70% 15%, 70% 32%, 30% 32%, 30% 100%, 100% 100%, 100% 0%);                                                     }
+    40%, 48%  { clip-path: polygon(0% 0%, 0% 100%, 30% 100%, 30% 19%, 70% 19%, 70% 32%, 30% 32%, 30% 100%, 100% 100%, 100% 0%);                                                     }
+    49%, 56%  { clip-path: polygon(0% 0%, 0% 100%, 30% 100%, 30% 23%, 70% 23%, 70% 32%, 30% 32%, 30% 100%, 100% 100%, 100% 0%);                                                     }
+    57%, 64%  { clip-path: polygon(0% 0%, 0% 100%, 33.4% 100%, 33.4% 27%, 70% 27%, 70% 30%, 33.4% 30%, 33.4% 78%, 66.6% 78%, 66.6% 81%, 33.4% 81%, 33.4% 100%, 100% 100%, 100% 0%); }
+    65%, 100% { clip-path: polygon(0% 0%, 0% 100%, 33.4% 100%, 33.4% 78%, 66.6% 78%, 66.6% 90%, 33.4% 90%, 33.4% 100%, 100% 100%, 100% 0%);                                         }
+}
+/* ANIMATED PRINTER 2 - use with mushic:paper */
+@keyframes mushic-paper {
+    0%, 2%    { clip-path: inset(100% 0 0 0);}
+    3%, 7%    { transform: translateY(-10%); clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 35% 15%, 65% 15%, 65% 60%, 35% 60%, 3% 100%, 100% 100%, 100% 0%); }
+    8%, 15%   { transform: translateY(-6%);  clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 35% 15%, 65% 15%, 65% 60%, 35% 60%, 3% 100%, 100% 100%, 100% 0%); }
+    16%, 23%  { transform: translateY(-2%);  clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 35% 15%, 65% 15%, 65% 40%, 35% 40%, 3% 100%, 100% 100%, 100% 0%); }
+    24%, 31%  { transform: translateY(2%);   clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 35% 15%, 65% 15%, 65% 40%, 35% 40%, 3% 100%, 100% 100%, 100% 0%); }
+    32%, 39%  { transform: translateY(6%);   clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 35% 15%, 65% 15%, 65% 40%, 35% 40%, 3% 100%, 100% 100%, 100% 0%); }
+    40%, 48%  { transform: translateY(10%);  clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 35% 15%, 65% 15%, 65% 40%, 35% 40%, 3% 100%, 100% 100%, 100% 0%); }
+    49%, 56%  { transform: translateY(14%);                                                                                                                 }
+    57%, 64%  { transform: translateY(18%);                                                                                                                 }
+    65%, 72%  { transform: translateY(22%);                                                                                                                 }
+    73%, 80%  { transform: translateY(26%);                                                                                                                 }
+    81%, 100% { transform: translateY(30%);                                                                                                                 }
+}
+
 `;
