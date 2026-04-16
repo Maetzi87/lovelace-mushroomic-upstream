@@ -581,7 +581,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--mushic-badge-icon-animation": this._resolveAnim(this.getValue("badge_icon_animation"), autoBadgeAnim.icon),
       "--mushic-badge-icon-origin": this.getValue("badge_icon_origin") || autoBadgeAnim.icon_origin,
       "--mushic-overlay-animation": this._resolveAnim(this.getValue("overlay_animation"), autoOverlayAnim),
-      "--mushic-overlay-icon-origin": this.getValue("overlay_icon_origin") || autoOverlayAnim.icon_origin,
+      "--mushic-overlay-origin": this.getValue("overlay_origin") || autoOverlayAnim.icon_origin,
       "--mushic-card-keyframes": this.getValue("keyframes"),
       "--mushic-animation-color": this.getValue("animation_color"),
 
