@@ -15,8 +15,8 @@ export const AUTO_OVERLAY_MAP: Record<string, string> = {
 };
 
 const alertAnimation = {
-  icon: "mushic-blink 1.5s ease-in-out infinite",
-  shape: "mushic-ping 1.5s infinite, mushic-blink 1.5s ease-in-out infinite",
+  icon: "mushic-offset-blink 1.5s ease-in-out infinite",
+  shape: "mushic-ping 1.5s infinite, mushic-offset-blink 2s ease-in-out infinite",
 };
 
 /* --- AUTO ANIMATIONS --- */
@@ -68,8 +68,10 @@ export const AUTO_ANIMATIONS: Record<
   "mdi:water": alertAnimation,
 
   /* Misc */
-  "mushic:air-freshener":    { icon: "mushic-air 3s ease-in-out infinite", }, 
-
+  "mushic:air-freshener":    { icon: "mushic-air 3s ease-in-out infinite",  }, 
+  "mushic:robot-vacuum":     { icon: "mushic-vacuum 10s linear infinite",   },
+  "mushic:door":             { icon: "mushic-door 6s ease-in-out infinite", },
+  
   /* Fan */
   "mushic:fan":              { icon: "mushic-rotate 1.5s linear infinite", },
   "mushic:ceiling-fan-wind": { icon: "mushic-wind-forward 1s ease-in-out infinite", },
