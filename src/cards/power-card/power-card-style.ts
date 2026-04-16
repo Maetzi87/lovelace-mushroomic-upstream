@@ -234,7 +234,7 @@ export const powerCardStyles = [
          opacity: var(--mushic-overlay-opacity, 1);
          --mdc-icon-size: var(--mushic-overlay-size, var(--mushic-final-icon-size, var(--tile-mdc-icon-size)));
          animation: var(--mushic-overlay-animation);
-         transform-origin: 50% 50%;
+         transform-origin: var(--mushic-overlay-origin, 50% 50%);
          transform-style: preserve-3d;
          backface-visibility: hidden;
        }
