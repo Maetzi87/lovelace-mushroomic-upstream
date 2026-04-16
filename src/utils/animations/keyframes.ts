@@ -119,7 +119,7 @@ export const mushroomicKeyframes = css`
     100% { transform: rotate(360deg); }
   }
   
-  /* ANIMATED WASHING MACHINE 1 - SHAKE and BUBBLE - use with mdi:washing-machine and mushic:wash */
+  /* ANIMATED WASHING MACHINE 1 - SHAKE and BUBBLE - use with mdi:washing-machine and mushic:washing-machine-bubble */
   @keyframes mushic-shake {
     0%, 100% { transform: translate(0, 0)           rotate(0);     }
     20%      { transform: translate(0.4px, -0.4px)  rotate(-4deg); }
