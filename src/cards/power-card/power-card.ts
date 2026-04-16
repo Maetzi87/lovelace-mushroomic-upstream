@@ -13,7 +13,7 @@ import {
   ActionHandlerEvent,
   atLeastHaVersion,
   computeDomain,
-  DOMAINS_TOGGLE,
+  DOMAINS_TOGGLE, 
   handleAction,
   hasAction,
   HomeAssistant,
