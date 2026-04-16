@@ -7,7 +7,7 @@ export const mushroomicKeyframes = css`
   }
   /* ALERT – makes shape blink */
   @keyframes mushic-ping {
-    0%   { box-shadow: 0 0 0 0 rgba(var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))), 0.7); }
+    0%   { box-shadow: 0 0 0 0 rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) R G B / 0.7); }
     100% { box-shadow: 0 0 5px 7px transparent;           }
   }
 
