@@ -89,7 +89,6 @@ export const AUTO_OVERLAY_ANIMATIONS: Record<
   Partial<{
     icon: string;
     icon_origin: string;
-    };
   }>
 > = {
   "mushic:ceiling-fan-blades": { icon: "mushic-blade-rotation 0.3s linear infinite" } ,
@@ -103,7 +102,6 @@ export const AUTO_BADGE_ANIMATIONS: Record<
     icon: string;
     icon_origin: string;
     shape: string;
-    };
   }>
 > = {
   "mdi:battery-high": { icon: "mushic-charge 3s steps(1) infinite" } ,
