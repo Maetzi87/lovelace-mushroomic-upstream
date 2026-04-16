@@ -20,6 +20,13 @@ export const AUTO_ANIMATIONS: Record<
   Partial<{
     icon: string;
     shape: string;
+    screen: string;
+    screenMask: {
+      width: string;
+      height: string;
+      top: string;
+      left: string;
+    };
   }>
 > = {
   "mdi:fire":  alertAnimation,
@@ -27,6 +34,15 @@ export const AUTO_ANIMATIONS: Record<
   "mushic:air-freshener":    { icon: "mushic-air 3s ease-in-out infinite", },  
   "mushic:fan":              { icon: "mushic-rotate 1.5s linear infinite", },
   "mushic:ceiling-fan-wind": { icon: "mushic-wind-forward 1.1s ease-in-out infinite", },
+  "mdi:television": {
+    screen: "mushic-flicker 500ms linear infinite",
+    screenMask: {
+      width: "75%",
+      height: "50%",
+      top: "20.833%",
+      left: "12.5%"
+    }
+  },
 };
 
 /* OVERLAY */
