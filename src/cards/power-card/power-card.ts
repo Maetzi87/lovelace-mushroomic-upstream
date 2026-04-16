@@ -343,57 +343,35 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       : value;
   }
 
+  // -- CARD HEIGHT ---
+  
+    private _computeFinalHeightPx(): number {
+    const h = getComputedStyle(this).getPropertyValue("--mushic-card-auto-height");
+    const px = parseFloat(h);
+    if (isNaN(px)) return 56;
+    return Math.round(px);
+  }
+  
   public getCardSize(): number {
-    const card = this.shadowRoot?.querySelector("ha-card");
-    if (!card) return 3;
-    const height = card.getBoundingClientRect().height;
-    return Math.ceil(height / 60);
+    const px = this._computeFinalHeightPx();
+    return px < 57 ? 1 : Math.ceil(px / 60);
   }
 
   public getGridOptions(): LovelaceGridOptions {
-    const card = this.shadowRoot?.querySelector("ha-card");
-    let measuredRows: number | undefined;
-    if (card) {
-      const height = card.getBoundingClientRect().height;
-      measuredRows = Math.max(1, Math.ceil(height / 60)); 
-    }
+    let columns = 6;
   
-    let columns: number | undefined = 6;
-    let rows: number | undefined = measuredRows;
-  
-    const hasContent = Boolean(
-      this._config?.icon ||
-        this._config?.picture ||
-        this._config?.primary ||
-        this._config?.secondary
-    );
-  
+    // Inline Features → 12 columns
     const featurePosition = this._config && this._featurePosition(this._config);
     const featuresCount = this._config?.features?.length || 0;
-  
     if (featuresCount && featurePosition === "inline") {
       columns = 12;
     }
   
-    if (!rows) {
-      rows = hasContent ? 1 : 0;
+    const px = this._computeFinalHeightPx();
+    const rows = px < 57 ? 1 : Math.ceil(px / 60);
   
-      if (featuresCount && featurePosition !== "inline") {
-        rows += featuresCount;
-      }
-  
-      if (this._config?.vertical) {
-        if (
-          this._config.primary ||
-          (this._config.secondary && !this._config.icon)
-        ) {
-          rows++;
-        }
-      }
-    }
     return { columns, rows };
   }
-
   
   private _handleAction(ev: ActionHandlerEvent) {
     handleAction(this, this.hass!, this._config!, ev.detail.action!);
