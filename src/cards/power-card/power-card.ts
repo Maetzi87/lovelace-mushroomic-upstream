@@ -421,6 +421,12 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
     return features;
   });
 
+  private _resolveAnim(userValue: string | undefined, autoValue: string | undefined): string | undefined {
+    if (userValue === "none") return "none";
+    if (!userValue || userValue === "auto") return autoValue;
+    return userValue;
+  }
+  
   protected render() {
     if (!this._config || !this.hass) {
       return nothing;
@@ -557,11 +563,11 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--mushic-overlay-margin": this.getValue("overlay_margin"),
 
       // --- ANIMATIONS ---
-      "--mushic-icon-animation": this.getValue("icon_animation") || autoAnim.icon,
-      "--mushic-shape-animation": this.getValue("shape_animation") || autoAnim.shape,
+      "--mushic-icon-animation": this._resolveAnim(this.getValue("icon_animation"), autoAnim.icon),
+      "--mushic-shape-animation": this._resolveAnim(this.getValue("shape_animation"), autoAnim.shape),
       "--mushic-badge-animation": this.getValue("badge_animation"),
-      "--mushic-badge-icon-animation": this.getValue("badge_icon_animation") || autoBadgeAnim,
-      "--mushic-overlay-animation": this.getValue("overlay_animation") || autoOverlayAnim,
+      "--mushic-badge-icon-animation": this._resolveAnim(this.getValue("badge_icon_animation"), autoBadgeAnim),
+      "--mushic-overlay-animation": this._resolveAnim(this.getValue("overlay_animation"), autoOverlayAnim),
       "--mushic-card-keyframes": this.getValue("keyframes"),
 
       // --- FEATURES ---
