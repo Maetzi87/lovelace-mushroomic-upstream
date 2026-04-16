@@ -22,7 +22,7 @@ export const AUTO_ANIMATIONS: Record<
     shape: string;
   }>
 > = {
-  "mdi:fire": alertAnimation,
+  "mdi:fire":                { icon: "blink 1.5s ease-in-out infinite", shape: "ping 1.5s infinite, blink 1.5s ease-in-out infinite", },
   "mdi:water": alertAnimation,
   "mushic:air-freshener":    { icon: "mushic-air 3s ease-in-out infinite", },  
   "mushic:fan":              { icon: "mushic-rotate 1.5s linear infinite", },
