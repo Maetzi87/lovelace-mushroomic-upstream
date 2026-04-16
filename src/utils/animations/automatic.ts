@@ -77,7 +77,10 @@ export const AUTO_ANIMATIONS: Record<
   "mushic:door":             { icon: "mushic-door 6s ease-in-out infinite", icon_origin: "30%" },
   "mushic:dishwasher":       { icon: "mushic-bounce 1.5s ease-in-out infinite, mushic-dishwash 1s ease-in-out infinite", icon_origin: "50% 75%" },
   "mushic:printer":          { icon: "mushic-print 5s infinite" } ,
-
+  "mushic:ring":             { icon: "mushic-ring 4s linear infinite", icon_origin: "50% 15%" },
+  "mushic:access-point":     { icon: "mushic-send 1.5s infinite" } ,
+  "mushic:air-purifier":     { icon: "mushic-purify 1.5s steps(1) infinite" } ,
+  "mushic:radiator":         { icon: "mushic-heat 1s ease-out infinite" } ,
 };
 
 /* OVERLAY */
@@ -99,10 +102,12 @@ export const AUTO_BADGE_ANIMATIONS: Record<
   Partial<{
     icon: string;
     icon_origin: string;
+    shape: string;
     };
   }>
 > = {
-  "mdi:battery-high": { icon: "mushic-charge 3s steps(1) infinite", } ,
+  "mdi:battery-high": { icon: "mushic-charge 3s steps(1) infinite" } ,
+  "mdi:alert-circle": { icon: "mushic-blink 1.2s ease-in-out infinite", shape: "mushic-blink 1.2s ease-in-out infinite" } ,
 };
 
 /* --- HELPER --- */
