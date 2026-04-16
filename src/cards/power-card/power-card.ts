@@ -507,6 +507,15 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
     const autoBadgeAnim = getAutoBadgeAnimation(badgeIcon);
     const autoOverlayAnim = getAutoOverlayAnimation(overlayIcon);
     
+    // --- Screen Animation (Flicker) ---
+    let screenAnimation = "none";
+    const userIconAnim = this.getValue("icon_animation");
+    if (userIconAnim === "none") {
+      screenAnimation = "none";
+    } else {
+      screenAnimation = autoAnim.screen ?? "none";
+    }
+    
     const style = {
       // --- ICON ---  
       "--mushic-icon-color": cssColor,
@@ -563,6 +572,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       // --- ANIMATIONS ---
       "--mushic-icon-animation": this._resolveAnim(this.getValue("icon_animation"), autoAnim.icon),
       "--mushic-shape-animation": this._resolveAnim(this.getValue("shape_animation"), autoAnim.shape),
+      "--mushic-screen-animation": screenAnimation,
       "--mushic-badge-animation": this.getValue("badge_animation"),
       "--mushic-badge-icon-animation": this._resolveAnim(this.getValue("badge_icon_animation"), autoBadgeAnim),
       "--mushic-overlay-animation": this._resolveAnim(this.getValue("overlay_animation"), autoOverlayAnim),
@@ -577,6 +587,19 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--mushic-features-gap": this.getValue("features_gap"),
       "--ha-card-feature-gap": "var(--mushic-features-gap, 12px)",
     };
+
+    // --- SCREEN MASK ---
+    if (userIconAnim === "none") {
+      style["--mushic-screen-width"] = "0";
+      style["--mushic-screen-height"] = "0";
+      style["--mushic-screen-top"] = "0";
+      style["--mushic-screen-left"] = "0";
+    } else if (autoAnim.screenMask) {
+      style["--mushic-screen-width"] = autoAnim.screenMask.width;
+      style["--mushic-screen-height"] = autoAnim.screenMask.height;
+      style["--mushic-screen-top"] = autoAnim.screenMask.top;
+      style["--mushic-screen-left"] = autoAnim.screenMask.left;
+    }
 
   // --- CALCULATE CARD HEIGHT ---
     // -- Features-Padding
