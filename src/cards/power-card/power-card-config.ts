@@ -76,17 +76,20 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   overlay_margin?: string;
 
   // --- ANIMATIONS ---
+  animation_color?: string;
   icon_animation?: string;
+  icon_origin?: string;
+  icon_clip_path?: string;
   shape_animation?: string;
   badge_animation?: string;
   badge_icon_animation?: string;
+  badge_icon_origin?: string;  
+  badge_icon_clip_path?: string; 
   overlay_animation?: string;
-  keyframes?: string;
-  animation_color?: string;
-  icon_origin?: string;
-  badge_icon_origin?: string;
   overlay_origin?: string;
-  
+  overlay_clip_path?: string;
+  keyframes?: string;
+
   // --- INTERACTIONS ---
   tap_action?: ActionConfig;
   hold_action?: ActionConfig;
@@ -173,16 +176,19 @@ export const templateCardConfigStruct = assign(
     overlay_margin: optional(string()),
 
     // --- ANIMATIONS ---
+    animation_color: optional(string()),
     icon_animation: optional(string()),
+    icon_origin: optional(string()),
+    icon_clip_path: optional(string()),
     shape_animation: optional(string()),
     badge_animation: optional(string()),
     badge_icon_animation: optional(string()),
-    overlay_animation: optional(string()),
-    keyframes: optional(string()),
-    animation_color: optional(string()),
-    icon_origin: optional(string()),
     badge_icon_origin: optional(string()),
+    badge_icon_clip_path: optional(string()),
+    overlay_animation: optional(string()),
     overlay_origin: optional(string()),
+    overlay_clip_path: optional(string()),
+    keyframes: optional(string()),
 
     // --- INTERACTIONS ---
     tap_action: optional(actionConfigStruct),
