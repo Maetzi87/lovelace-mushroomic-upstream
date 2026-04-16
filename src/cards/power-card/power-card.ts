@@ -127,6 +127,7 @@ const TEMPLATE_KEYS = [
   "animation_color",
   "icon_origin",
   "badge_icon_origin",
+  "overlay_origin",
 
   // --- FEATURES ---
   "features_color",
