@@ -5,6 +5,10 @@ export const mushroomicKeyframes = css`
   @keyframes mushic-blink {
     100% { opacity: 0; }
   }
+  @keyframes mushic-offset-blink {
+    0%, 10% { opacity: 1; }          
+    100%    { opacity: 0; }
+  }
   /* ALERT – makes shape blink */
   @keyframes mushic-ping {
     0%   { box-shadow: 0 0 0 0 rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.7); }
