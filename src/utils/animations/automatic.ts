@@ -12,6 +12,9 @@ export const AUTO_OVERLAY_MAP: Record<string, string> = {
   "mushic:ceiling-fan-wind":   "mushic:ceiling-fan-blades",
   
   "mushic:printer": "mushic:paper",
+
+  "mushic:washing-machine-bubble": "mushic:washing-machine-waves",
+  "mushic:washing-machine-empty":  "mushic:washing-machine-drum",
 };
 
 const alertAnimation = {
@@ -81,6 +84,12 @@ export const AUTO_ANIMATIONS: Record<
   "mushic:access-point":     { icon: "mushic-send 1.5s infinite" } ,
   "mushic:air-purifier":     { icon: "mushic-purify 1.5s steps(1) infinite" } ,
   "mushic:radiator":         { icon: "mushic-heat 1s ease-out infinite" } ,
+
+  /* Washing Machine */
+  "mushic:washing-machine-bubble": { icon: "mushic-shake 400ms ease-in-out infinite, bubble 4s steps(1) infinite"  },
+  "mushic:washing-machine-empty":  { icon: "mushic-shake 400ms ease-in-out infinite"  },
+  "mushic:washing-machine-rinse":  { icon: "mushic-shake 400ms ease-in-out infinite, mushic-rinse 1.5s ease-in-out infinite" },
+  "mushic:tumble-dryer":           { icon: "mushic-shake 400ms ease-in-out infinite, mushic-dry 2s ease-in-out infinite" },
 };
 
 /* OVERLAY */
@@ -91,8 +100,10 @@ export const AUTO_OVERLAY_ANIMATIONS: Record<
     icon_origin: string;
   }>
 > = {
-  "mushic:ceiling-fan-blades": { icon: "mushic-blade-rotation 0.3s linear infinite" } ,
-  "mushic:paper":              { icon: "mushic-paper 5s infinite" } ,
+  "mushic:ceiling-fan-blades":    { icon: "mushic-blade-rotation 0.3s linear infinite" } ,
+  "mushic:paper":                 { icon: "mushic-paper 5s infinite" } ,
+  "mushic:washing-machine-drum":  { icon: "mushic-spin 0.5s linear infinite" },
+  "mushic:washing-machine-waves": { icon: "mushic-wash 5s ease-in-out infinite" },
 };  
 
 /* BADGE */
