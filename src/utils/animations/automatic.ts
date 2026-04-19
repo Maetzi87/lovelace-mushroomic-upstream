@@ -89,7 +89,7 @@ export const AUTO_ANIMATIONS: Record<
   "mushic:washing-machine-bubble": { icon: "mushic-shake 400ms ease-in-out infinite, bubble 4s steps(1) infinite"  },
   "mushic:washing-machine-empty":  { icon: "mushic-shake 400ms ease-in-out infinite"  },
   "mushic:washing-machine-rinse":  { icon: "mushic-shake 400ms ease-in-out infinite, mushic-rinse 1.5s ease-in-out infinite" },
-  "mushic:tumble-dryer":           { icon: "mushic-shake 400ms ease-in-out infinite, mushic-dry 2s ease-in-out infinite" },
+  "mushic:tumble-dryer":           { icon: "mushic-shake 400ms ease-in-out infinite, mushic-dry 2s ease-in infinite" },
 };
 
 /* OVERLAY */
