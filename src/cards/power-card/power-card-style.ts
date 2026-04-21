@@ -141,7 +141,9 @@ export const powerCardStyles = [
          transform-style: preserve-3d;
          backface-visibility: hidden;
          z-index: 0;
-         box-shadow: 0 0 0 0 rgba(from var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color))) r g b / 0.7);
+         box-shadow: 
+         0 0 0 0 rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.7),
+         0 0 0 0 rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.7) inset;
       }
       ha-tile-icon.no-shape .mushic-shape {
         opacity: 0 !important;
