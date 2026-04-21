@@ -4,16 +4,13 @@ import { mushroomicKeyframes } from "../../utils/animations/keyframes";
 
 export const powerCardStyles = [
   weatherSVGStyles,
+  mushroomicKeyframes,  
   css`
       :host {
         --tile-color: var(--state-inactive-color);
         -webkit-tap-highlight-color: transparent;
-        var(--mushic-card-keyframes);
-        var(--mushic-keyframes);
       }
-  `,
-  mushroomicKeyframes,
-  css`
+      
       ha-card {
         position: relative;
         z-index: 0;
