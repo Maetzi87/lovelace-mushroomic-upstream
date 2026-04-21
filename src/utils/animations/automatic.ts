@@ -8,7 +8,7 @@ export const AUTO_OVERLAY_MAP: Record<string, string> = {
   "mushic:television":         "mushic:blank",
   "mushic:television-classic": "mushic:blank",
 
-  "mushic:fire": "mushic:alert",
+  "mushic:fire":  "mushic:alert",
   "mushic:water": "mushic:alert",
 
   "mushic:ceiling-fan-center": "mushic:ceiling-fan-blades",
@@ -21,7 +21,7 @@ export const AUTO_OVERLAY_MAP: Record<string, string> = {
 };
 
 const alertAnimation = {
-  icon: "mushic-offset-blink 1.5s ease-in-out infinite",
+  icon:  "mushic-offset-blink 1.5s ease-in-out infinite",
   shape: "mushic-ping 1.5s infinite, mushic-offset-blink 2s ease-in-out infinite",
 };
 
@@ -43,7 +43,7 @@ export const AUTO_ANIMATIONS: Record<
     };
   }>
 > = {
-  /* Screen flicker */
+  /* -- SCREENS -- */
   "mushic:cellphone": {
     screen:     "mushic-flicker 500ms linear infinite",
     screenMask: { width: "41.666%", height: "58.333%", top: "20.833%", left: "29.166%" }
@@ -69,24 +69,34 @@ export const AUTO_ANIMATIONS: Record<
     screenMask: { width: "54.166%", height: "41.666%", top: "37.5%", left: "16.666%" }
   },
 
-  /* Alert */
-  "mushic:fire":  alertAnimation,
-  "mushic:water": alertAnimation,
-  
+  /* -- ALERT -- */
+  "mushic:bell-ring": { icon: "mushic-ring 4s linear infinite", icon_origin: "50% 15%"  },
+  "mushic:door":      { icon: "mushic-door 6s ease-in-out infinite", icon_origin: "30%" },
+  "mushic:fire":      alertAnimation,
+  "mushic:water":     alertAnimation,
+
+  /* -- AIR -- */
+  "mushic:air-freshener":     { icon: "mushic-air 3s ease-in-out infinite"  }, 
+  "mushic:air-purifier":      { icon: "mushic-purify 1.5s steps(1) infinite" } ,
+  "mushic:radiator":          { icon: "mushic-heat 1s ease-out infinite" } ,
+
   /* Fan */
-  "mushic:ceiling-fan-wind": { icon: "mushic-wind-forward 1s ease-in-out infinite" },
-  "mushic:fan":              { icon: "mushic-rotate 1.5s linear infinite" },
+  "mushic:ceiling-fan-wind":  { icon: "mushic-wind-forward 1s ease-in-out infinite" },
+  "mushic:fan":               { icon: "mushic-rotate 1.5s linear infinite" },
+
+  /* -- CONNECTION -- */
+  "mushic:access-point": { icon: "mushic-send 1.5s infinite" } ,
+  "mushic:wifi":         { icon: "good_signal 3s steps(1) infinite" } ,
   
-  /* Misc */
-  "mushic:air-freshener":    { icon: "mushic-air 3s ease-in-out infinite"  }, 
-  "mushic:robot-vacuum":     { icon: "mushic-vacuum 10s linear infinite"   },
-  "mushic:door":             { icon: "mushic-door 6s ease-in-out infinite", icon_origin: "30%" },
-  "mushic:dishwasher":       { icon: "mushic-bounce 1.5s ease-in-out infinite, mushic-dishwash 1s ease-in-out infinite", icon_origin: "50% 75%" },
-  "mushic:printer":          { icon: "mushic-print 5s infinite" } ,
-  "mushic:bell-ring":        { icon: "mushic-ring 4s linear infinite", icon_origin: "50% 15%" },
-  "mushic:access-point":     { icon: "mushic-send 1.5s infinite" } ,
-  "mushic:air-purifier":     { icon: "mushic-purify 1.5s steps(1) infinite" } ,
-  "mushic:radiator":         { icon: "mushic-heat 1s ease-out infinite" } ,
+  /* -- DEVICES -- */
+  "mushic:robot-vacuum": { icon: "mushic-vacuum 10s linear infinite"   },
+  "mushic:dishwasher":   { icon: "mushic-bounce 1.5s ease-in-out infinite, mushic-dishwash 1s ease-in-out infinite", icon_origin: "50% 75%" },
+  "mushic:printer":      { icon: "mushic-print 5s infinite" } ,
+
+  /* -- WATER -- */
+  "mushic:water-boiler":           { shape: "mushic-glow 5s ease-in-out infinite" },
+  "mushic:water-boiler-auto":      { shape: "mushic-glow 5s ease-in-out infinite" },
+  "mushic:water-heater":           { shape: "mushic-glow 5s ease-in-out infinite" },
 
   /* Washing Machine */
   "mushic:washing-machine-bubble": { icon: "mushic-shake 400ms ease-in-out infinite, bubble 4s steps(1) infinite", icon_origin: "50% 110%"  },
