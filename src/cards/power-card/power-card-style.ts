@@ -129,6 +129,7 @@ export const powerCardStyles = [
          justify-content: center;
          color: var(--mushic-icon-color, var(--state-inactive-color));
       }
+      
       /* --- ... COLORABLE SHAPE ... --- */
       .mushic-shape {
          width: 100%;
@@ -141,9 +142,6 @@ export const powerCardStyles = [
          transform-style: preserve-3d;
          backface-visibility: hidden;
          z-index: 0;
-         box-shadow: 
-         0 0 0 0 rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.7),
-         0 0 0 0 rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.7) inset;
       }
       ha-tile-icon.no-shape .mushic-shape {
         opacity: 0 !important;
@@ -156,6 +154,16 @@ export const powerCardStyles = [
       }
       ha-tile-icon.no-shape:hover .mushic-shape {
         opacity: 0 !important;
+      }
+      .mushic-shape::before {
+         content: "";
+         position: absolute;
+         inset: 0;
+         border-radius: 50%;
+         box-shadow: 
+         0 0 0 0 rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.7),
+         0 0 0 0 rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.7) inset;
+         animation: var(--mushic-shape-animation);
       }
       
       /* --- ...AND COLORABLE SVG --- */
