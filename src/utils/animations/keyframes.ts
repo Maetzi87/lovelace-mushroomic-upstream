@@ -38,6 +38,12 @@ export const mushroomicKeyframes = css`
    95%, 100% { clip-path: inset(0 0 0 0);   }
   }
   
+  /* GLOW EFFEKT - gradient-like shape-animation for any (heating) icon */
+  @keyframes mushic-glow {
+    0%  { background: var(--mushic-animation-color, red); box-shadow: 0 0 0 0 transparent, 0 0 20px 20px var(--mushic-shape-color, var(--mushic-icon-color)) inset;                          }
+    70% { background: var(--mushic-shape-color, var(--mushic-icon-color)); box-shadow: 0 0 5px 7px var(--mushic-animation-color, red), 0 0 0px 0px var(--mushic-animation-color, red) inset; } 
+  }
+  
   /* OPENING DOOR – use with mdi:door */
   @keyframes mushic-door {
     0%, 66% { transform: rotateY(0deg);    transform-origin: 30%; }
