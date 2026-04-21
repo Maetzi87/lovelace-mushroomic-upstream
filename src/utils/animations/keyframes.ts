@@ -103,14 +103,12 @@ export const mushroomicKeyframes = css`
 
   /* ANIMATED CEILING FAN 1 – WIND - use with mushic:center-and-wind */
   @keyframes mushic-wind-forward {
-    0%        { clip-path: polygon(0% 60%, 50% 73%, 100% 60%, 100% 0%, 0% 0%); }
-    50%       { clip-path: inset(0 0% 30% 0);                                  }
-    95%, 100% { clip-path: inset(0 0 0 0);                                     }
+    0%        { clip-path: inset(0 0% 30% 0); }
+    95%, 100% { clip-path: inset(0 0 0 0);    }
   }
   @keyframes mushic-wind-reverse {
-    0%, 5%  { clip-path: inset(0% 0% 0% 0%);                                 }
-    50%     { clip-path: inset(0 0% 30% 0);                                  }
-    100%    { clip-path: polygon(0% 60%, 50% 73%, 100% 60%, 100% 0%, 0% 0%); }
+    0%, 5%  { clip-path: inset(0% 0% 0% 0%);  }
+    100%    { clip-path: inset(0 0% 30% 0);   }
   }
 
   /* ANIMATED CEILING FAN 2 – ROTATION - use with mushic:blades */
