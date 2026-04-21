@@ -20,12 +20,12 @@ export const AUTO_OVERLAY_MAP: Record<string, string> = {
   "mushic:washing-machine-empty":  "mushic:washing-machine-drum",
 };
 
+/* --- AUTO ANIMATIONS --- */
+
 const alertAnimation = {
   icon:  "mushic-offset-blink 1.5s ease-in-out infinite",
   shape: "mushic-ping 1.5s infinite, mushic-offset-blink 2s ease-in-out infinite",
 };
-
-/* --- AUTO ANIMATIONS --- */
 
 /* ICON */
 export const AUTO_ANIMATIONS: Record<
@@ -89,9 +89,9 @@ export const AUTO_ANIMATIONS: Record<
   "mushic:wifi":         { icon: "good_signal 3s steps(1) infinite" } ,
   
   /* -- DEVICES -- */
-  "mushic:robot-vacuum": { icon: "mushic-vacuum 10s linear infinite"   },
   "mushic:dishwasher":   { icon: "mushic-bounce 1.5s ease-in-out infinite, mushic-dishwash 1s ease-in-out infinite", icon_origin: "50% 75%" },
   "mushic:printer":      { icon: "mushic-print 5s infinite" } ,
+  "mushic:robot-vacuum": { icon: "mushic-vacuum 10s linear infinite"   },
 
   /* -- WATER -- */
   "mushic:water-boiler":           { shape: "mushic-glow 5s ease-in-out infinite" },
