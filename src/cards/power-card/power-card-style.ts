@@ -61,6 +61,7 @@ export const powerCardStyles = [
         display: flex;
         flex-direction: column;
         flex: 1;
+        
       }
       .container.horizontal {
         flex-direction: row;
@@ -77,6 +78,7 @@ export const powerCardStyles = [
         box-sizing: border-box;
         pointer-events: none;
         gap: var(--mushic-content-gap, 10px);
+        overflow: visible !important;
       }
 
       .vertical {
