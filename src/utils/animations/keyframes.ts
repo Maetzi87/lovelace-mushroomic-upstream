@@ -11,8 +11,10 @@ export const mushroomicKeyframes = css`
   }
   /* ALERT – makes shape blink */
   @keyframes mushic-ping {
-    0%   { box-shadow: 0 0 0 0 rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.7), 0 0 50px 50px transparent inset; }
-    100% { box-shadow: 0 0 5px 7px transparent, 0 0 50px 50px transparent inset; }
+    0%   { box-shadow: 0 0 0 0 rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.7),
+                       0 0 50px 50px rgba(from var(--mushic-shape-color, var(--mushic-icon-color)) r g b / var(--mushic-shape-opacity, 0.2)) inset; }
+    100% { box-shadow: 0 0 5px 7px transparent, 
+                       0 0 50px 50px rgba(from var(--mushic-shape-color, var(--mushic-icon-color)) r g b / var(--mushic-shape-opacity, 0.2)) inset; }
   }
 
   /* BATTERY CHARGING ANIMATION – use with mdi:battery-high */
