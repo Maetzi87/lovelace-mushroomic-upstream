@@ -291,6 +291,7 @@ export const powerCardStyles = [
         min-width: 0;
         transition: background-color 180ms ease-in-out;
         box-sizing: border-box;
+        overflow: hidden !important;
       }
       ha-tile-info .mushic-primary {
         text-shadow: var(--mushic-primary-text-shadow, none);
