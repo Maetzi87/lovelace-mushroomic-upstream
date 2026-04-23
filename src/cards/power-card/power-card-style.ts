@@ -78,6 +78,7 @@ export const powerCardStyles = [
         box-sizing: border-box;
         pointer-events: none;
         gap: var(--mushic-content-gap, 10px);
+        overflow: hidden !important;
       }
 
       .vertical {
