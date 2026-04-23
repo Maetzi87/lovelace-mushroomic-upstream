@@ -290,11 +290,11 @@ export const powerCardStyles = [
         transition: background-color 180ms ease-in-out;
         box-sizing: border-box;
       }
-      ha-tile-info .primary {
-        text-shadow: var(--mushic-primary-text-shadow, none);
+      ha-card ha-tile-info .primary {
+        text-shadow: var(--mushic-primary-text-shadow, none) !important;
       }
-      ha-tile-info .secondary {
-        text-shadow: var(--mushic-secondary-text-shadow, none);
+      ha-card ha-tile-info .secondary {
+        text-shadow: var(--mushic-secondary-text-shadow, none) !important;
       }
 
 
