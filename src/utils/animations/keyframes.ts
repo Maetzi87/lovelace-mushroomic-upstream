@@ -6,8 +6,7 @@ export const mushroomicKeyframes = css`
     100% { opacity: 0; }
   }
   @keyframes mushic-offset-blink {
-    0%, 10% { opacity: 1; }          
-    100%    { opacity: 0; }
+    50%  { opacity: 0; }
   }
   /* ALERT – makes shape blink */
   @keyframes mushic-ping {
