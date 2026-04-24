@@ -79,7 +79,8 @@ const TEMPLATE_KEYS = [
   "primary_text_color",
   "primary_text_shadow",
   "primary_line_height",
-  "primary_letter_spacing", 
+  "primary_letter_spacing",
+  "primary_font_variant",
   
   "secondary",
   "secondary_text_size",
@@ -88,6 +89,7 @@ const TEMPLATE_KEYS = [
   "secondary_text_shadow",
   "secondary_line_height",
   "secondary_letter_spacing",
+  "secondary_font_variant",
   
   // --- BADGE ---
   "badge_icon",
@@ -544,6 +546,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--ha-tile-info-primary-line-height": this.getValue("primary_line_height") || "var(--mushic-primary-line-height)",
       "--ha-tile-info-primary-letter-spacing": this.getValue("primary_letter_spacing") || "var(--mushic-primary-letter-spacing)",
       "--mushic-primary-text-shadow": this.getValue("primary_text_shadow"),
+      "--mushic-primary-font-variant": this.getValue("primary_font_variant"),
     
       "--ha-tile-info-secondary-font-size": this.getValue("secondary_text_size") || "var(--mushic-secondary-text-size)",
       "--ha-tile-info-secondary-font-weight": this.getValue("secondary_text_weight") || "var(--mushic-secondary-text-weight)",
@@ -551,6 +554,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--ha-tile-info-secondary-line-height": this.getValue("secondary_line_height") || "var(--mushic-secondary-line-height)",
       "--ha-tile-info-secondary-letter-spacing": this.getValue("secondary_letter_spacing") || "var(--mushic-secondary-letter-spacing)",
       "--mushic-secondary-text-shadow": this.getValue("secondary_text_shadow"),
+      "--mushic-secondary-font-variant": this.getValue("secondary_font_variant"),
     
       // --- BADGE ---
       "--mushic-final-badge-size": badgeSize ||  "var(--mushic-badge-size, calc(var(--mushic-final-shape-size) * 0.444))",
