@@ -115,6 +115,7 @@ const TEMPLATE_KEYS = [
   "card_padding",
   "content_gap",
   "card_shadow",
+  "focus_shadow",
 
   // --- OVERLAY ---
   "overlay_icon",
@@ -578,6 +579,8 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--mushic-card-padding": this.getValue("card_padding"),
       "--mushic-content-gap": this.getValue("content_gap"),
       "--ha-card-box-shadow": this.getValue("card_shadow") || "var(--mushic-card-shadow)",
+      "--mushic-focus-shadow": this.getValue("focus_shadow"),
+
       
       // --- OVERLAY ---
       "--mushic-overlay-icon": overlayIcon,
