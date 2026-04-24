@@ -145,7 +145,7 @@ export const templateCardConfigStruct = assign(
     primary_text_shadow: optional(string()),
 
     secondary: optional(string()),
-    secondary_text_color: optional(string()),
+    secondary_color: optional(string()),
     secondary_font_size: optional(string()),
     secondary_font_weight: optional(string()),
     secondary_font_variant: optional(string()),    
