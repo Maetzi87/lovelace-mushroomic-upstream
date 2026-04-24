@@ -120,7 +120,7 @@ export const AUTO_OVERLAY_ANIMATIONS: Record<
   "mushic:paper":                 { icon: "mushic-paper 5s infinite" } ,
   "mushic:washing-machine-drum":  { icon: "mushic-spin 0.5s linear infinite", icon_origin: "50% 58%" },
   "mushic:washing-machine-waves": { icon: "mushic-wash 5s ease-in-out infinite", icon_origin: "50% 58%" },
-  "mushic:alert":                 { icon: "mushic-offset-blink 1.5s ease-in-out infinite" },
+  "mushic:alert":                 { icon: "mushic-blink 1.5s ease-in-out infinite -750ms" },
   "mushic:no-motion":             { icon: "mushic-blink 1s linear infinite" },
 };  
 
