@@ -29,23 +29,25 @@ export type TemplateCardConfig = LovelaceCardConfig & {
 
   // --- TEXT ---
   primary?: string;
-  primary_text_size?: string;
-  primary_text_weight?: string;
-  primary_text_color?: string;
-  primary_text_shadow?: string;
+  primary_color?: string;  
+  primary_font_size?: string;
+  primary_font_weight?: string;
+  primary_font_variant?: string;  
   primary_line_height?: string;
   primary_letter_spacing?: string;
-  primary_font_variant?: string;
-
+  primary_text_align?: string;
+  primary_text_shadow?: string;
+  
   secondary?: string;
-  secondary_text_size?: string;
-  secondary_text_weight?: string;
-  secondary_text_color?: string;
-  secondary_text_shadow?: string;
+  secondary_color?: string;  
+  secondary_font_size?: string;
+  secondary_font_weight?: string;
+  secondary_font_variant?: string;
   secondary_line_height?: string;
   secondary_letter_spacing?: string;
-  secondary_font_variant?: string;
-
+  secondary_text_align?: string;
+  secondary_text_shadow?: string;
+  
   // --- BADGE ---
   badge_icon?: string;
   badge_color?: string;
@@ -133,22 +135,25 @@ export const templateCardConfigStruct = assign(
 
     // --- TEXT ---
     primary: optional(string()),
-    primary_text_size: optional(string()),
-    primary_text_weight: optional(string()),
-    primary_text_color: optional(string()),
-    primary_text_shadow: optional(string()),
+    primary_color: optional(string()),
+    primary_font_size: optional(string()),
+    primary_font_weight: optional(string()),
+    primary_font_variant: optional(string()),    
     primary_line_height: optional(string()),
     primary_letter_spacing: optional(string()),
-    primary_font_variant: optional(string()),
+    primary_text_align: optional(string()),
+    primary_text_shadow: optional(string()),
 
     secondary: optional(string()),
-    secondary_text_size: optional(string()),
-    secondary_text_weight: optional(string()),
     secondary_text_color: optional(string()),
-    secondary_text_shadow: optional(string()),
+    secondary_font_size: optional(string()),
+    secondary_font_weight: optional(string()),
+    secondary_font_variant: optional(string()),    
     secondary_line_height: optional(string()),
     secondary_letter_spacing: optional(string()),
-    secondary_font_variant: optional(string()),
+    secondary_text_align: optional(string()),
+    secondary_text_shadow: optional(string()),
+
 
     // --- BADGE ---
     badge_icon: optional(string()),
