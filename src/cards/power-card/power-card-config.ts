@@ -68,7 +68,7 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   border_style?: string;     
   card_padding?: string;     
   content_gap?: string;      
-  border?: string;
+  card_shadow?: string;
   vertical?: boolean;
   ripple_color?: string;
 
@@ -172,7 +172,7 @@ export const templateCardConfigStruct = assign(
     border_style: optional(string()),      
     card_padding: optional(string()),      
     content_gap: optional(string()),         
-    border: optional(string()),
+    card_shadow: optional(string()),
     vertical: optional(boolean()),
     ripple_color: optional(string()),
 
