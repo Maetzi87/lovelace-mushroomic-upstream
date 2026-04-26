@@ -26,9 +26,7 @@ export const powerCardStyles = [
         justify-content: space-between;
         background: var(--mushic-card-bg-color, var(--ha-card-background, var(--card-background-color)));
         border-radius: var(--mushic-border-radius, var(--ha-card-border-radius, 12px));
-        border-width: var(--mushic-border-width, var(--ha-card-border-width, 1px));
-        border-style: var(--mushic-border-style, solid);
-        border-color: var(--mushic-border-color, var(--ha-card-border-color, var(--divider-color)));
+        border: var(--mushic-border, var(--mushic-border-width, var(--ha-card-border-width, 1px)) var(--mushic-border-style, solid) var(--mushic-border-color, var(--ha-card-border-color, var(--divider-color))));
       }
 
       ha-card:has(.background:focus-visible) {
