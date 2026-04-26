@@ -143,6 +143,7 @@ export const powerCardStyles = [
          transform-style: preserve-3d;
          backface-visibility: hidden;
          z-index: 0;
+         border: var(--mushic-shape-border, none);
       }
       ha-tile-icon.no-shape .mushic-shape {
         opacity: 0 !important;
@@ -304,12 +305,18 @@ export const powerCardStyles = [
         font-variant: var(--mushic-secondary-font-variant, normal);
         overflow: visible !important; 
       }
-
+      .container.horizontal ha-tile-info {
+        flex: 1;
+      }
       .vertical ha-tile-info .mushic-primary {
         text-align: var(--mushic-primary-text-align, center);
       }
       .vertical ha-tile-info .mushic-secondary {
         text-align: var(--mushic-secondary-text-align, center);
+      }
+      
+      ha-tile-info .mushic-primary:not(:only-child) {
+        margin-bottom: var(--mushic-text-gap, 0px);
       }
 
 /* --- FEATURES --- */
