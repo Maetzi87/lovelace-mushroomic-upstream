@@ -66,11 +66,14 @@ const TEMPLATE_KEYS = [
   "icon",
   "picture",
   "color",
-  "shape_size",
+  "icon_size",
+
+  // --- SHAPE ---
   "shape_color",
+  "shape_size",
   "shape_opacity",
   "shape_hover_opacity",
-  "icon_size",
+  "shape_border",
 
   // --- TEXT ---
   "primary",
@@ -92,6 +95,8 @@ const TEMPLATE_KEYS = [
   "secondary_letter_spacing",
   "secondary_text_align",
   "secondary_text_shadow",
+
+  "text_gap",
   
   // --- BADGE ---
   "badge_icon",
@@ -534,11 +539,15 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
     const style = {
       // --- ICON ---  
       "--mushic-icon-color": cssColor,
+      
       "--mushic-shape-color": shapeCssColor,
       "--mushic-shape-opacity": this.getValue("shape_opacity"),
       "--mushic-shape-hover-opacity": this.getValue("shape_hover_opacity"),
+      "--mushic-shape-border": this.getValue("shape_border"),
+      
       "--mushic-final-shape-size": shapeSize || "var(--mushic-shape-size, 36px)", 
       "--mushic-final-icon-size": iconSize || "var(--mushic-icon-size, calc(var(--mushic-final-shape-size) * 0.666))",
+
       "--tile-color": "var(--mushic-icon-color, var(--state-inactive-color))",
       "--tile-mdc-icon-size": "var(--mushic-final-icon-size)",
       "--tile-icon-size": "var(--mushic-final-shape-size)",
@@ -561,6 +570,8 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--ha-tile-info-secondary-letter-spacing": this.getValue("secondary_letter_spacing") || "var(--mushic-secondary-letter-spacing)",
       "--mushic-secondary-text-align": this.getValue("secondary_text_align"),   
       "--mushic-secondary-text-shadow": this.getValue("secondary_text_shadow"),
+
+      "--mushic-text-gap": this.getValue("text_gap"),
     
       // --- BADGE ---
       "--mushic-final-badge-size": badgeSize ||  "var(--mushic-badge-size, calc(var(--mushic-final-shape-size) * 0.444))",
