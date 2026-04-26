@@ -67,13 +67,14 @@ export type TemplateCardConfig = LovelaceCardConfig & {
 
   // --- CARD STYLING ---
   card_height?: string;
-  card_min_height?: string;
   card_bg_color?: string;
-  border?: string;
-  border_color?: string;     
+  
+  border?: string; 
   border_width?: string;    
-  border_radius?: string;   
-  border_style?: string;     
+  border_style?: string; 
+  border_color?: string;
+  
+  border_radius?: string;  
   card_padding?: string;     
   content_gap?: string;      
   card_shadow?: string;
@@ -165,7 +166,6 @@ export const templateCardConfigStruct = assign(
 
     text_gap: optional(string()),
 
-
     // --- BADGE ---
     badge_icon: optional(string()),
     badge_color: optional(string()),
@@ -180,13 +180,14 @@ export const templateCardConfigStruct = assign(
 
     // --- CARD STYLING ---
     card_height: optional(string()),
-    card_min_height: optional(string()),
     card_bg_color: optional(string()),
+    
     border: optional(string()),
-    border_color: optional(string()),      
     border_width: optional(string()),      
-    border_radius: optional(string()),     
     border_style: optional(string()),      
+    border_color: optional(string()), 
+    
+    border_radius: optional(string()),      
     card_padding: optional(string()),      
     content_gap: optional(string()),         
     card_shadow: optional(string()),
