@@ -587,6 +587,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--mushic-card-height": this.getValue("card_height"),
       "--mushic-card-bg-color": cardBgCssColor,
       "--mushic-ripple-color": rippleCssColor,
+      "--mushic-border": this.getValue("border"),
       "--mushic-border-color": borderCssColor,
       "--mushic-border-width": this.getValue("border_width"),
       "--mushic-border-radius": this.getValue("border_radius"),
