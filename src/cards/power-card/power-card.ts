@@ -112,12 +112,14 @@ const TEMPLATE_KEYS = [
 
   // --- CARD STYLING ---
   "card_height",
-  "card_min_height",
   "card_bg_color",
-  "border_color",
+  
+  "border",
   "border_width",
-  "border_radius",
   "border_style",
+  "border_color",
+  
+  "border_radius",
   "ripple_color",
   "card_padding",
   "content_gap",
