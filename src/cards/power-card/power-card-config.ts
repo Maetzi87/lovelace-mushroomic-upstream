@@ -21,11 +21,14 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   icon?: string;
   picture?: string;
   color?: string;
-  shape_size?: string;
+  icon_size?: string;
+  
+  // --- SHAPE ---
   shape_color?: string;
+  shape_size?: string;  
   shape_opacity?: string;
   shape_hover_opacity?: string;
-  icon_size?: string;
+  shape_border?: string;
 
   // --- TEXT ---
   primary?: string;
@@ -47,6 +50,8 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   secondary_letter_spacing?: string;
   secondary_text_align?: string;
   secondary_text_shadow?: string;
+
+  text_gap?: string;
   
   // --- BADGE ---
   badge_icon?: string;
@@ -64,6 +69,7 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   card_height?: string;
   card_min_height?: string;
   card_bg_color?: string;
+  border?: string;
   border_color?: string;     
   border_width?: string;    
   border_radius?: string;   
@@ -127,11 +133,14 @@ export const templateCardConfigStruct = assign(
     icon: optional(string()),
     picture: optional(string()),
     color: optional(string()),
-    shape_size: optional(string()),
+    icon_size: optional(string()),
+
+    // --- SHAPE ---
     shape_color: optional(string()),
+    shape_size: optional(string()),
     shape_opacity: optional(string()),
     shape_hover_opacity: optional(string()),
-    icon_size: optional(string()),
+    shape_border: optional(string()),
 
     // --- TEXT ---
     primary: optional(string()),
@@ -154,6 +163,8 @@ export const templateCardConfigStruct = assign(
     secondary_text_align: optional(string()),
     secondary_text_shadow: optional(string()),
 
+    text_gap: optional(string()),
+
 
     // --- BADGE ---
     badge_icon: optional(string()),
@@ -171,6 +182,7 @@ export const templateCardConfigStruct = assign(
     card_height: optional(string()),
     card_min_height: optional(string()),
     card_bg_color: optional(string()),
+    border: optional(string()),
     border_color: optional(string()),      
     border_width: optional(string()),      
     border_radius: optional(string()),     
