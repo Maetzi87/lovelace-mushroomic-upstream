@@ -101,7 +101,7 @@ All variables are optional.
 
 ### 🎨 Advanced Options - Unleash the _Power_ of Power-Card (currently YAML-only)
 
-All options are fully supported but some must be set manually in YAML.
+All options are fully supported but advanced options must be set manually in YAML.
 (Wiki in progress)
 
 - [Icon Styling](/docs/icon_styling.md)
