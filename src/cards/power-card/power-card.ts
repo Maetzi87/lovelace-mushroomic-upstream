@@ -67,6 +67,8 @@ const TEMPLATE_KEYS = [
   "picture",
   "color",
   "icon_size",
+  "icon_rotation",
+  "icon_clip_path",
 
   // --- SHAPE ---
   "shape_color",
@@ -105,6 +107,8 @@ const TEMPLATE_KEYS = [
   "badge_size",
   "badge_icon_size",
   "badge_icon_color",
+  "badge_icon_rotation",
+  "badge_icon_clip_path",
   "badge_text_size",
   "badge_text_color",
   "badge_margin_top",
@@ -132,21 +136,25 @@ const TEMPLATE_KEYS = [
   "overlay_color",
   "overlay_opacity",
   "overlay_size",
+  "overlay_rotation",
+  "overlay_clip_path",
   "overlay_margin",
 
   // --- ANIMATIONS ---
   "animation_color",
+  
   "icon_animation",
   "icon_origin",
-  "icon_clip_path",
+  
   "shape_animation",
+  
   "badge_animation",
   "badge_icon_animation",
-  "badge_icon_origin",  
-  "badge_icon_clip_path",
+  "badge_icon_origin",
+  
   "overlay_animation",
   "overlay_origin",
-  "overlay_clip_path",
+
   "keyframes",
 
   // --- FEATURES ---
@@ -541,6 +549,8 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
     const style = {
       // --- ICON ---  
       "--mushic-icon-color": cssColor,
+      "--mushic-icon-rotation": this.getValue("icon_rotation"),
+      "--mushic-icon-clip-path": this.getValue("icon_clip_path"),
       
       "--mushic-shape-color": shapeCssColor,
       "--mushic-shape-opacity": this.getValue("shape_opacity"),
@@ -581,6 +591,8 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--mushic-final-badge-text-size": badgeTextSize || "var(--mushic-badge-text-size, calc(var(--mushic-final-badge-size) * 0.5))", 
       "--mushic-badge-color": badgeCssColor,
       "--mushic-badge-icon-color": badgeIconCssColor,
+      "--mushic-badge-icon-rotation": this.getValue("badge_icon_rotation"),
+      "--mushic-badge-icon-clip-path": this.getValue("badge_icon_clip_path"),
       "--mushic-badge-text-color": badgeTextCssColor,
       "--mushic-badge-margin-top": this.getValue("badge_margin_top"),
       "--mushic-badge-margin-right": this.getValue("badge_margin_right"),  
@@ -606,21 +618,20 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--mushic-overlay-color": overlayCssColor,
       "--mushic-overlay-opacity": this.getValue("overlay_opacity"),
       "--mushic-overlay-size": this.getValue("overlay_size"),
+      "--mushic-overlay-rotation": this.getValue("overlay_rotation"),
       "--mushic-overlay-margin": this.getValue("overlay_margin"),
+      "--mushic-overlay-clip-path": this.getValue("overlay_clip_path"),
 
       // --- ANIMATIONS ---
       "--mushic-icon-animation": this._resolveAnim(this.getValue("icon_animation"), autoAnim.icon),
       "--mushic-icon-origin": this.getValue("icon_origin") || autoAnim.icon_origin,
-      "--mushic-icon-clip-path": this.getValue("icon_clip_path"),
       "--mushic-shape-animation": this._resolveAnim(this.getValue("shape_animation"), autoAnim.shape),
       "--mushic-screen-animation": screenAnimation,
       "--mushic-badge-animation": this._resolveAnim(this.getValue("badge_animation"), autoBadgeAnim.shape),
       "--mushic-badge-icon-animation": this._resolveAnim(this.getValue("badge_icon_animation"), autoBadgeAnim.icon),
       "--mushic-badge-icon-origin": this.getValue("badge_icon_origin") || autoBadgeAnim.icon_origin,
-      "--mushic-badge-icon-clip-path": this.getValue("badge_icon_clip_path"),
       "--mushic-overlay-animation": this._resolveAnim(this.getValue("overlay_animation"), autoOverlayAnim.icon),
       "--mushic-overlay-origin": this.getValue("overlay_origin") || autoOverlayAnim.icon_origin,
-      "--mushic-overlay-clip-path": this.getValue("overlay_clip_path"),
       "--mushic-animation-color": this.getValue("animation_color"),
 
       // --- FEATURES ---
@@ -628,8 +639,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--mushic-features-color": featuresCssColor,
       "--mushic-features-height": this.getValue("features_height"),
       "--mushic-features-padding": this.getValue("features_padding"),
-      "--mushic-features-gap": this.getValue("features_gap"),
-      "--ha-card-feature-gap": "var(--mushic-features-gap, 12px)",
+      "--ha-card-feature-gap": this.getValue("features_gap") || "var(--mushic-features-gap, 12px)",
     };
 
     // --- SCREEN MASK ---
@@ -697,7 +707,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
         ? `calc(
              ${contentHeight}
              + calc(${featuresCount} * var(--mushic-features-height, 42px))
-             + calc(${Math.max(0, featuresCount - 1)} * var(--mushic-features-gap, 12px))
+             + calc(${Math.max(0, featuresCount - 1)} * var(--ha-card-feature-gap, 12px))
              + calc(${padTop} + ${padBottom})
            )`
         : contentHeight;
