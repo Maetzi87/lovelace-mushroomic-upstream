@@ -22,6 +22,9 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   picture?: string;
   color?: string;
   icon_size?: string;
+  icon_origin?: string;
+  icon_rotation?: string;  
+  icon_clip_path?: string;
   
   // --- SHAPE ---
   shape_color?: string;
@@ -57,13 +60,19 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   badge_icon?: string;
   badge_color?: string;
   badge_text?: string;
+  
   badge_size?: string;
+  badge_margin_top?: string;    
+  badge_margin_right?: string; 
+  
   badge_icon_size?: string;
   badge_icon_color?: string;
+  badge_icon_origin?: string;  
+  badge_icon_rotation?: string;
+  badge_icon_clip_path?: string; 
+  
   badge_text_size?: string;     
   badge_text_color?: string;
-  badge_margin_top?: string;    
-  badge_margin_right?: string;   
 
   // --- CARD STYLING ---
   card_height?: string;
@@ -87,20 +96,17 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   overlay_opacity?: string;
   overlay_size?: string;
   overlay_margin?: string;
+  overlay_origin?: string;
+  overlay_rotation?: string;
+  overlay_clip_path?: string;
 
   // --- ANIMATIONS ---
   animation_color?: string;
   icon_animation?: string;
-  icon_origin?: string;
-  icon_clip_path?: string;
   shape_animation?: string;
   badge_animation?: string;
   badge_icon_animation?: string;
-  badge_icon_origin?: string;  
-  badge_icon_clip_path?: string; 
   overlay_animation?: string;
-  overlay_origin?: string;
-  overlay_clip_path?: string;
   keyframes?: string;
 
   // --- INTERACTIONS ---
@@ -135,6 +141,9 @@ export const templateCardConfigStruct = assign(
     picture: optional(string()),
     color: optional(string()),
     icon_size: optional(string()),
+    icon_origin: optional(string()),
+    icon_rotation: optional(string()),    
+    icon_clip_path: optional(string()),
 
     // --- SHAPE ---
     shape_color: optional(string()),
@@ -173,6 +182,9 @@ export const templateCardConfigStruct = assign(
     badge_size: optional(string()),
     badge_icon_size: optional(string()),
     badge_icon_color: optional(string()),
+    badge_icon_origin: optional(string()),
+    badge_icon_rotation: optional(string()),
+    badge_icon_clip_path: optional(string()),
     badge_text_size: optional(string()),     
     badge_text_color: optional(string()),
     badge_margin_top: optional(string()),    
@@ -200,20 +212,17 @@ export const templateCardConfigStruct = assign(
     overlay_opacity: optional(string()),
     overlay_size: optional(string()),
     overlay_margin: optional(string()),
+    overlay_origin: optional(string()),
+    overlay_rotation: optional(string()),
+    overlay_clip_path: optional(string()),
 
     // --- ANIMATIONS ---
     animation_color: optional(string()),
     icon_animation: optional(string()),
-    icon_origin: optional(string()),
-    icon_clip_path: optional(string()),
     shape_animation: optional(string()),
     badge_animation: optional(string()),
     badge_icon_animation: optional(string()),
-    badge_icon_origin: optional(string()),
-    badge_icon_clip_path: optional(string()),
     overlay_animation: optional(string()),
-    overlay_origin: optional(string()),
-    overlay_clip_path: optional(string()),
     keyframes: optional(string()),
 
     // --- INTERACTIONS ---
