@@ -78,7 +78,7 @@ All variables are optional.
 | `area`                    | —              | ❌       | —                        | Area context for features |
 | `primary`                 | —              | ✔        | text / template          | Primary text content |
 | `secondary`               | —              | ✔        | text / template          | Secondary text content |
-| `color`                   | —              | ✔        | hex, rgb(), rgba(), var() | Icon/shape color |
+| `color`                   | —              | ✔        | hex, rgb(), rgba(), var() | Icon color |
 | `icon`                    | —              | ✔        | any installed icon       | Icon |
 | `picture`                 | —              | ✔        | URL                      | Picture URL instead of icon |
 | `badge_icon`              | —              | ✔        | any installed icon       | Badge icon |
