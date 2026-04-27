@@ -103,7 +103,7 @@ All variables are optional.
 These options are fully supported but must be set manually in YAML.
 (Wiki in progress)
 
-- [Icon Styling](/docs/examples/icon_styling.md)
+- [Icon Styling](/docs/icon_styling.md)
 - Text Styling
 - Card Styling
 - Badge Styling
