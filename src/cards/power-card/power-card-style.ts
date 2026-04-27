@@ -24,7 +24,7 @@ export const powerCardStyles = [
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background: var(--mushic-card-bg-color, var(--ha-card-background, var(--card-background-color)));
+/*        background: var(--mushic-card-bg-color, var(--ha-card-background, var(--card-background-color))); */
         border-radius: var(--mushic-border-radius, var(--ha-card-border-radius, 12px));
         border: var(--mushic-border, var(--mushic-border-width, var(--ha-card-border-width, 1px)) var(--mushic-border-style, solid) var(--mushic-border-color, var(--ha-card-border-color, var(--divider-color))));
       }
@@ -297,14 +297,12 @@ export const powerCardStyles = [
         text-shadow: var(--mushic-primary-text-shadow, none);
         font-variant: var(--mushic-primary-font-variant, normal);
         overflow: visible !important;
-        margin-right: calc(-1 * var(--ha-tile-info-primary-letter-spacing) + 0.1px);
       }
       ha-tile-info .mushic-secondary {
         text-align: var(--mushic-secondary-text-align, left);
         text-shadow: var(--mushic-secondary-text-shadow, none);
         font-variant: var(--mushic-secondary-font-variant, normal);
         overflow: visible !important;
-        margin-right: calc(-1 * var(--ha-tile-info-secondary-letter-spacing) + 0.4px );
       }
       
       .vertical ha-tile-info .mushic-primary {
@@ -312,6 +310,16 @@ export const powerCardStyles = [
       }
       .vertical ha-tile-info .mushic-secondary {
         text-align: var(--mushic-secondary-text-align, center);
+      }
+      ha-tile-info .mushic-primary::after {
+        content: "";
+        display: inline-block;
+        width: calc(-1 * var(--ha-tile-info-primary-letter-spacing));
+      }
+      ha-tile-info .mushic-secondary::after {
+        content: "";
+        display: inline-block;
+        width: calc(-1 * var(--ha-tile-info-secondary-letter-spacing));
       }
       
       ha-tile-info .mushic-primary:not(:only-child) {
