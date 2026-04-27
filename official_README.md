@@ -5,9 +5,9 @@
 ---
 ## 📖 What this is
 
-Mushroomic Power Card builds on the clean, elegant design language of the popular Mushroom ecosystem, but focuses on **extended customization**, **template‑driven styling**, and **fine‑grained control** over typography and sizing.
+Mushroomic Power Card builds on the clean, elegant design language of the popular Mushroom ecosystem, but focuses on **extended customization**, **template-driven styling**, **typography-control** and **animations**.
 
-Mushroomic Cards mimic the familiar Mushroom look while adding the flexibility many users (including me) have been missing.
+Mushroomic Cards mimic the familiar Mushroom look while adding the flexibility many users (including me) have been missing, without tinkering around with cardmod.
 
 ---
 
@@ -17,16 +17,17 @@ Mushroomic Cards mimic the familiar Mushroom look while adding the flexibility m
 - 📐 **Full control** over all sizes and colors
 - ✒️ **Advanced font styling** (size, weight, color, spacing, line height)
 - 🧩 **Overlay icons** for dual animations and overlay effects   
-- 💫 **AUTO-ANIMATIONS** for many [_Mushroomic Icons_](https://github.com/Maetzi87/mushroomic-icons)
+- 💫 **AUTO-ANIMATIONS** for many [Mushroomic Icons](https://github.com/Maetzi87/mushroomic-icons)
 - ⭐ **Custom animations** -  easy and direct configuration in yaml
 - 🔎 **Automatic scaling** - no need to set every size manually
-- 📝 **Template support** for all visual fields
+- 💞 **Template support** for all visual fields
+- 📝 **Theme support** for Mushic Themes
 
 ---
 
 ## 🧰 Installation
 
-Mushroomic is completely independent and can be installed alongside Mushroom without conflicts.  
+Mushroomic Cards is completely independent and can be installed alongside Mushroom without conflicts.  
 Your existing Mushroom cards will continue to work as usual.
 
 ### HACS (Custom Repository)
@@ -63,7 +64,7 @@ resources:
 
 ## 🔧 Available Options
 
-The Mushroomic Resize Card supports a wide range of fields.  
+The Mushroomic Power Card supports a wide range of fields.  
 Fields marked **Template** accept Jinja‑style Home Assistant templates.
 
 
