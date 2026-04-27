@@ -1,25 +1,24 @@
 # 🍄 Mushroomic Cards - Mushroom on steroids
 
+[![Mushroomic Cards Demo](./docs/examples/demo.png)](./docs/examples/demo.md)
+
+---
+## 📖 What this is
+
 Mushroomic Power Card builds on the clean, elegant design language of the popular Mushroom ecosystem, but focuses on **extended customization**, **template‑driven styling**, and **fine‑grained control** over typography and sizing.
 
-Mushroomic Cards mimic the familiar Mushroom look while adding the flexibility many users have been missing.
+Mushroomic Cards mimic the familiar Mushroom look while adding the flexibility many users (including me) have been missing.
 
 ---
 
-## 🌟 Key Enhancements
+## 🌟 Features
 
-- **Template support** for all visual fields  
-- **Dynamic tile, icon, and badge sizing**  
-- **Advanced font styling** (size, weight, color, spacing, line height)  
-- **Badge styling** (icon size, color, text badge option)  
-- **Automatic scaling**  
-- **Weather SVG support**  
-- **Inline or bottom feature positioning**  
-- **Vertical layout mode**  
-- **Multiline secondary text**  
-- **Auto-animated Icons**
-
-All while staying lightweight, fast, and visually consistent with Mushroom — but far more customizable.
+- 🎨 **Style EVERYTHING** - completely **without cardmod!!**  
+- 📐 **Full control** over all sizes and colors
+- ✒️ **Advanced font styling** (size, weight, color, spacing, line height)   
+- 💫 **AUTO-ANIMATIONS** for many [_Mushroomic Icons_](https://github.com/Maetzi87/mushroomic-icons)
+- 🔎 **Automatic scaling** - no need to set every size manually
+- 📝 **Template support** for all visual fields
 
 ---
 
@@ -99,7 +98,7 @@ All variables are optional.
 \* Default only when `entity` is set.
 
 
-### 🧪 Advanced Options - Unleash the _Power_ of Power-Card (currently YAML-only)
+### 🎨 Advanced Options - Unleash the _Power_ of Power-Card (currently YAML-only)
 
 These options are fully supported but must be set manually in YAML.
 (Wiki in progress)
