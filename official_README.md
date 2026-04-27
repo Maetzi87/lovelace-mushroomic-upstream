@@ -1,6 +1,6 @@
 # 🍄 Mushroomic Cards - Mushroom on steroids
 
-[![Mushroomic Cards Demo](./docs/examples/demo.png)](./docs/examples/demo.md)
+[![Mushroomic Cards Demo](/docs/examples/demo.png)](/docs/examples/demo.md)
 
 ---
 ## 📖 What this is
@@ -103,7 +103,7 @@ All variables are optional.
 These options are fully supported but must be set manually in YAML.
 (Wiki in progress)
 
-- Icon Styling
+- [Icon Styling](/docs/examples/icon_styling.md)
 - Text Styling
 - Card Styling
 - Badge Styling
