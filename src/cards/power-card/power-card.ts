@@ -230,7 +230,6 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
     super.updated(changedProps);
   
     if (!this._config || !this.hass) return;
-    this.style.setProperty("--mushic-force-update", Date.now().toString());
     this._tryConnect();
     this.dispatchEvent(new Event("iron-resize", { bubbles: true, composed: true }));
   }
