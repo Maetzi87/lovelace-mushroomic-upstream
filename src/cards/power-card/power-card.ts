@@ -646,6 +646,16 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
     }
 
   // --- CALCULATE CARD HEIGHT ---
+    
+    // -- Card Padding (top + bottom)
+    const content = this.shadowRoot?.querySelector(".content");
+    let cardPadTop = 0;
+    let cardPadBottom = 0;
+    if (content) {
+      const cs = getComputedStyle(content);
+      cardPadTop = parseFloat(cs.paddingTop);
+      cardPadBottom = parseFloat(cs.paddingBottom);
+    }
     // -- Features-Padding
     const featuresPad = this.shadowRoot?.querySelector("hui-card-features");
     let padTop = 0;
@@ -668,15 +678,18 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
     const secondaryTextHeight = this._config.vertical && secondary
       ? "calc(var(--ha-tile-info-secondary-font-size, var(--ha-font-size-s, 12px)) * var(--ha-tile-info-secondary-line-height, var(--ha-line-height-condensed, 1.2)))"
       : "0px";
-    const gapHeight = this._config.vertical && primary && secondary
+    const gapHeight = this._config.vertical && primary
       ? "var(--mushic-content-gap, 10px)"
+      : "0px";
+    const textGapHeight = this._config.vertical && primary && secondary
+      ? "var(--mushic-text-gap, 0px)"
       : "0px";
 
     // -- Content = Shape + Text --
     const contentHeight = 
       `calc(
-          ${shapeHeight} + ${primaryTextHeight} + ${secondaryTextHeight} + ${gapHeight}
-          + calc(var(--mushic-card-padding, 10px) * 2)
+          ${shapeHeight} + ${primaryTextHeight} + ${secondaryTextHeight} + ${gapHeight} + ${textGapHeight}
+          + ${cardPadTop + cardPadBottom}px
       )`;
     // -- Card Heigt = Content + Features
     const finalHeight =
