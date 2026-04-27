@@ -15,6 +15,7 @@ export const powerCardStyles = [
         position: relative;
         z-index: 0;
         height: var(--mushic-card-height, var(--mushic-card-auto-height));
+        width: var(--mushic-card-width, 100%);
         --ha-ripple-color: var(--mushic-ripple-color, var(--mushic-icon-color, var(--state-inactive-color)));
         --ha-ripple-hover-opacity: 0.04;
         --ha-ripple-pressed-opacity: 0.12;
