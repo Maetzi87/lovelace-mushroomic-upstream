@@ -1,0 +1,98 @@
+type: grid
+cards:
+  - features:
+      - type: light-brightness
+    type: custom:mushroomic-power-card
+    primary: Style it
+    secondary: like mushroom
+    icon: mdi:mushroom
+    features_position: bottom
+    entity: light.deckenfluter_local
+    badge_icon: mdi:access-point
+    badge_color: red
+    tap_action:
+      action: more-info
+    color: "{% if is_state(config.entity, 'on')%} red {% else %} blue {%endif%}"
+  - type: custom:mushroomic-power-card
+    primary: Style it
+    secondary: different
+    icon: mdi:mushroom
+    features_position: bottom
+    entity: light.deckenfluter_local
+    badge_icon: mdi:access-point
+    badge_color: red
+    shape_size: 50px
+    primary_font_variant: small-caps
+    tap_action:
+      action: none
+    color: "{% if is_state(config.entity, 'on')%} red {% else %} blue {%endif%}"
+    vertical: false
+    border_color: black
+    features_color: green
+    primary_text_shadow: 0 0 5px rgba(0,0,0,0.5)
+    features:
+      - type: light-brightness
+  - type: custom:mushroomic-power-card
+    entity: light.deckenfluter_local
+    icon: mdi:mushroom
+    primary: Style it
+    secondary: NEW
+    color: "{% if is_state(config.entity, 'off')%} pink {% else %} purple {%endif%}"
+    icon_size: 30px
+    shape_color: "#F7D774"
+    shape_size: 70px
+    shape_opacity: "0.5"
+    shape_border: 3px dotted black
+    overlay_icon: mdi:square-outline
+    overlay_color: pink
+    overlay_size: 60px
+    badge_icon: mdi:alert-circle
+    badge_color: blue
+    badge_size: 20px
+    badge_icon_color: darkblue
+    primary_color: darkblue
+    primary_font_size: 20px
+    primary_font_weight: "300"
+    primary_font_variant: small-caps;
+    primary_text_align: center
+    primary_letter_spacing: 1.2px
+    secondary_color: hsl(207, 63%, 54%)
+    secondary_letter_spacing: 21px
+    secondary_font_size: 17px
+    secondary_font_weight: "500"
+    secondary_text_align: center
+    card_bg_color: rgba(50, 72, 168, 0.2)
+    card_padding: 15px 15px 15px 15px
+    border_color: "#3248a8"
+    border_width: 5px
+    features_position: bottom
+    features:
+      - type: light-brightness
+    features_color: black
+    features_height: 20px
+    features_padding: 0px 15px 15px 15px
+    card_shadow: 0 0 10px blue
+    card_height: 140px
+    border_radius: 30px
+    tap_action:
+      action: more-info
+  - type: custom:mushroomic-power-card
+    primary: Style it
+    secondary: however YOU want
+    primary_font_variant: all-small-caps
+    primary_font_size: 30px
+    primary_text_align: left
+    primary_text_shadow: 2px 2px 5px white
+    text_gap: 70px
+    secondary_color: "#ffffff"
+    secondary_font_size: 15px
+    secondary_font_weight: "500"
+    secondary_text_align: right
+    secondary_text_shadow: 1px -1px 5px black
+    card_height: 160px
+    card_padding: 0px 10px 5px 10px
+    card_bg_color: "linear-gradient(135deg, #ff2e00, #4a0000)"
+    card_shadow: 0 0 10px
+    border: 2px solid white
+    vertical: true
+column_span: 2
