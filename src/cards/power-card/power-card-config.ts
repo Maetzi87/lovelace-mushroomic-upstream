@@ -76,6 +76,7 @@ export type TemplateCardConfig = LovelaceCardConfig & {
 
   // --- CARD STYLING ---
   card_height?: string;
+  card_width?: string;
   card_bg_color?: string;
   
   border?: string; 
@@ -192,6 +193,7 @@ export const templateCardConfigStruct = assign(
 
     // --- CARD STYLING ---
     card_height: optional(string()),
+    card_width: optional(string()),    
     card_bg_color: optional(string()),
     
     border: optional(string()),
