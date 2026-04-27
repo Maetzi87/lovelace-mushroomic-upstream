@@ -82,7 +82,7 @@ export const powerCardStyles = [
         flex-direction: column;
         justify-content: center;
       }
-      .vertical ha-tile-info {
+      .vertical .mushic-info {
         width: 100%;
         flex: none;
       }
@@ -283,45 +283,54 @@ export const powerCardStyles = [
       }
       
  /* --- TEXT CONTAINER --- */     
-      ha-tile-info {
+      .mushic-info {
         position: relative;
         width: 100%;
         min-width: 0;
         transition: background-color 180ms ease-in-out;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
       }
       
-      ha-tile-info .mushic-primary {
+      /* PRIMARY */
+      .mushic-info .mushic-primary {
+        color: var(--ha-tile-info-primary-color);
+        font-size: var(--ha-tile-info-primary-font-size);
+        font-weight: var(--ha-tile-info-primary-font-weight);
+        font-variant: var(--mushic-primary-font-variant, normal);
+        line-height: var(--ha-tile-info-primary-line-height);
+        letter-spacing: var(--ha-tile-info-primary-letter-spacing);
         text-align: var(--mushic-primary-text-align, left);
         text-shadow: var(--mushic-primary-text-shadow, none);
-        font-variant: var(--mushic-primary-font-variant, normal);
-        overflow: visible !important;
-      }
-      ha-tile-info .mushic-secondary {
-        text-align: var(--mushic-secondary-text-align, left);
-        text-shadow: var(--mushic-secondary-text-shadow, none);
-        font-variant: var(--mushic-secondary-font-variant, normal);
-        overflow: visible !important;
+        overflow: visible;
+        margin-right: calc(-1 * var(--ha-tile-info-primary-letter-spacing));
       }
       
-      .vertical ha-tile-info .mushic-primary {
+      .vertical .mushic-info .mushic-primary {
         text-align: var(--mushic-primary-text-align, center);
       }
-      .vertical ha-tile-info .mushic-secondary {
-        text-align: var(--mushic-secondary-text-align, center);
-      }
-      ha-tile-info .mushic-primary::after {
-        content: "";
-        display: inline-block;
-        width: calc(-1 * var(--ha-tile-info-primary-letter-spacing));
-      }
-      ha-tile-info .mushic-secondary::after {
-        content: "";
-        display: inline-block;
-        width: calc(-1 * var(--ha-tile-info-secondary-letter-spacing));
+      
+      /* SECONDARY */
+      .mushic-info .mushic-secondary {
+        color: var(--ha-tile-info-secondary-color);
+        font-size: var(--ha-tile-info-secondary-font-size);
+        font-weight: var(--ha-tile-info-secondary-font-weight);
+        font-variant: var(--mushic-secondary-font-variant, normal);
+        line-height: var(--ha-tile-info-secondary-line-height);
+        letter-spacing: var(--ha-tile-info-secondary-letter-spacing);
+        text-align: var(--mushic-secondary-text-align, left);
+        text-shadow: var(--mushic-secondary-text-shadow, none);
+        overflow: visible;
+        margin-right: calc(-1 * var(--ha-tile-info-secondary-letter-spacing));
       }
       
-      ha-tile-info .mushic-primary:not(:only-child) {
+      .vertical .mushic-info .mushic-secondary {
+        text-align: var(--mushic-secondary-text-align, center);
+      }
+
+       /* TEXT GAP */
+      .mushic-info .mushic-primary:not(:only-child) {
         margin-bottom: var(--mushic-text-gap, 0px);
       }
 
@@ -351,14 +360,14 @@ export const powerCardStyles = [
       .container.feature-only.horizontal hui-card-features {
         padding: var(--mushic-features-padding, 0 12px) !important;
       }
-      .container.horizontal .content:not(:has(ha-tile-info)) {
+      .container.horizontal .content:not(:has(.mushic-info)) {
         flex: none;
       }
-      .container.horizontal:not(:has(ha-tile-info)) hui-card-features {
+      .container.horizontal:not(:has(.mushic-info)) hui-card-features {
         width: auto;
         flex: 1;
       }
-      .container.horizontal:not(:has(ha-tile-info)) .content {
+      .container.horizontal:not(:has(.mushic-info)) .content {
         flex: none;
       }
     `,
