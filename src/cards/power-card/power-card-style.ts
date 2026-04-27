@@ -180,6 +180,7 @@ export const powerCardStyles = [
         color: var(--mushic-icon-color, var(--state-inactive-color));
         animation: var(--mushic-icon-animation);
         transform-origin: var(--mushic-icon-origin, 50% 50%);
+        transform: rotate(var(--mushic-icon-rotation, 0deg));
         clip-path: var(--mushic-icon-clip-path, none);
         position: relative;
         z-index: 2;
@@ -227,6 +228,7 @@ export const powerCardStyles = [
          left: 50%;
          width: var(--mushic-overlay-size, var(--mushic-icon-size, var(--tile-mdc-icon-size)));
          height: var(--mushic-overlay-size, var(--mushic-icon-size, var(--tile-mdc-icon-size)));
+         margin: var(--mushic-overlay-margin, 0 0 0 0);
          pointer-events: none;
          z-index: 3;
          display: flex;
@@ -242,6 +244,7 @@ export const powerCardStyles = [
          --mdc-icon-size: var(--mushic-overlay-size, var(--mushic-final-icon-size, var(--tile-mdc-icon-size)));
          animation: var(--mushic-overlay-animation);
          transform-origin: var(--mushic-overlay-origin, 50% 50%);
+         transform: rotate(var(--mushic-overlay-rotation, 0deg));
          clip-path: var(--mushic-overlay-clip-path, none);
          transform-style: preserve-3d;
          backface-visibility: hidden;
@@ -261,8 +264,6 @@ export const powerCardStyles = [
         justify-content: center;
         pointer-events: none;
         animation: var(--mushic-badge-animation);
-        transform-origin: var(--mushic-badge-icon-origin, 50% 50%);
-        clip-path: var(--mushic-badge-icon-clip-path, none);
         z-index: 4;
       }
       .mushic-badge ha-icon {
@@ -271,6 +272,9 @@ export const powerCardStyles = [
         display: flex;
         align-items: center;
         justify-content: center;
+        transform-origin: var(--mushic-badge-icon-origin, 50% 50%);
+        transform: rotate(var(--mushic-badge-icon-rotation, 0deg));
+        clip-path: var(--mushic-badge-icon-clip-path, none);
         animation: var(--mushic-badge-icon-animation);
         backface-visibility: hidden;
         transform-style: preserve-3d;
