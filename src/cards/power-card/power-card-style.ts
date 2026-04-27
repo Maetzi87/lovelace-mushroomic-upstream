@@ -305,6 +305,7 @@ export const powerCardStyles = [
       }
       .container.horizontal ha-tile-info {
         flex: 1;
+        min-width: 0;
       }
       .vertical ha-tile-info .mushic-primary {
         text-align: var(--mushic-primary-text-align, center);
