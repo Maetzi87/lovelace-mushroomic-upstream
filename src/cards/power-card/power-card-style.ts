@@ -297,17 +297,16 @@ export const powerCardStyles = [
         text-shadow: var(--mushic-primary-text-shadow, none);
         font-variant: var(--mushic-primary-font-variant, normal);
         overflow: visible !important;
+        margin-right: calc(-1 * var(--ha-tile-info-primary-letter-spacing) + 0.1px);
       }
       ha-tile-info .mushic-secondary {
         text-align: var(--mushic-secondary-text-align, left);
         text-shadow: var(--mushic-secondary-text-shadow, none);
         font-variant: var(--mushic-secondary-font-variant, normal);
-        overflow: visible !important; 
+        overflow: visible !important;
+        margin-right: calc(-1 * var(--ha-tile-info-secondary-letter-spacing) + 0.4px );
       }
-   /*   .container.horizontal ha-tile-info {
-        flex: 1;
-        min-width: 0;
-      } */
+      
       .vertical ha-tile-info .mushic-primary {
         text-align: var(--mushic-primary-text-align, center);
       }
