@@ -15,7 +15,8 @@ Mushroomic Cards mimic the familiar Mushroom look while adding the flexibility m
 
 - 🎨 **Style EVERYTHING** - completely **without cardmod!!**  
 - 📐 **Full control** over all sizes and colors
-- ✒️ **Advanced font styling** (size, weight, color, spacing, line height)   
+- ✒️ **Advanced font styling** (size, weight, color, spacing, line height)
+- 🧩 **Overlay icons** for dual animations and overlay effects   
 - 💫 **AUTO-ANIMATIONS** for many [_Mushroomic Icons_](https://github.com/Maetzi87/mushroomic-icons)
 - 🔎 **Automatic scaling** - no need to set every size manually
 - 📝 **Template support** for all visual fields
