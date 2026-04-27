@@ -18,24 +18,29 @@ Only basic styling options are available in the editor (yet).
 ## YAML
 Advanced styling options need to be set in yaml. All of them are **template-aware**.
 
-| YAML Options           | Default                      | Template | Allowed Units / Formats        | Description |
-|------------------------|------------------------------|----------|--------------------------------|-------------|
-| `icon_size`            | 66.6% of shape_size          | ✔        | px, rem, %, calc()             | Icon size |
-| `icon_rotation`        | '0deg'                       | ✔        | deg, turn, rad                 | Icon rotation |
-| `icon_clip_path`       | none                         | ✔        | CSS clip-path                  | Clip mask for icon |
-| `shape_color`          | color                        | ✔        | hex, rgb(), rgba(), var()      | Icon background color |
-| `shape_opacity`        | '0.2'                        | ✔        | numeric 0–1                    | Icon background opacity |
-| `shape_hover_opacity`  | '0.35'                       | ✔        | numeric 0–1                    | Icon background hover opacity |
-| `shape_border`         | none                         | ✔        | shorthand (width style color)  | Border around the icon shape |
+| YAML Options           | Default                      | Allowed Units / Formats        | Description |
+|------------------------|------------------------------|--------------------------------|-------------|
+| `icon_size`            | 66.6% of shape_size          | px, rem, %, calc()             | Icon size |
+| `icon_origin`          | '50% 50%'                    | CSS transform-origin           | Transform origin of Icon (for animations and rotation)|
+| `icon_rotation`        | '0deg'                       | deg, turn, rad                 | Icon rotation |
+| `icon_clip_path`       | none                         | CSS clip-path                  | Clip mask for icon |
+| `shape_color`          | color                        | hex, rgb(), rgba(), var()      | Icon background color |
+| `shape_opacity`        | '0.2'                        | numeric 0–1                    | Icon background opacity |
+| `shape_hover_opacity`  | '0.35'                       | numeric 0–1                    | Icon background hover opacity |
+| `shape_border`         | none                         | shorthand (width style color)  | Border around the icon shape |
 
 # 🧩 Overlay Icon - Options
 The overlay icon can be used for dual animations or static overlays. Overlay is yaml-only, all options are **template-aware**.
-| YAML Options           | Default                      | Template | Allowed Units / Formats        | Description |
-|------------------------|------------------------------|----------|--------------------------------|-------------|
-| `overlay_icon`         | auto                         | ✔        | any installed icon             | Overlay icon |
-| `overlay_color`        | color                        | ✔        | hex, rgb(), rgba(), var()      | Overlay color |
-| `overlay_opacity`      | 1                            | ✔        | numeric 0–1                    | Overlay opacity |
-| `overlay_size`         | icon_size                    | ✔        | px, rem, %, calc()             | Overlay size |
-| `overlay_margin`       | '0 0 0 0'                    | ✔        | px, rem, %, calc()             | Overlay margin (top right bottom left) |
-| `overlay_rotation`     | '0deg'                       | ✔        | deg, turn, rad                 | Overlay rotation |
-| `overlay_clip_path`    | none                         | ✔        | CSS clip-path                  | Clip mask for overlay |
+| YAML Options           | Default                      | Allowed Units / Formats        | Description |
+|------------------------|------------------------------|--------------------------------|-------------|
+| `overlay_icon`         | auto                         | any installed icon             | Overlay icon |
+| `overlay_color`        | color                        | hex, rgb(), rgba(), var()      | Overlay color |
+| `overlay_opacity`      | 1                            | numeric 0–1                    | Overlay opacity |
+| `overlay_size`         | icon_size                    | px, rem, %, calc()             | Overlay size |
+| `overlay_margin`       | '0 0 0 0'                    | px, rem, %, calc()             | Overlay margin (top right bottom left) |
+| `overlay_origin`       | '50% 50%'                    | CSS transform-origin           | Transform origin of overlay (for animations and rotation)|
+| `overlay_rotation`     | '0deg'                       | deg, turn, rad                 | Overlay rotation |
+| `overlay_clip_path`    | none                         | CSS clip-path                  | Clip mask for overlay |
+
+# 💫 Animation Options
+For animation variables see [animations](/docs/animations.md).
