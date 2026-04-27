@@ -105,11 +105,11 @@ These options are fully supported but must be set manually in YAML.
 (Wiki in progress)
 
 - [Icon Styling](/docs/icon_styling.md)
-- Text Styling
-- Card Styling
-- Badge Styling
-- Animations
-- ...
+- [Badge Styling](/docs/badge_styling.md)
+- [Text Styling](/docs/text_styling.md)
+- [Card Styling](/docs/card_styling.md)
+- [Animations](/docs/animations.md)
+- [Theming](/docs/theming.md)
 
 ---
 
