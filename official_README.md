@@ -21,6 +21,7 @@ Mushroomic Cards mimic the familiar Mushroom look while adding the flexibility m
 - ⭐ **Custom animations** -  easy and direct configuration in yaml
 - 🔎 **Automatic scaling** - no need to set every size manually
 - 💞 **Template support** for all visual fields
+- 🖌 **Colorable svg support**
 - 📝 **Theme support** for Mushic Themes
 
 ---
