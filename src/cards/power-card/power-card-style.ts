@@ -26,7 +26,7 @@ export const powerCardStyles = [
         justify-content: space-between;
 /*        background: var(--mushic-card-bg-color, var(--ha-card-background, var(--card-background-color))); */
         border-radius: var(--mushic-border-radius, var(--ha-card-border-radius, 12px));
-        border: var(--mushic-border, var(--mushic-border-width, var(--ha-card-border-width, 1px)) var(--mushic-border-style, solid) var(--mushic-border-color, var(--ha-card-border-color, var(--divider-color))));
+        border: var(--mushic-border /*, var(--mushic-border-width, var(--ha-card-border-width, 1px)) var(--mushic-border-style, solid) var(--mushic-border-color, var(--ha-card-border-color, var(--divider-color)))*/ );
       }
 
       ha-card:has(.background:focus-visible) {
@@ -50,7 +50,7 @@ export const powerCardStyles = [
         bottom: 0;
         right: 0;
         border-radius: var(--mushic-border-radius, var(--ha-card-border-radius, 12px));
-        margin: calc(-1 * var(--mushic-border-width, var(--ha-card-border-width, 1px)));
+        margin: calc(-1 * var(--ha-card-border-width, 1px));
         overflow: hidden;
       }
       
