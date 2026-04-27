@@ -101,7 +101,7 @@ All variables are optional.
 
 ### 🎨 Advanced Options - Unleash the _Power_ of Power-Card (currently YAML-only)
 
-These options are fully supported but must be set manually in YAML.
+All options are fully supported but some must be set manually in YAML.
 (Wiki in progress)
 
 - [Icon Styling](/docs/icon_styling.md)
@@ -109,7 +109,7 @@ These options are fully supported but must be set manually in YAML.
 - [Text Styling](/docs/text_styling.md)
 - [Card Styling](/docs/card_styling.md)
 - [Animations](/docs/animations.md)
-- [Theming](/docs/theming.md)
+- [using Themes](/docs/themes.md)
 
 ---
 
