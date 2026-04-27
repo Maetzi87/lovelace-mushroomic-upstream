@@ -86,7 +86,6 @@ All variables are optional.
 | `shape_size`               | `"36px"`       | ✔        | px, rem, %, calc()       | Size of shape behind icon |
 | `badge_size`              | `32% of tile`  | ✔        | px, rem, %, calc()       | Badge size override |
 | `content_layout`          | `"horizontal"` | ❌       | horizontal / vertical    | Layout selector |
-| `multiline_secondary`     | `false`        | ❌       | true / false             | Allow multiline secondary text |
 | `features_position`       | `"bottom"`     | ❌       | bottom / inline          | Position of feature row |
 | `features`                | —              | ❌       | list                     | List of card features |
 | `tap_action`              | `"more-info"`* | ❌       | action object            | Card tap action |
