@@ -87,7 +87,7 @@ All variables are optional.
 | `badge_color`             | —              | ✔        | hex, rgb(), rgba(), var() | Badge background color |
 | `badge_icon_color`        | —              | ✔        | hex, rgb(), rgba(), var() | Badge icon color |
 | `shape_size`               | `36px`       | ✔        | px, rem, %, calc()       | Size of shape behind icon |
-| `badge_size`              | autoscaling </br> <sub>(shape_size * 0.444)</sub>  | ✔        | px, rem, %, calc()       | Badge size override |
+| `badge_size`              | autoscaling </br> <sub>(44.4% of shape_size)</sub>  | ✔        | px, rem, %, calc()       | Badge size override |
 | `vertical`          | `false` | ❌       | true / false    | Layout selector |
 | `features_position`       | `bottom`     | ❌       | bottom / inline          | Position of feature row |
 | `features`                | —              | ❌       | list                     | List of card features |
