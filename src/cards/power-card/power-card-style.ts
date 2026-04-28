@@ -294,6 +294,8 @@ export const powerCardStyles = [
         min-width: 0;
         transition: background-color 180ms ease-in-out;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
       }
       
       /* PRIMARY */
@@ -306,6 +308,7 @@ export const powerCardStyles = [
         letter-spacing: var(--ha-tile-info-primary-letter-spacing);
         text-align: var(--mushic-primary-text-align, left);
         text-shadow: var(--mushic-primary-text-shadow, none);
+        white-space: nowrap;
         overflow: visible;
         margin-right: calc(-1 * var(--ha-tile-info-primary-letter-spacing));
       }
@@ -324,6 +327,7 @@ export const powerCardStyles = [
         letter-spacing: var(--ha-tile-info-secondary-letter-spacing);
         text-align: var(--mushic-secondary-text-align, left);
         text-shadow: var(--mushic-secondary-text-shadow, none);
+        white-space: nowrap;
         overflow: visible;
         margin-right: calc(-1 * var(--ha-tile-info-secondary-letter-spacing));
       }
