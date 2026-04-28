@@ -94,11 +94,12 @@ All variables are optional.
 | `tap_action`              | `more-info`* | ❌       | action object            | Card tap action |
 | `hold_action`             | `none`       | ❌       | action object            | Card hold action |
 | `double_tap_action`       | `none`       | ❌       | action object            | Card double-tap action |
-| `icon_tap_action`         | auto*           | ❌       | action object            | Icon tap action |
+| `icon_tap_action`         | auto**           | ❌       | action object            | Icon tap action |
 | `icon_hold_action`        | `none`       | ❌       | action object            | Icon hold action |
 | `icon_double_tap_action`  | `none`       | ❌       | action object            | Icon double-tap action |
 
-\* Default only when `entity` is set.
+<sub>* Default only when `entity` is set.</br>
+**Default icon action depending on entity (toggle for light, more-info for sensor etc...) </sub>
 
 
 ### 🎨 Advanced Options - Unleash the _Power_ of Power-Card (currently YAML-only)
