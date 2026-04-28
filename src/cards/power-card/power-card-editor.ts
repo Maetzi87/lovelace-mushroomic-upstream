@@ -53,7 +53,6 @@ export const POWER_CARD_HELPERS = [
   "badge_size",
   "entity",
   "badge_text",
-  "multiline_secondary",
   "picture",
   "shape_size",
 ];
