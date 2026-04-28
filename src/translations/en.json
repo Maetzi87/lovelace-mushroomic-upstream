@@ -24,7 +24,6 @@
         "badge": "Badge",
         "content": "Content",
         "entity_helper": "Used in templates, interactions and features",
-        "entity_helper_legacy": "Used in templates and interactions",
         "label": "Label",
         "layout": "Layout",
         "multiline_secondary_helper": "The card may be taller to fit the text and will not always align with the grid system.",
