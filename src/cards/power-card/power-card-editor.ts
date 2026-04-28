@@ -33,6 +33,7 @@ export const POWER_CARD_LABELS = [
   "badge_text",
   "primary",
   "secondary",
+  "multiline_secondary",
 ];
 
 export const TILE_LABELS = [
@@ -48,6 +49,7 @@ export const POWER_CARD_HELPERS = [
   "area",
   "entity",
   "badge_text",
+  "multiline_secondary",
 ];
 
 @customElement("mushroomic-power-card-editor")
@@ -159,6 +161,10 @@ export class MushroomicPowerCardEditor
                   })),
                 },
               },
+            },
+            {
+              name: "multiline_secondary",
+              selector: { boolean: {} },
             },
             {
               name: "features_position",
