@@ -32,8 +32,6 @@ export const POWER_CARD_LABELS = [
   "badge_icon",
   "badge_size",
   "badge_text",
-  "color",
-  "icon",
   "multiline_secondary",
   "picture",
   "primary",
@@ -56,6 +54,7 @@ export const POWER_CARD_HELPERS = [
   "entity",
   "badge_text",
   "multiline_secondary",
+  "picture",
   "shape_size",
 ];
 
