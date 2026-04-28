@@ -299,10 +299,10 @@ private _computeLabel = (schema: HaFormSchema) => {
   const customLocalize = setupCustomlocalize(this.hass!);
 
   if (schema.type === "expandable") {
-    return customLocalize(`editor.mushic.section.${schema.name}`);
+    return customLocalize(`editor.section.${schema.name}`);
   }
   if (POWER_CARD_LABELS.includes(schema.name)) {
-    return customLocalize(`editor.card.template.${schema.name}`);
+    return customLocalize(`editor.card.power.${schema.name}`);
   }
   if (TILE_LABELS.includes(schema.name)) {
     return this.hass!.localize(
@@ -320,7 +320,7 @@ private _computeHelper = (schema: HaFormSchema) => {
   }
   const customLocalize = setupCustomlocalize(this.hass!);
   if (POWER_CARD_HELPERS.includes(schema.name)) {
-    return customLocalize(`editor.card.template.${schema.name}_helper`);
+    return customLocalize(`editor.card.power.${schema.name}_helper`);
   }
   return undefined;
 };
