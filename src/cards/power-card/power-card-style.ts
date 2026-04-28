@@ -331,7 +331,10 @@ export const powerCardStyles = [
         overflow: visible;
         margin-right: calc(-1 * var(--ha-tile-info-secondary-letter-spacing));
       }
-      
+
+      .mushic-info .mushic-secondary.multiline {
+        white-space: normal;
+      }
       .vertical .mushic-info .mushic-secondary {
         text-align: var(--mushic-secondary-text-align, center);
       }
