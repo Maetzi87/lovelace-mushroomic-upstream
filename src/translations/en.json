@@ -17,19 +17,22 @@
       "power": {
         "area_helper": "Used in templates and features",
         "area": "Area",
+        "badge": "Badge",        
         "badge_color": "Badge color",
         "badge_icon": "Badge icon",
-        "badge_text_helper": "If set, it will replace the icon.",
+        "badge_text_helper": "Replaces the badge icon if set",
         "badge_text": "Badge text",
-        "badge": "Badge",
+        "badge_size": "Badge size",
+        "badge_size_helper": "Size of badge, scaled automatically with shape size if not set"
         "content": "Content",
         "entity_helper": "Used in templates, interactions and features",
         "label": "Label",
         "layout": "Layout",
-        "multiline_secondary_helper": "The card may be taller to fit the text and will not always align with the grid system.",
         "multiline_secondary": "Allow multiline secondary information",
         "primary": "Primary information",
-        "secondary": "Secondary information"
+        "secondary": "Secondary information",
+        "shape_size": "Shape size",
+        "shape_size_helper": "Size of icon background, icon and badge will be scaled automatically"
       }
     },
     "form": {
