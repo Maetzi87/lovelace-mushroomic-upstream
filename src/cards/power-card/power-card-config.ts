@@ -174,7 +174,7 @@ export const templateCardConfigStruct = assign(
     secondary_letter_spacing: optional(string()),
     secondary_text_align: optional(string()),
     secondary_text_shadow: optional(string()),
-    multiline_secondary: { type: "boolean", optional: true },
+    multiline_secondary: optional(boolean()),
 
     text_gap: optional(string()),
 
