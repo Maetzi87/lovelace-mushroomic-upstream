@@ -53,6 +53,7 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   secondary_letter_spacing?: string;
   secondary_text_align?: string;
   secondary_text_shadow?: string;
+  multiline_secondary?: boolean;
 
   text_gap?: string;
   
@@ -173,6 +174,7 @@ export const templateCardConfigStruct = assign(
     secondary_letter_spacing: optional(string()),
     secondary_text_align: optional(string()),
     secondary_text_shadow: optional(string()),
+    multiline_secondary: { type: "boolean", optional: true },
 
     text_gap: optional(string()),
 
