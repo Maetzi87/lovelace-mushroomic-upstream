@@ -47,9 +47,11 @@ export const TILE_LABELS = [
 
 export const POWER_CARD_HELPERS = [
   "area",
+  "badge_size",
   "entity",
   "badge_text",
   "multiline_secondary",
+  "shape_size",
 ];
 
 @customElement("mushroomic-power-card-editor")
