@@ -3,27 +3,46 @@
     "not_found": "Entität nicht gefunden"
   },
   "editor": {
+    "section": {
+      "badge": "Badge",
+      "context": "Kontext",
+      "content": "Inhalt",
+      "features": "Features",
+      "icon": "Icon",
+      "card_interactions": "Karten-Interaktionen",
+      "icon_interactions": "Icon-Interaktionen",
+      "layout": "Layout"
+    },
     "card": {
-      "template": {
+      "power": {
+        "area_helper": "Verwendung in Templates und Features",
+        "area": "Bereich",
         "badge_color": "Badge-Farbe",
-          "badge_icon": "Badge-Icon",
-          "content": "Inhalt",
-          "entity_extra": "Wird in Vorlagen und Aktionen verwendet",
-          "label": "Beschriftung",
-          "multiline_secondary": "Mehrzeilig sekundär?",
-          "picture": "Bild (ersetzt das Icon)",
-          "primary": "Primäre Information",
-          "secondary": "Sekundäre Information"
+        "badge_icon": "Badge-Icon",
+        "badge_size": "Badge-Größe",
+        "badge_size_helper": "Größe des Badges - skaliert automatisch mit Shape-Größe, wenn nicht gesetzt",
+        "badge_text_helper": "Ersetzt das Badge-Icon, wenn gesetzt",
+        "badge_text": "Badge-Text",
+        "badge": "Badge",
+        "content": "Inhalt",
+        "entity_helper": "Verwendung in Templates, Interaktionen und Features",
+        "label": "Label",
+        "layout": "Layout",
+        "multiline_secondary": "Mehrzeiligen Sekundärtext erlauben",
+        "primary": "Primäre Information",
+        "secondary": "Sekundäre Information",
+        "shape_size": "Shape-Größe",
+        "shape_size_helper": "Größe des Icon-Hintergrunds - Icon und Badge werden automatisch mitskaliert"
       }
     },
     "form": {
       "alignment_picker": {
         "values": {
           "center": "Mitte",
-          "default": "Standard",
+          "default": "Standard-Ausrichtung",
           "end": "Ende",
           "justify": "Ausrichten",
-          "start": "Anfang"
+          "start": "Start"
         }
       },
       "color_picker": {
@@ -34,7 +53,7 @@
       "icon_type_picker": {
         "values": {
           "default": "Standard-Typ",
-          "entity-picture": "Entitätsbild",
+          "entity-picture": "Bild",
           "icon": "Icon",
           "none": "Keines"
         }
@@ -55,45 +74,6 @@
           "horizontal": "Horizontales Layout",
           "vertical": "Vertikales Layout"
         }
-      }
-    },
-    "mushic": {
-      "section": {
-        "context": "Kontext",
-        "icon": "Icon",
-        "content": "Inhalt",
-        "badge": "Badge",
-        "layout": "Layout",
-        "card_interactions": "Karten-Interaktionen",
-        "icon_interactions": "Icon-Interaktionen",
-        "features": "Funktionen"
-      },
-      "field": {
-        "entity": "Entität",
-        "area": "Bereich",
-        "color": "Icon-Farbe",
-        "icon": "Icon",
-        "picture": "Bild",
-        "shape_size": "Icon-Hintergrund-Größe",
-        "primary": "Primärtext",
-        "secondary": "Sekundärtext",
-        "badge_icon": "Badge-Icon",
-        "badge_text": "Badge-Text",
-        "badge_color": "Badge-Farbe",
-        "badge_size": "Badge-Größe",
-        "content_layout": "Inhaltslayout",
-        "features_position": "Position der Funktionen",
-        "tap_action": "Tippen-Aktion",
-        "hold_action": "Halten-Aktion",
-        "double_tap_action": "Doppeltippen-Aktion",
-        "icon_tap_action": "Icon-Tippen-Aktion",
-        "icon_hold_action": "Icon-Halten-Aktion",
-        "icon_double_tap_action": "Icon-Doppeltippen-Aktion"
-      },
-      "helper": {
-        "entity": "Wähle die Entität, die diese Karte anzeigen soll",
-        "area": "Optional einen Bereich zuweisen",
-        "badge_text": "Text, der im Badge angezeigt wird"
       }
     }
   }
