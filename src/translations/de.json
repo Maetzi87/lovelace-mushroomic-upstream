@@ -30,7 +30,7 @@
         "layout": "Layout",
         "multiline_secondary": "Mehrzeiligen Sekundärtext erlauben",
         "picture": "Bild",
-        "picture_helper": "Pfad der Bilddatei - ersetzt das Icon wenn gesetzt",
+        "picture_helper": "Pfad der Bilddatei - ersetzt das Icon",
         "primary": "Primäre Information",
         "secondary": "Sekundäre Information",
         "shape_size": "Shape-Größe",
