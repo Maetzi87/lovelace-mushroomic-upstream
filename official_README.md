@@ -98,7 +98,7 @@ All variables are optional.
 | `icon_hold_action`        | `none`       | ❌       | action object            | Icon hold action |
 | `icon_double_tap_action`  | `none`       | ❌       | action object            | Icon double-tap action |
 
-<sub>* Default only when `entity` is set.</br>
+<sub>* Default only if `entity` is set.</br>
 **Default icon action depending on entity (toggle for light, more-info for sensor etc...) </sub>
 
 
