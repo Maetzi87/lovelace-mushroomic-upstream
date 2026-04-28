@@ -23,7 +23,7 @@
         "badge_text_helper": "Replaces the badge icon if set",
         "badge_text": "Badge text",
         "badge_size": "Badge size",
-        "badge_size_helper": "Size of badge, scaled automatically with shape size if not set"
+        "badge_size_helper": "Size of badge, scaled automatically with shape size if not set",
         "content": "Content",
         "entity_helper": "Used in templates, interactions and features",
         "label": "Label",
