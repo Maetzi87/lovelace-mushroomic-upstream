@@ -126,7 +126,7 @@ icon: mdi:thermometer
 color: purple
 icon_tap_action:
   action: more-info
-primary: "{{ state_attr(entity, 'friendly_name') }}"
+primary: "{{ state_attr(config.entity, 'friendly_name') }}"
 secondary: "{{ states(entity) }}"
 shape_size: 40px
 badge_icon: mdi:eye
