@@ -29,6 +29,8 @@
         "label": "Label",
         "layout": "Layout",
         "multiline_secondary": "Allow multiline secondary information",
+        "picture": "Picture",
+        "picture_helper": "Picture url, replaces icon if set,
         "primary": "Primary information",
         "secondary": "Secondary information",
         "shape_size": "Shape size",
