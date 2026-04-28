@@ -844,7 +844,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
                           ? html`<span class="mushic-primary">${primary}</span>`
                           : nothing}
                         ${secondary
-                          ? html`<span class="mushic-secondary ${multiline ? "multi" : "single"}">${secondary}</span>`
+                          ? html`<span class="mushic-secondary ${multiline ? "multiline" : ""}">${secondary}</span>`
                           : nothing}
                       </div>
                     `
