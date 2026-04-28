@@ -30,15 +30,15 @@ export const POWER_CARD_LABELS = [
   "area",
   "badge_color",
   "badge_icon",
-  "badge_text",
   "badge_size",
+  "badge_text",
   "color",
   "icon",
+  "multiline_secondary",
   "picture",
-  "shape_size",
   "primary",
   "secondary",
-  "multiline_secondary",
+  "shape_size",
 ];
 
 export const TILE_LABELS = [
