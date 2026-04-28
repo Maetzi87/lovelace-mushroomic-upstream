@@ -97,6 +97,7 @@ const TEMPLATE_KEYS = [
   "secondary_letter_spacing",
   "secondary_text_align",
   "secondary_text_shadow",
+  "multiline_secondary",
 
   "text_gap",
   
@@ -481,6 +482,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
     // --- TEXT ---
     const primary = this.getValue("primary");
     const secondary = this.getValue("secondary");
+    const multiline = this.getValue("multiline_secondary") ?? false;
 
     const primaryTextColor = this.getValue("primary_color");
     const primaryTextCssColor = primaryTextColor ? computeCssColor(primaryTextColor) : undefined;
@@ -842,7 +844,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
                           ? html`<span class="mushic-primary">${primary}</span>`
                           : nothing}
                         ${secondary
-                          ? html`<span class="mushic-secondary">${secondary}</span>`
+                          ? html`<span class="mushic-secondary ${multiline ? "multi" : "single"}">${secondary}</span>`
                           : nothing}
                       </div>
                     `
