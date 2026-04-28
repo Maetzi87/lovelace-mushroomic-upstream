@@ -18,11 +18,11 @@ Only basic styling options are available in the editor (yet).
 **Default icon action depending on entity (toggle for light, more-info for sensor etc...) </sub>
 
 ## YAML
-Advanced styling options need to be set in yaml. All of them are **template-aware**.
+Advanced styling options need to be set in yaml. All of them are **template-aware** and optional.
 
 | YAML Options           | Default                      | Allowed Units / Formats        | Description |
 |------------------------|------------------------------|--------------------------------|-------------|
-| `icon_size`            | autoscaling </br><sub>(shape_size × 0.666)</sub>         | px, rem, %, calc()             | Icon size |
+| `icon_size`            | autoscaling </br><sub>(66.6% of shape_size)</sub>         | px, rem, %, calc()             | Icon Size |
 | `icon_origin`          | `'50% 50%'`                    | CSS transform-origin           | Transform origin of Icon (for animations and rotation)|
 | `icon_rotation`        | `0deg`                       | deg, turn, rad                 | Icon rotation |
 | `icon_clip_path`       | `none`                        | CSS clip-path                  | Clip mask for icon |
@@ -32,7 +32,7 @@ Advanced styling options need to be set in yaml. All of them are **template-awar
 | `shape_border`         | `none`                         | shorthand (width style color)  | Border around the icon shape |
 
 # 🧩 Overlay Icon - Options
-The overlay icon can be used for dual animations or static overlays. Overlay is yaml-only, all options are **template-aware**.
+The overlay icon can be used for dual animations or static overlays. Overlay is yaml-only, all variables are **template-aware** and optional.
 | YAML Options           | Default                      | Allowed Units / Formats        | Description |
 |------------------------|------------------------------|--------------------------------|-------------|
 | `overlay_icon`         | —*                         | any installed icon             | Overlay icon |
@@ -44,7 +44,7 @@ The overlay icon can be used for dual animations or static overlays. Overlay is 
 | `overlay_rotation`     | `0deg`                       | deg, turn, rad                 | Overlay rotation |
 | `overlay_clip_path`    | `none`                         | CSS clip-path                  | Clip mask for overlay |
 
-<sub> *some Mushroomic Icons have auto-overlays, set 'overlay_icon: none' to disable </sub>
+<sub> *Some Mushroomic Icons have auto-overlays, set 'overlay_icon: none' to disable </sub>
 
 # 💫 Animation Options
 For animation variables see [animations](/docs/animations.md).
