@@ -86,17 +86,17 @@ All variables are optional.
 | `badge_text`              | —              | ✔        | text / template          | Badge text (overrides icon) |
 | `badge_color`             | —              | ✔        | hex, rgb(), rgba(), var() | Badge background color |
 | `badge_icon_color`        | —              | ✔        | hex, rgb(), rgba(), var() | Badge icon color |
-| `shape_size`               | `"36px"`       | ✔        | px, rem, %, calc()       | Size of shape behind icon |
+| `shape_size`               | `36px`       | ✔        | px, rem, %, calc()       | Size of shape behind icon |
 | `badge_size`              | `32% of tile`  | ✔        | px, rem, %, calc()       | Badge size override |
-| `content_layout`          | `"horizontal"` | ❌       | horizontal / vertical    | Layout selector |
-| `features_position`       | `"bottom"`     | ❌       | bottom / inline          | Position of feature row |
+| `vertical`          | `false` | ❌       | true / false    | Layout selector |
+| `features_position`       | `bottom`     | ❌       | bottom / inline          | Position of feature row |
 | `features`                | —              | ❌       | list                     | List of card features |
-| `tap_action`              | `"more-info"`* | ❌       | action object            | Card tap action |
-| `hold_action`             | `"none"`       | ❌       | action object            | Card hold action |
-| `double_tap_action`       | `"none"`       | ❌       | action object            | Card double-tap action |
+| `tap_action`              | `more-info`* | ❌       | action object            | Card tap action |
+| `hold_action`             | `none`       | ❌       | action object            | Card hold action |
+| `double_tap_action`       | `none`       | ❌       | action object            | Card double-tap action |
 | `icon_tap_action`         | auto*           | ❌       | action object            | Icon tap action |
-| `icon_hold_action`        | `"none"`       | ❌       | action object            | Icon hold action |
-| `icon_double_tap_action`  | `"none"`       | ❌       | action object            | Icon double-tap action |
+| `icon_hold_action`        | `none`       | ❌       | action object            | Icon hold action |
+| `icon_double_tap_action`  | `none`       | ❌       | action object            | Icon double-tap action |
 
 \* Default only when `entity` is set.
 
