@@ -5,7 +5,7 @@ import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { unsafeSVG } from "lit/directives/unsafe-svg.js";
-import "./power-card-editor";
+import "./power-card-editor"; 
 import memoizeOne from "memoize-one";
 import hash from "object-hash/dist/object_hash"; 
 import {
