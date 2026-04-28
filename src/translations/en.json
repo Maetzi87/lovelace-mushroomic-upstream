@@ -4,14 +4,14 @@
   },
   "editor": {
     "section": {
-      "badge": "Badge"
+      "badge": "Badge",
       "context": "Context",
       "content": "Content",
       "features": "Features",
       "icon": "Icon",
       "card_interactions": "Card Interactions",
       "icon_interactions": "Icon Interactions",
-      "layout": "Layout",
+      "layout": "Layout"
     },
     "card": {
       "power": {
