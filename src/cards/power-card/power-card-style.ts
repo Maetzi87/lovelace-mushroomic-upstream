@@ -294,8 +294,6 @@ export const powerCardStyles = [
         min-width: 0;
         transition: background-color 180ms ease-in-out;
         box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
       }
       
       /* PRIMARY */
