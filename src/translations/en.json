@@ -3,15 +3,32 @@
     "not_found": "Entity not found"
   },
   "editor": {
+    "section": {
+      "badge": "Badge"
+      "context": "Context",
+      "content": "Content",
+      "features": "Features",
+      "icon": "Icon",
+      "card_interactions": "Card Interactions",
+      "icon_interactions": "Icon Interactions",
+      "layout": "Layout",
+    },
     "card": {
-      "template": {
+      "power": {
+        "area_helper": "Used in templates and features",
+        "area": "Area",
         "badge_color": "Badge color",
         "badge_icon": "Badge icon",
+        "badge_text_helper": "If set, it will replace the icon.",
+        "badge_text": "Badge text",
+        "badge": "Badge",
         "content": "Content",
-        "entity_extra": "Used in templates and actions",
+        "entity_helper": "Used in templates, interactions and features",
+        "entity_helper_legacy": "Used in templates and interactions",
         "label": "Label",
-        "multiline_secondary": "Multiline secondary?",
-        "picture": "Picture (replaces the icon)",
+        "layout": "Layout",
+        "multiline_secondary_helper": "The card may be taller to fit the text and will not always align with the grid system.",
+        "multiline_secondary": "Allow multiline secondary information",
         "primary": "Primary information",
         "secondary": "Secondary information"
       }
@@ -20,7 +37,7 @@
       "alignment_picker": {
         "values": {
           "center": "Center",
-          "default": "Default",
+          "default": "Default alignment",
           "end": "End",
           "justify": "Justify",
           "start": "Start"
@@ -42,8 +59,8 @@
       "info_picker": {
         "values": {
           "default": "Default information",
-          "last-changed": "Last changed",
-          "last-updated": "Last updated",
+          "last-changed": "Last Changed",
+          "last-updated": "Last Updated",
           "name": "Name",
           "none": "None",
           "state": "State"
@@ -55,40 +72,6 @@
           "horizontal": "Horizontal layout",
           "vertical": "Vertical layout"
         }
-      }
-    },
-    "mushic": {
-      "section": {
-        "context": "Context",
-        "icon": "Icon",
-        "content": "Content",
-        "badge": "Badge",
-        "layout": "Layout",
-        "card_interactions": "Card interactions",
-        "icon_interactions": "Icon interactions",
-        "features": "Features"
-      },
-      "field": {
-        "entity": "Entity",
-        "area": "Area",
-        "color": "Icon color",
-        "icon": "Icon",
-        "picture": "Picture",
-        "shape_size": "Icon background size",
-        "primary": "Primary text",
-        "secondary": "Secondary text",
-        "badge_icon": "Badge icon",
-        "badge_text": "Badge text",
-        "badge_color": "Badge color",
-        "badge_size": "Badge size",
-        "content_layout": "Content layout",
-        "features_position": "Features position",
-        "tap_action": "Tap action",
-        "hold_action": "Hold action",
-        "double_tap_action": "Double tap action",
-        "icon_tap_action": "Icon tap action",
-        "icon_hold_action": "Icon hold action",
-        "icon_double_tap_action": "Icon double tap action"
       }
     }
   }
