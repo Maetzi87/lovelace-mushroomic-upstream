@@ -301,16 +301,16 @@ export const powerCardStyles = [
       /* PRIMARY */
       .mushic-info .mushic-primary {
         color: var(--ha-tile-info-primary-color);
-        font-size: var(--ha-tile-info-primary-font-size);
+        font-size: var(--ha-tile-info-primary-font-size, var(--ha-font-size-m, 14px));
         font-weight: var(--ha-tile-info-primary-font-weight);
         font-variant: var(--mushic-primary-font-variant, normal);
-        line-height: var(--ha-tile-info-primary-line-height);
+        line-height: var(--ha-tile-info-primary-line-height, var(--ha-line-height-normal, 1.6));
         letter-spacing: var(--ha-tile-info-primary-letter-spacing);
         text-align: var(--mushic-primary-text-align, left);
         text-shadow: var(--mushic-primary-text-shadow, none);
         white-space: nowrap;
         overflow: visible;
-        margin-right: calc(-1 * var(--ha-tile-info-primary-letter-spacing));
+        margin-right: calc(-1 * var(--ha-tile-info-primary-letter-spacing, 0));
       }
       
       .vertical .mushic-info .mushic-primary {
@@ -320,16 +320,16 @@ export const powerCardStyles = [
       /* SECONDARY */
       .mushic-info .mushic-secondary {
         color: var(--ha-tile-info-secondary-color);
-        font-size: var(--ha-tile-info-secondary-font-size);
+        font-size: var(--ha-tile-info-secondary-font-size, var(--ha-font-size-s, 12px));
         font-weight: var(--ha-tile-info-secondary-font-weight);
         font-variant: var(--mushic-secondary-font-variant, normal);
-        line-height: var(--ha-tile-info-secondary-line-height);
+        line-height: var(--ha-tile-info-secondary-line-height, var(--ha-line-height-condensed, 1.2));
         letter-spacing: var(--ha-tile-info-secondary-letter-spacing);
         text-align: var(--mushic-secondary-text-align, left);
         text-shadow: var(--mushic-secondary-text-shadow, none);
         white-space: nowrap;
         overflow: visible;
-        margin-right: calc(-1 * var(--ha-tile-info-secondary-letter-spacing));
+        margin-right: calc(-1 * var(--ha-tile-info-secondary-letter-spacing, 0));
       }
 
       .mushic-info .mushic-secondary.multiline {
