@@ -29,7 +29,7 @@ Advanced styling options need to be set in yaml. All of them are **template-awar
 | `shape_color`          | color                       | hex, rgb(), rgba(), var()      | Icon background color |
 | `shape_opacity`        | `'0.2'`                        | numeric 0–1                    | Icon background opacity |
 | `shape_hover_opacity`  | `'0.35'`                       | numeric 0–1                    | Icon background hover opacity |
-| `shape_border`         | `none`                         | shorthand (width style color)  | Border around the icon shape |
+| `shape_border`         | `none`                         | shorthand (width style color)  | Border around the icon background |
 
 # 🧩 Overlay Icon - Options
 The overlay icon can be used for dual animations or static overlays. Overlay is yaml-only, all variables are **template-aware** and optional.
@@ -38,7 +38,7 @@ The overlay icon can be used for dual animations or static overlays. Overlay is 
 | `overlay_icon`         | —*                         | any installed icon             | Overlay icon |
 | `overlay_color`        | color                        | hex, rgb(), rgba(), var()      | Overlay color |
 | `overlay_opacity`      | 1                            | numeric 0–1                    | Overlay opacity |
-| `overlay_size`         | icon_size                    | px, rem, %, calc()             | Overlay size |
+| `overlay_size`         | Size of icon                    | px, rem, %, calc()             | Overlay size |
 | `overlay_margin`       | `'0 0 0 0'`                    | px, rem, %, calc()             | Overlay margin (top right bottom left) |
 | `overlay_origin`       | `'50% 50%'`                    | CSS transform-origin           | Transform origin of overlay (for animations and rotation)|
 | `overlay_rotation`     | `0deg`                       | deg, turn, rad                 | Overlay rotation |
