@@ -1,4 +1,4 @@
-# ✍️ Text Styling – Options
+# ✒️ Text Styling – Options
 
 ## Editor
 Only basic text options are available in the editor (yet).
