@@ -1,4 +1,4 @@
-# 🎨 Icon Styling - Options
+# 🍄 Icon Styling - Options
 
 ## Editor
 Only basic styling options are available in the editor (yet).
