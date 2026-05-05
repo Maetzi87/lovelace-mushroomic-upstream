@@ -300,17 +300,17 @@ export const powerCardStyles = [
       
       /* PRIMARY */
       .mushic-info .mushic-primary {
-        color: var(--ha-tile-info-primary-color);
-        font-size: var(--ha-tile-info-primary-font-size, var(--ha-font-size-m, 14px));
-        font-weight: var(--ha-tile-info-primary-font-weight);
+        color: var(--mushic-primary-color, var(--primary-text-color));
+        font-size: var(--mushic-primary-font-size, var(--ha-font-size-m, 14px));
+        font-weight: var(--mushic-primary-font-weight, var(--ha-font-weight-medium, 500));
         font-variant: var(--mushic-primary-font-variant, normal);
-        line-height: var(--ha-tile-info-primary-line-height, var(--ha-line-height-normal, 1.6));
-        letter-spacing: var(--ha-tile-info-primary-letter-spacing);
+        line-height: var(--mushic-primary-line-height, var(--ha-line-height-normal, 1.6));
+        letter-spacing: var(--mushic-primary-letter-spacing, 0.1px);
         text-align: var(--mushic-primary-text-align, left);
         text-shadow: var(--mushic-primary-text-shadow, none);
         white-space: nowrap;
         overflow: visible;
-        margin-right: calc(-1 * var(--ha-tile-info-primary-letter-spacing, 0));
+        margin-right: calc(-1 * var(--mushic-primary-letter-spacing, 0.1px));
       }
       
       .vertical .mushic-info .mushic-primary {
@@ -319,17 +319,17 @@ export const powerCardStyles = [
       
       /* SECONDARY */
       .mushic-info .mushic-secondary {
-        color: var(--ha-tile-info-secondary-color);
-        font-size: var(--ha-tile-info-secondary-font-size, var(--ha-font-size-s, 12px));
-        font-weight: var(--ha-tile-info-secondary-font-weight);
+        color: var(--mushic-secondary-color, var(--secondary-text-color));
+        font-size: var(--mushic-secondary-font-size, var(--ha-font-size-s, 12px));
+        font-weight: var(--mushic-secondary-font-weight, var(--ha-font-weight-normal, 400));
         font-variant: var(--mushic-secondary-font-variant, normal);
-        line-height: var(--ha-tile-info-secondary-line-height, var(--ha-line-height-condensed, 1.2));
-        letter-spacing: var(--ha-tile-info-secondary-letter-spacing);
+        line-height: var(--mushic-secondary-line-height, var(--ha-line-height-condensed, 1.2));
+        letter-spacing: var(--mushic-secondary-letter-spacing, 0.4px);
         text-align: var(--mushic-secondary-text-align, left);
         text-shadow: var(--mushic-secondary-text-shadow, none);
         white-space: nowrap;
         overflow: visible;
-        margin-right: calc(-1 * var(--ha-tile-info-secondary-letter-spacing, 0));
+        margin-right: calc(-1 * var(--mushic-secondary-letter-spacing, 0.4px));
       }
 
       .mushic-info .mushic-secondary.multiline {
