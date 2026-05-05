@@ -38,14 +38,15 @@ cards:
     primary: Style it
     secondary: NEW
     color: "{% if is_state(config.entity, 'off')%} pink {% else %} purple {%endif%}"
-    icon_size: 30px
+    icon_size: 70px
+    icon_rotation: 180deg
     shape_color: "#F7D774"
     shape_size: 70px
     shape_opacity: "0.5"
     shape_border: 3px dotted black
-    overlay_icon: mdi:square-outline
+    overlay_icon: mdi:alert
     overlay_color: pink
-    overlay_size: 60px
+    overlay_size: 25px
     badge_icon: mdi:alert-circle
     badge_color: blue
     badge_size: 20px
