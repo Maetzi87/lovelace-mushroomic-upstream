@@ -117,7 +117,7 @@ All options are fully supported but advanced options must be set manually in YAM
 
 ---
 
-## 📝 Simple example YAML
+## 👉 Simple example YAML
 <img width="289" height="85" alt="image" src="https://github.com/user-attachments/assets/b9333cfb-bb52-412a-af27-6dea46f8060a" />
 
 ```yaml
