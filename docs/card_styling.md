@@ -1,4 +1,4 @@
-# 🧩 Card Styling – Options
+# 🔲 Card Styling – Options
 
 ## Editor
 Only basic styling options are available in the editor (yet).
@@ -26,7 +26,7 @@ Card styling options are YAML‑only.  All fields are **template‑aware** and o
 | `border_width`     | `var(--ha-card-border-width, 1px)`                 | px, rem                        | Border width |
 | `border_style`     | `var(--ha-card-border-style, solid)`                      | CSS border-style               | Border style |
 | `border_color`     | `var(--ha-card-border-color, var(--divider-color))`                  | hex, rgb(), rgba()     | Border color |
-| `border_radius`    | var(--ha-card-border-radius-lg, 12px)                | px, rem, %, calc()             | Card corner radius |
+| `border_radius`    | `var(--ha-card-border-radius-lg, 12px)`                | px, rem, %, calc()             | Card corner radius |
 | `ripple_color`     | `color` of icon                   | hex, rgb(), rgba()      | Hover color |
 | `card_padding`     | `10px`                       | px, rem, %, calc()             | Inner padding of the card |
 | `content_gap`      | `10px`                       | px, rem, %, calc()             | Gap between icon and text |
