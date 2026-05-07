@@ -67,9 +67,8 @@ resources:
 
 ## 🔧 Available Options
 
-The Mushroomic Power Card supports a wide range of fields.  
-Fields marked **Template** accept Jinja‑style Home Assistant templates.
-
+The Mushroomic Power Card supports a wide range of fields.
+Fields marked **Template** accept Jinja‑style Home Assistant templates.
 
 ### 🖥️ Basic Options (Editor-friendly)
 
@@ -81,32 +80,37 @@ All variables are optional.
 | `area`                    | —                           | ❌       | —                         | Area context for features |
 | `primary`                 | —                           | ✔        | text / template           | Primary text content |
 | `secondary`               | —                           | ✔        | text / template           | Secondary text content |
-| `color`                   | var(--state-inactive-color) | ✔        | hex, rgb(), rgba(), css-gradient | Icon color |
+| `color`                   | `var(--state-inactive-color)` | ✔        | any CSS color<sup>1</sup> | Icon color |
 | `icon`                    | —                           | ✔        | any installed icon        | Icon |
 | `picture`                 | —                           | ✔        | URL                       | Picture URL instead of icon |
 | `badge_icon`              | —                           | ✔        | any installed icon        | Badge icon |
 | `badge_text`              | —                           | ✔        | text / template           | Badge text (overrides icon) |
-| `badge_color`             | var(--state-inactive-color) | ✔        | hex, rgb(), rgba(), var() | Badge background color |
-| `badge_icon_color`        | white                       | ✔        | hex, rgb(), rgba(), var() | Badge icon color |
+| `badge_color`             | `var(--state-inactive-color)` | ✔        | any CSS color<sup>1</sup> or CSS gradient<sup>2</sup> | Badge background color |
+| `badge_icon_color`        | white                       | ✔        | any CSS color<sup>1</sup> | Badge icon color |
 | `shape_size`              | `36px`                      | ✔        | px, rem, %, calc()        | Size of shape behind icon |
 | `badge_size`              | autoscaling </br> <sub>(44.4% of shape_size)</sub>  | ✔        | px, rem, %, calc()       | Badge size |
 | `vertical`                | `false`                     | ❌       | true / false              | Layout selection |
 | `features_position`       | `bottom`                    | ❌       | bottom / inline           | Position of feature row |
 | `features`                | —                           | ❌       | list                      | List of card features |
-| `tap_action`              | `more-info`*                | ❌       | action object             | Card tap action |
+| `tap_action`              | `more-info`<sup>3</sup>               | ❌       | action object             | Card tap action |
 | `hold_action`             | `none`                      | ❌       | action object             | Card hold action |
 | `double_tap_action`       | `none`                      | ❌       | action object             | Card double-tap action |
-| `icon_tap_action`         | auto**                      | ❌       | action object             | Icon tap action |
+| `icon_tap_action`         | auto<sup>4</sup>                      | ❌       | action object             | Icon tap action |
 | `icon_hold_action`        | `none`                      | ❌       | action object             | Icon hold action |
 | `icon_double_tap_action`  | `none`                      | ❌       | action object             | Icon double-tap action |
 
-<sub>* Default only if `entity` is set.</br>
-**Default icon action depending on entity (toggle for light, more-info for sensor etc...) </sub>
+<sub> 
+<sup>1</sup>CSS color formats: CSS color keyword (red, blue, etc.), hex(#ffffff), rgb(), rgba(), hsl(), var() </br>
+<sup>2</sup>CSS gradient formats: linear-gradient(), radial-gradient(), conic-gradient()</br>
+<sup>3</sup>Default only if entity is set.</br>
+<sup>4</sup>Default icon action depending on entity (toggle for light, more-info for sensor etc...) 
+</sub>
+</br>
 
 
-### 🎨 Advanced Options - Unleash the _Power_ of Power-Card (currently YAML-only)
+### 🎨 Advanced Options - Unleash the _Power_ of Power-Card
 
-All options are fully supported but advanced options must be set manually in YAML.
+Advanced options are currently **YAML-only**.
 (Wiki in progress)
 
 - 🍄 [**Icon & Overlay Styling**](/docs/icon_styling.md)
