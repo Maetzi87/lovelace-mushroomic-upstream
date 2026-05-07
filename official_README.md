@@ -1,4 +1,4 @@
-# 🍄 Mushroomic Cards - Mushroom on steroids
+# 🍄 Mushroomic Power Card - Mushroom on steroids
 
 [![Mushroomic Cards Demo](/docs/examples/demo.png)](/docs/examples/demo.md)
 
