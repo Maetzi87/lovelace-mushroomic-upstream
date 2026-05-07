@@ -5,6 +5,8 @@
 ---
 ## 📖 What this is
 
+**Mushroomic** = 🍄 Mushroom + 🎨 **styling** + 📐 **sizing** + 🧩 **overlay** + 💫 **animations**
+
 **Mushroomic Power Card** builds on the clean, elegant design language of the popular Mushroom ecosystem, but focuses on **extended customization**, **template-driven styling**, **typography-control** and **animations**.
 
 Mushroomic mimics the familiar **Mushroom look** while adding the **flexibility** many users (including me) have been missing - completely **out of the box**, without cardmod or anything.
@@ -14,13 +16,13 @@ Mushroomic mimics the familiar **Mushroom look** while adding the **flexibility*
 ## 🌟 Features
 
 - 🎨 **Style EVERYTHING** - completely **without cardmod!!**  
-- 📐 **Full control** over all sizes and colors
+- 📐 **Full control** over **all** sizes and colors - (icon, badge, card etc.)
 - ✒️ **Advanced font styling** (size, weight, color, spacing, line height)
 - 🧩 **Overlay icons** for dual animations and overlay effects   
 - 💫 **AUTO-ANIMATIONS** for many [Mushroomic Icons](https://github.com/Maetzi87/mushroomic-icons)
-- ⭐ **Custom animations** -  easy and direct configuration in yaml
+- ⭐ **Custom animations** -  easy configuration in card settings
 - 🔎 **Automatic scaling** - no need to set every size manually
-- 💞 **Template support** for all visual fields
+- 💞 **Template support** for almost everything
 - 🖌 **Colorable SVG support**
 - 📝 **Theme support** for Mushic Themes
 
