@@ -86,7 +86,7 @@ All variables are optional.
 | `badge_icon`              | —                           | ✔        | any installed icon        | Badge icon |
 | `badge_text`              | —                           | ✔        | text / template           | Badge text (overrides icon) |
 | `badge_color`             | `var(--state-inactive-color)` | ✔        | any CSS color<sup>1</sup> or CSS gradient<sup>2</sup> | Badge background color |
-| `shape_size`              | `36px`                      | ✔        | px, rem, %, calc()        | Size of shape behind icon |
+| `shape_size`              | `36px`                      | ✔        | px, rem, %, calc()        | Size of icon background |
 | `badge_size`              | autoscaling </br> <sub>(44.4% of shape_size)</sub>  | ✔        | px, rem, %, calc()       | Badge size |
 | `vertical`                | `false`                     | ❌       | true / false              | Layout selection |
 | `features_position`       | `bottom`                    | ❌       | bottom / inline           | Position of feature row |
@@ -104,7 +104,6 @@ All variables are optional.
 <sup>3</sup>Default only if entity is set.</br>
 <sup>4</sup>Default icon action depending on entity (toggle for light, more-info for sensor etc...) 
 </sub>
-</br>
 
 
 ### 🎨 Advanced Options - Unleash the _Power_ of Power-Card
