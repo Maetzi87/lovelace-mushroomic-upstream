@@ -5,9 +5,9 @@
 ---
 ## 📖 What this is
 
-Mushroomic Power Card builds on the clean, elegant design language of the popular Mushroom ecosystem, but focuses on **extended customization**, **template-driven styling**, **typography-control** and **animations**.
+**Mushroomic Power Card** builds on the clean, elegant design language of the popular Mushroom ecosystem, but focuses on **extended customization**, **template-driven styling**, **typography-control** and **animations**.
 
-Mushroomic Cards mimic the familiar Mushroom look while adding the flexibility many users (including me) have been missing, without tinkering around with cardmod.
+Mushroomic mimics the familiar **Mushroom look** while adding the **flexibility** many users (including me) have been missing - completely **out of the box**, without cardmod or anything.
 
 ---
 
@@ -107,12 +107,12 @@ All variables are optional.
 All options are fully supported but advanced options must be set manually in YAML.
 (Wiki in progress)
 
-- 🍄 [Icon Styling](/docs/icon_styling.md)
-- 🏷️ [Badge Styling](/docs/badge_styling.md)
-- ✒️ [Text Styling](/docs/text_styling.md)
-- 💬 [Card Styling](/docs/card_styling.md)
-- 💫 [Animations](/docs/animations.md)
-- 🖌  [Colorable SVGs](/docs/svgs.md)
+- 🍄 [**Icon & Overlay Styling**](/docs/icon_styling.md)
+- 🏷️ [**Badge Styling**](/docs/badge_styling.md)
+- ✒️ [**Text Styling**](/docs/text_styling.md)
+- 💬 [**Card Styling**](/docs/card_styling.md)
+- 💫 [**Animations**](/docs/animations.md)
+- 🖌 [Colorable SVGs](/docs/svgs.md)
 - 📝 [Theming](/docs/theming.md)
 
 ---
