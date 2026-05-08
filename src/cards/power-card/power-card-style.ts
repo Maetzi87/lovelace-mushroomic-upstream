@@ -25,7 +25,7 @@ export const powerCardStyles = [
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        border-radius: var(--mushic-border-radius, var(--ha-card-border-radius, 12px));
+        border-radius: var(--mushic-border-radius, var(--ha-card-border-radius, var(--ha-border-radius-lg, 12px)));
         border: var(--mushic-border, var(--ha-card-border-width, 1px) var(--ha-card-border-style, solid) var(--ha-card-border-color, var(--divider-color)));
       }
 
