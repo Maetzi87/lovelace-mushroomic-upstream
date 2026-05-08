@@ -36,7 +36,7 @@ Card styling options are YAML‑only.  All fields are **template‑aware** and o
 <sub> 
 <sup>1</sup>CSS color formats: CSS color keyword (red, blue, etc.), hex(#ffffff), rgb(), rgba(), hsl(), var() </br>
 <sup>2</sup>CSS gradient formats: linear-gradient(), radial-gradient(), conic-gradient()</br>
-<sup>3</sup>use shorthand OR single border-configuration (border_width, border_style, border_color), shorthand replaces single config
+<sup>3</sup>Use shorthand OR individual border options (border_width, border_style, border_color). Shorthand overrides individual options.
 </sub>
 
 # 🛠 Features Styling – Options
