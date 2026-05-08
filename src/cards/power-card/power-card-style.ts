@@ -49,7 +49,7 @@ export const powerCardStyles = [
         left: 0;
         bottom: 0;
         right: 0;
-        border-radius: var(--mushic-border-radius, var(--ha-card-border-radius, 12px));
+        border-radius: var(--mushic-border-radius, var(--ha-card-border-radius, var(--ha-border-radius-lg, 12px)));
         margin: calc(-1 * var(--ha-card-border-width, 1px));
         overflow: hidden;
       }
