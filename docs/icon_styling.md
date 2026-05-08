@@ -31,6 +31,8 @@ Advanced styling options need to be set in yaml. All of them are **template-awar
 | `shape_hover_opacity`  | `'0.35'`                       | numeric 0–1                    | Icon background hover opacity |
 | `shape_border`         | `none`                         | shorthand (width style color)  | Border around the icon background |
 
+---
+
 # 🧩 Overlay Icon - Options
 The overlay icon can be used for dual animations or static overlays. Overlay is yaml-only, all variables are **template-aware** and optional.
 | YAML Options           | Default                      | Allowed Units / Formats        | Description |
