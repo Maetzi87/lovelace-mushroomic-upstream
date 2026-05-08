@@ -39,7 +39,7 @@ Card styling options are YAML‑only.  All fields are **template‑aware** and o
 <sup>3</sup>use shorthand OR single border-configuration (border_width, border_style, border_color), shorthand replaces single config
 </sub>
 
-#  Features Styling – Options
+# 🛠 Features Styling – Options
 
 ## Editor
 Only basic styling options are available in the editor (yet).
