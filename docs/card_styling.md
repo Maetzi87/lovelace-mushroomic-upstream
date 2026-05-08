@@ -1,7 +1,7 @@
 # 🃏 Card Styling – Options
 
 ## Editor
-Only basic styling options are available in the editor (yet).
+Only basic card options are available in the editor (yet).
 
 | Editor Options          | Default                     | Template | Allowed Units / Formats    | Description |
 |-------------------------|-----------------------------|----------|---------------------------|-------------|
@@ -42,7 +42,7 @@ Card styling options are YAML‑only.  All fields are **template‑aware** and o
 # 🛠 Features Styling – Options
 
 ## Editor
-Only basic styling options are available in the editor (yet).
+Only basic feature options are available in the editor (yet).
 
 | Editor Options          | Default                     | Template | Allowed Units / Formats    | Description |
 |-------------------------|-----------------------------|----------|---------------------------|-------------|
