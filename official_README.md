@@ -114,7 +114,7 @@ Advanced options are currently **YAML-only**.
 - 🍄 [**Icon & Overlay Styling**](/docs/icon_styling.md)
 - 🏷️ [**Badge Styling**](/docs/badge_styling.md)
 - ✒️ [**Text Styling**](/docs/text_styling.md)
-- 🔲 [**Card Styling**](/docs/card_styling.md)
+- 🃏 [**Card & Features Styling**](/docs/card_styling.md)
 - 💫 [**Animations**](/docs/animations.md)
 - 🖌 [Colorable SVGs](/docs/svgs.md)
 - 📝 [Theming](/docs/theming.md)
