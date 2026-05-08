@@ -1,4 +1,4 @@
-# 🔲 Card Styling – Options
+# 🃏 Card Styling – Options
 
 ## Editor
 Only basic styling options are available in the editor (yet).
