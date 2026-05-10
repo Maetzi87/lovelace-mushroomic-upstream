@@ -57,5 +57,15 @@ The overlay icon can be used for dual animations or static overlays. Overlay is 
 <sup>2</sup>CSS color formats: CSS color keyword (red, blue, etc.), hex(#ffffff), rgb(), rgba(), hsl(), var() </br>
 </sub>
 
+---
+
+# 🎨 Other Styling Options
+- 🍄 [**Icon & Overlay Styling**](/docs/icon_styling.md)
+- 🏷️ [**Badge Styling**](/docs/badge_styling.md)
+- ✒️ [**Text Styling**](/docs/text_styling.md)
+- 🃏 [**Card & Features Styling**](/docs/card_styling.md)
+
 # 💫 Animation Options
 For animation variables see [animations](/docs/animations.md).
+
+
