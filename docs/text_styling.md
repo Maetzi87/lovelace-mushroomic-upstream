@@ -18,14 +18,18 @@ Advanced text styling options need to be set in YAML.  All of them are **templat
 
 | YAML Options             | Default                             | Allowed Units / Formats        | Description |
 |--------------------------|-------------------------------------|--------------------------------|-------------|
-| `primary_color`          | `var(--primary-text-color)`           | hex, rgb(), rgba(), var()      | Primary text color |
+| `primary_color`          | `var(--primary-text-color)`         | any CSS color<sup>1</sup>      | Primary text color |
 | `primary_font_size`      | `var(--ha-font-size-m, 14px)`       | px, rem, %, calc()             | Primary font size |
 | `primary_font_weight`    | `var(--ha-font-weight-medium, 500)` | number, `bold`, `normal`       | Primary font weight |
 | `primary_font_variant`   | `normal`                            | CSS font‑variant               | Primary font variant (eg. `small‑caps`) |
 | `primary_line_height`    | `var(--ha-line-height-normal, 1.6)` | number, px, rem                | Primary line height |
-| `primary_letter_spacing` | `0.1px`                            | px, em                         | Primary letter spacing |
+| `primary_letter_spacing` | `0.1px`                             | px, em                         | Primary letter spacing |
 | `primary_text_align`     | `left`                              | `left`, `center`, `right`      | Primary text alignment |
 | `primary_text_shadow`    | `none`                              | CSS text‑shadow                | Primary text shadow |
+
+<sub> 
+<sup>1</sup>CSS color formats: CSS color keyword (red, blue, etc.), hex(#ffffff), rgb(), rgba(), hsl(), var() </br>
+</sub>
 
 ---
 
@@ -33,7 +37,7 @@ Advanced text styling options need to be set in YAML.  All of them are **templat
 
 | YAML Options               | Default                                | Allowed Units / Formats        | Description |
 |----------------------------|----------------------------------------|--------------------------------|-------------|
-| `secondary_color`          | `var(--secondary-text-color)`          | hex, rgb(), rgba(), var()      | Secondary text color |
+| `secondary_color`          | `var(--secondary-text-color)`          | any CSS color<sup>1</sup>      | Secondary text color |
 | `secondary_font_size`      | `var(--ha-font-size-s, 12px)`          | px, rem, %, calc()             | Secondary font size |
 | `secondary_font_weight`    | `var(--ha-font-weight-normal, 400)`    | number, `bold`, `normal`       | Secondary font weight |
 | `secondary_font_variant`   | `normal`                               | CSS font‑variant               | Secondary font variant (eg. `small‑caps`) |
@@ -41,6 +45,10 @@ Advanced text styling options need to be set in YAML.  All of them are **templat
 | `secondary_letter_spacing` | `0.4px`                                | px, em                         | Secondary letter spacing |
 | `secondary_text_align`     | `left`                                 | `left`, `center`, `right`      | Secondary text alignment |
 | `secondary_text_shadow`    | `none`                                 | CSS text‑shadow                | Secondary text shadow |
+
+<sub> 
+<sup>1</sup>CSS color formats: CSS color keyword (red, blue, etc.), hex(#ffffff), rgb(), rgba(), hsl(), var() </br>
+</sub>
 
 ---
 
