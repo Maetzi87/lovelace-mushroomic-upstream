@@ -89,7 +89,7 @@ export const AUTO_ANIMATIONS: Record<
   "mushic:wifi":         { icon: "mushic-good-signal 3s steps(1) infinite" } ,
   
   /* -- DEVICES -- */
-  "mushic:dishwasher":   { icon: "mushic-bounce 1.5s ease-in-out infinite, mushic-dishwash 1s ease-in-out infinite", icon_origin: "50% 75%" },
+  "mushic:dishwasher":   { icon: "mushic-bounce 1.5s ease-in-out infinite, mushic-dishwash 1s steps(1) infinite", icon_origin: "50% 75%" },
   "mushic:printer":      { icon: "mushic-print 5s infinite" } ,
   "mushic:robot-vacuum": { icon: "mushic-vacuum 10s linear infinite"   },
 
