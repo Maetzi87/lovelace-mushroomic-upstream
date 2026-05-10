@@ -63,7 +63,7 @@ Feature styling options are YAML‑only.  All fields are **template‑aware** an
 | `features_color`   | `color` of icon      |`color` of icon  | any CSS color<sup>1</sup> or CSS gradient<sup>2</sup>| Features color<sup>3</sup> |
 | `features_height`  | `42px`               | `shape_size`         | px, rem, %, calc()                              | Features height  |
 | `features_padding` | `0 12px 12px 12px`   | `0 12px 0 0`         | CSS padding (top right bottom left)             | Padding around features |
-| `features_gap`     | `12px`               | -                    | px, rem, %, calc()                              | Gap between features |
+| `features_gap`     | `12px`               | —                    | px, rem, %, calc()                              | Gap between features |
 
 <sub> 
 <sup>1</sup>CSS color formats: CSS color keyword (red, blue, etc.), hex(#ffffff), rgb(), rgba(), hsl(), var() </br>
