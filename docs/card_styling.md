@@ -70,3 +70,14 @@ Feature styling options are YAML‑only.  All fields are **template‑aware** an
 <sup>2</sup>CSS gradient formats: linear-gradient(), radial-gradient(), conic-gradient()</br>
 <sup>3</sup>only applies to features without built‑in colors. Features with own color logic (light-color-temp, light-color-favorites etc.) cannot be overridden.
 </sub>
+
+
+---
+
+# 🎨 Other Styling Options
+- 🍄 [**Icon & Overlay Styling**](/docs/icon_styling.md)
+- 🏷️ [**Badge Styling**](/docs/badge_styling.md)
+- ✒️ [**Text Styling**](/docs/text_styling.md)
+
+# 💫 Animation Options
+For animation variables see [animations](/docs/animations.md).
