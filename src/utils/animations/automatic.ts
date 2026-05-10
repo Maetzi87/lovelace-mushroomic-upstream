@@ -86,7 +86,7 @@ export const AUTO_ANIMATIONS: Record<
 
   /* -- CONNECTION -- */
   "mushic:access-point": { icon: "mushic-send 1.5s infinite" } ,
-  "mushic:wifi":         { icon: "good_signal 3s steps(1) infinite" } ,
+  "mushic:wifi":         { icon: "mushic-good-signal 3s steps(1) infinite" } ,
   
   /* -- DEVICES -- */
   "mushic:dishwasher":   { icon: "mushic-bounce 1.5s ease-in-out infinite, mushic-dishwash 1s ease-in-out infinite", icon_origin: "50% 75%" },
