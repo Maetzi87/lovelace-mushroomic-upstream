@@ -82,7 +82,7 @@ export const AUTO_ANIMATIONS: Record<
 
   /* Fan */
   "mushic:ceiling-fan-wind":  { icon: "mushic-wind-forward 1s ease-in-out infinite" },
-  "mushic:fan":               { icon: "mushic-rotate 1.5s linear infinite" },
+  "mushic:fan":               { icon: "mushic-rotate 800ms linear infinite" },
 
   /* -- CONNECTION -- */
   "mushic:access-point": { icon: "mushic-send 1.5s infinite" } ,
