@@ -35,5 +35,12 @@ Advanced styling options need to be set in yaml. All of them are **template-awar
 <sup>1</sup>CSS color formats: CSS color keyword (red, blue, etc.), hex(#ffffff), rgb(), rgba(), hsl(), var() </br>
 </sub>
 
+---
+
+# 🎨 Other Styling Options
+- 🍄 [**Icon & Overlay Styling**](/docs/icon_styling.md)
+- ✒️ [**Text Styling**](/docs/text_styling.md)
+- 🃏 [**Card & Features Styling**](/docs/card_styling.md)
+
 # 💫 Animation Options
 For animation variables see [animations](/docs/animations.md).
