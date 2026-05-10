@@ -8,7 +8,7 @@ Only basic styling options are available in the editor (yet).
 |--------------------|-----------------------------------------------------|----------|---------------------------|-------------|
 | `badge_icon`       | —                                                   | ✔        | any installed icon        | Badge icon |
 | `badge_text`       | —                                                   | ✔        | text / template           | Badge text (overrides icon) |
-| `badge_color`      | var(--state-inactive-color)    | ✔        | any CSS color<sup>1</sup> or CSS gradient<sup>2</sup> | Badge background color |
+| `badge_color`      | `var(--state-inactive-color)`    | ✔        | any CSS color<sup>1</sup> or CSS gradient<sup>2</sup> | Badge background color |
 | `badge_size`       | autoscaling </br> <sub>(44.4% of shape_size)</sub>  | ✔        | px, rem, %, calc()        | Badge size |
 
 <sub> 
