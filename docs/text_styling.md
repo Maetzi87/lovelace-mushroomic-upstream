@@ -9,12 +9,16 @@ Only basic text options are available in the editor (yet).
 | `secondary`             | `How are you?`     | ✔        | text / template                | Secondary text |
 | `multiline_secondary`   | `false`            | ❌       | boolean                        | Allow multiline secondary text |
 
----
 
 ## YAML
 Advanced text styling options need to be set in YAML.  All of them are **template‑aware** and optional. </br>
 
-### Primary Text
+| YAML Options           | Default  | Allowed Units / Formats        | Description |
+|------------------------|----------|--------------------------------|-------------|
+| `text_gap`             | 0px      | px, rem, %, calc()             | Gap between primary and secondary text |
+
+
+### 1️⃣ Primary Text
 
 | YAML Options             | Default                             | Allowed Units / Formats        | Description |
 |--------------------------|-------------------------------------|--------------------------------|-------------|
@@ -31,9 +35,8 @@ Advanced text styling options need to be set in YAML.  All of them are **templat
 <sup>1</sup>CSS color formats: CSS color keyword (red, blue, etc.), hex(#ffffff), rgb(), rgba(), hsl(), var() </br>
 </sub>
 
----
 
-### Secondary Text
+### 2️⃣ Secondary Text
 
 | YAML Options               | Default                                | Allowed Units / Formats        | Description |
 |----------------------------|----------------------------------------|--------------------------------|-------------|
@@ -49,15 +52,6 @@ Advanced text styling options need to be set in YAML.  All of them are **templat
 <sub> 
 <sup>1</sup>CSS color formats: CSS color keyword (red, blue, etc.), hex(#ffffff), rgb(), rgba(), hsl(), var() </br>
 </sub>
-
----
-
-### Shared Text Options
-
-| YAML Options           | Default  | Allowed Units / Formats        | Description |
-|------------------------|----------|--------------------------------|-------------|
-| `text_gap`             | 0px      | px, rem, %, calc()             | Gap between primary and secondary text |
-
 
 ---
 
