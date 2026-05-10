@@ -59,3 +59,12 @@ Advanced text styling options need to be set in YAML.  All of them are **templat
 | `text_gap`             | 0px      | px, rem, %, calc()             | Gap between primary and secondary text |
 
 
+---
+
+# 🎨 Other Styling Options
+- 🍄 [**Icon & Overlay Styling**](/docs/icon_styling.md)
+- 🏷️ [**Badge Styling**](/docs/badge_styling.md)
+- 🃏 [**Card & Features Styling**](/docs/card_styling.md)
+
+# 💫 Animation Options
+For animation variables see [animations](/docs/animations.md).
