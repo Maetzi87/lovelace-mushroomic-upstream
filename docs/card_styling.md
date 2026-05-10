@@ -8,11 +8,11 @@ Only basic card options are available in the editor (yet).
 | `vertical`              | `false`                     | ❌       | true / false              | Layout selection |
 | `features_position`     | `bottom`                    | ❌       | bottom / inline           | Position of feature row |
 | `features`              | —                           | ❌       | list                      | List of card features |
-| `tap_action`            | `more-info`*                | ❌       | action object             | Card tap action |
+| `tap_action`            | `more-info`<sup>1</sup>     | ❌       | action object             | Card tap action |
 | `hold_action`           | `none`                      | ❌       | action object             | Card hold action |
 | `double_tap_action`     | `none`                      | ❌       | action object             | Card double-tap action |
 
-<sub>* Default only if `entity` is set.</sub>
+<sub><sup>1</sup>Default only if `entity` is set.</sub>
 
 ## YAML
 Card styling options are YAML‑only.  All fields are **template‑aware** and optional.
@@ -39,6 +39,8 @@ Card styling options are YAML‑only.  All fields are **template‑aware** and o
 <sup>3</sup>Use shorthand OR individual border options (border_width, border_style, border_color). Shorthand overrides individual options.
 </sub>
 
+---
+
 # 🛠 Features Styling – Options
 
 ## Editor
@@ -46,6 +48,25 @@ Only basic feature options are available in the editor (yet).
 
 | Editor Options          | Default                     | Template | Allowed Units / Formats    | Description |
 |-------------------------|-----------------------------|----------|---------------------------|-------------|
-| `features_position`     | `bottom`                    | ❌       | bottom / inline           | Position of feature row |
+| `features_position`     | `bottom`                    | ❌       | bottom / inline           | Position of feature row<sup>1</sup> |
 | `features`              | —                           | ❌       | list                      | List of card features |
 
+<sub> 
+<sup>1</sup>"features_position: inline" shows first feature only </sub>
+
+
+## YAML
+Feature styling options are YAML‑only.  All fields are **template‑aware** and optional.
+
+| YAML Options       | Default for `bottom` | Default for `inline` | Allowed Units / Formats                         | Description |
+|--------------------|----------------------|----------------------|-------------------------------------------------|-------------|
+| `features_color`   | `color` of icon      |`color` of icon  | any CSS color<sup>1</sup> or CSS gradient<sup>2</sup>| Features color<sup>3</sup> |
+| `features_height`  | `42px`               | `shape_size`         | px, rem, %, calc()                              | Features height  |
+| `features_padding` | `0 12px 12px 12px`   | `0 12px 0 0`         | CSS padding (top right bottom left)             | Padding around features |
+| `features_gap`     | `12px`               | -                    | px, rem, %, calc()                              | Gap between features |
+
+<sub> 
+<sup>1</sup>CSS color formats: CSS color keyword (red, blue, etc.), hex(#ffffff), rgb(), rgba(), hsl(), var() </br>
+<sup>2</sup>CSS gradient formats: linear-gradient(), radial-gradient(), conic-gradient()</br>
+<sup>3</sup>only applies to features without built‑in colors. Features with own color logic (light-color-temp, light-color-favorites etc.) cannot be overridden.
+</sub>
