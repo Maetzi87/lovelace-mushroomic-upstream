@@ -143,7 +143,7 @@ badge_color: |
 
 ---
 
-❤️ Credits
+## ❤️ Credits
 
 A huge thanks to piitaya for the original Mushroom concept and design language that made this project possible.  
 Mushroomic is an independent extension that expands these ideas with additional customization options.
