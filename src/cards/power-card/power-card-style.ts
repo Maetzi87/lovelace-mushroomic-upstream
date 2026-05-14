@@ -96,7 +96,7 @@ export const powerCardStyles = [
         padding: 6px;
         --mdc-icon-size: var(--mushic-final-icon-size);
         --tile-icon-opacity: 0;
-        backface-visibility: hidden;
+        backface-visibility: visible;
         transform-style: preserve-3d;
       }
       ha-tile-icon .container {
@@ -139,7 +139,7 @@ export const powerCardStyles = [
          animation: var(--mushic-shape-animation);
          transform-origin: 50% 50%;
          transform-style: preserve-3d;
-         backface-visibility: hidden;
+         backface-visibility: visible;
          z-index: 0;
          border: var(--mushic-shape-border, none);
       }
@@ -185,7 +185,7 @@ export const powerCardStyles = [
         clip-path: var(--mushic-icon-clip-path, none);
         position: relative;
         z-index: 2;
-        backface-visibility: hidden;
+        backface-visibility: visible;
         transform-style: preserve-3d;
       }
 
@@ -248,7 +248,7 @@ export const powerCardStyles = [
          transform: rotate(var(--mushic-overlay-rotation, 0deg));
          clip-path: var(--mushic-overlay-clip-path, none);
          transform-style: preserve-3d;
-         backface-visibility: hidden;
+         backface-visibility: visible;
        }
 
 /* --- BADGE --- */
@@ -277,7 +277,7 @@ export const powerCardStyles = [
         transform: rotate(var(--mushic-badge-icon-rotation, 0deg));
         clip-path: var(--mushic-badge-icon-clip-path, none);
         animation: var(--mushic-badge-icon-animation);
-        backface-visibility: hidden;
+        backface-visibility: visible;
         transform-style: preserve-3d;
       }
       .mushic-badge span {
