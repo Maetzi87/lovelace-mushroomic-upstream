@@ -3,7 +3,7 @@ import { css, html, LitElement, nothing, PropertyValues } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { styleMap } from "lit/directives/style-map.js";
+import { styleMap } from "lit/directives/style-map.js"; 
 import { unsafeSVG } from "lit/directives/unsafe-svg.js";
 import "./power-card-editor";
 import memoizeOne from "memoize-one";
