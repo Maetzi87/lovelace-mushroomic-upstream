@@ -118,7 +118,7 @@ export const AUTO_OVERLAY_ANIMATIONS: Record<
     icon_origin: string;
   }>
 > = {
-  "mushic:ceiling-fan-blades":    { icon: "mushic-blade-rotation 0.3s linear infinite" } ,
+  "mushic:ceiling-fan-blades":    { icon: "mushic-blade-rotation 0.6s linear infinite" } ,
   "mushic:paper":                 { icon: "mushic-paper 5s infinite" } ,
   "mushic:washing-machine-drum":  { icon: "mushic-rotate 0.5s linear infinite", icon_origin: "51% 60%" },
   "mushic:washing-machine-waves": { icon: "mushic-wash 5s ease-in-out infinite", icon_origin: "50% 60%" },
