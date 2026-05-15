@@ -27,6 +27,7 @@ export const AUTO_OVERLAY_MAP: Record<string, string> = {
 const alertAnimation = {
   icon:  "mushic-blink 1.5s ease-in-out infinite",
   shape: "mushic-ping 1.5s infinite, mushic-blink 1.5s ease-in-out infinite",
+  badge: true
 };
 
 /* ICON */
@@ -73,30 +74,31 @@ export const AUTO_ANIMATIONS: Record<
   },
 
   /* -- ALERT -- */
-  "mushic:bell-ring": { icon: "mushic-ring 4s linear infinite", icon_origin: "50% 15%"  },
-  "mushic:door":      { icon: "mushic-door 6s ease-in-out infinite", icon_origin: "30%" },
+  "mushic:bell-ring": { icon: "mushic-ring 4s linear infinite", icon_origin: "50% 15%",  badge: true },
+  "mushic:door":      { icon: "mushic-door 6s ease-in-out infinite", icon_origin: "30%", badge: true },
   "mushic:fire":      alertAnimation,
   "mushic:water":     alertAnimation,
 
   /* -- AIR -- */
-  "mushic:air-freshener":     { icon: "mushic-air 3s ease-in-out infinite"  }, 
-  "mushic:air-purifier":      { icon: "mushic-purify 1.5s steps(1) infinite" } ,
-  "mushic:radiator":          { icon: "mushic-heat 1s ease-out infinite" } ,
+  "mushic:air-freshener":     { icon: "mushic-air 3s ease-in-out infinite",   badge: true }, 
+  "mushic:air-purifier":      { icon: "mushic-purify 1.5s steps(1) infinite", badge: true } ,
+  "mushic:radiator":          { icon: "mushic-heat 1s ease-out infinite",     badge: true } ,
 
   /* Fan */
   "mushic:ceiling-fan-wind":  { icon: "mushic-wind-forward 1s ease-in-out infinite" },
-  "mushic:fan":               { icon: "mushic-rotate 800ms linear infinite" },
+  "mushic:fan":               { icon: "mushic-rotate 800ms linear infinite", badge: true },
 
   /* -- CONNECTION -- */
-  "mushic:access-point": { icon: "mushic-send 1.5s infinite" } ,
-  "mushic:wifi":         { icon: "mushic-good-signal 3s steps(1) infinite" } ,
+  "mushic:access-point": { icon: "mushic-send 1.5s infinite", badge: true } ,
+  "mushic:wifi":         { icon: "mushic-good-signal 3s steps(1) infinite", badge: true } ,
   
   /* -- DEVICES -- */
-  "mushic:dishwasher":   { icon: "mushic-bounce 1.5s ease-in-out infinite, mushic-dishwash 1s steps(1) infinite", icon_origin: "50% 75%" },
+  "mushic:dishwasher":   { icon: "mushic-bounce 1.5s ease-in-out infinite, mushic-dishwash 1s steps(1) infinite", icon_origin: "50% 75%", badge: true },
   "mushic:printer":      { icon: "mushic-print 5s infinite" } ,
-  "mushic:robot-vacuum": { icon: "mushic-vacuum 10s linear infinite"   },
+  "mushic:robot-vacuum": { icon: "mushic-vacuum 10s linear infinite",  badge: true },
 
   /* -- MISC -- */
+  "mushic:battery-high": { icon: "mushic-charge 3s steps(1) infinite", badge: true },
   "mushic:frenchie": { icon: "mushic-huh 4s ease infinite", icon_origin: "40% 70%" },
 
   /* -- WATER -- */
@@ -136,7 +138,6 @@ export const AUTO_BADGE_ANIMATIONS: Record<
     shape: string;
   }>
 > = {
-  "mushic:battery-high": { icon: "mushic-charge 3s steps(1) infinite" } ,
   "mushic:alert-circle": { icon: "mushic-blink 1.2s ease-in-out infinite", shape: "mushic-blink 1.2s ease-in-out infinite" } ,
 };
 
@@ -169,11 +170,8 @@ export function getAutoBadgeAnimation(badgeIcon?: string) {
 
   const iconAnim = AUTO_ANIMATIONS[badgeIcon];
   if (iconAnim?.badge && iconAnim.icon) {
-    return {
-      icon: iconAnim.icon,
-      icon_origin: iconAnim.icon_origin,
-      shape: iconAnim.shape,
-    };
+    const { icon, icon_origin, shape } = iconAnim;
+    return { icon, icon_origin, shape };
   }
   return {};
 }
