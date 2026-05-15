@@ -36,6 +36,7 @@ export const AUTO_ANIMATIONS: Record<
     icon: string;
     icon_origin: string;
     shape: string;
+    badge: boolean;
     screen: string;
     screenMask: {
       width: string;
@@ -139,7 +140,7 @@ export const AUTO_BADGE_ANIMATIONS: Record<
   "mushic:alert-circle": { icon: "mushic-blink 1.2s ease-in-out infinite", shape: "mushic-blink 1.2s ease-in-out infinite" } ,
 };
 
-/* --- HELPER --- */
+/* --- EXPORT --- */
 /* Auto-Overlay-Icon*/
 
 export function getAutoOverlay(icon?: string): string | undefined {
@@ -162,5 +163,17 @@ export function getAutoOverlayAnimation(overlayIcon?: string) {
 /* Badge-Animation */
 export function getAutoBadgeAnimation(badgeIcon?: string) {
   if (!badgeIcon) return {};
-  return AUTO_BADGE_ANIMATIONS[badgeIcon] || {};
+  
+  const badgeSpecific = AUTO_BADGE_ANIMATIONS[badgeIcon];
+  if (badgeSpecific) return badgeSpecific;
+
+  const iconAnim = AUTO_ANIMATIONS[badgeIcon];
+  if (iconAnim?.badge && iconAnim.icon) {
+    return {
+      icon: iconAnim.icon,
+      icon_origin: iconAnim.icon_origin,
+      shape: iconAnim.shape,
+    };
+  }
+  return {};
 }
