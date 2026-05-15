@@ -89,28 +89,28 @@ export const AUTO_ANIMATIONS: Record<
   "mushic:fan":               { icon: "mushic-rotate 800ms linear infinite", badge: true },
 
   /* -- CONNECTION -- */
-  "mushic:access-point": { icon: "mushic-send 1.5s infinite", badge: true } ,
-  "mushic:wifi":         { icon: "mushic-good-signal 3s steps(1) infinite", badge: true } ,
+  "mushic:access-point": { icon: "mushic-send 1.5s infinite",               badge: true },
+  "mushic:wifi":         { icon: "mushic-good-signal 3s steps(1) infinite", badge: true },
   
   /* -- DEVICES -- */
   "mushic:dishwasher":   { icon: "mushic-bounce 1.5s ease-in-out infinite, mushic-dishwash 1s steps(1) infinite", icon_origin: "50% 75%", badge: true },
-  "mushic:printer":      { icon: "mushic-print 5s infinite" } ,
-  "mushic:robot-vacuum": { icon: "mushic-vacuum 10s linear infinite",  badge: true },
+  "mushic:printer":      { icon: "mushic-print 5s infinite"                       },
+  "mushic:robot-vacuum": { icon: "mushic-vacuum 10s linear infinite", badge: true },
 
   /* -- MISC -- */
-  "mushic:battery-high": { icon: "mushic-charge 3s steps(1) infinite", badge: true },
-  "mushic:frenchie": { icon: "mushic-huh 4s ease infinite", icon_origin: "40% 70%" },
+  "mushic:battery-high": { icon: "mushic-charge 3s steps(1) infinite", badge: true     },
+  "mushic:frenchie":     { icon: "mushic-huh 4s ease infinite", icon_origin: "40% 70%" },
 
   /* -- WATER -- */
-  "mushic:water-boiler":           { shape: "mushic-glow 5s ease-in-out infinite" },
-  "mushic:water-boiler-auto":      { shape: "mushic-glow 5s ease-in-out infinite" },
-  "mushic:water-heater":           { shape: "mushic-glow 5s ease-in-out infinite" },
+  "mushic:water-boiler":           { shape: "mushic-glow 5s ease-in-out infinite", badge: true },
+  "mushic:water-boiler-auto":      { shape: "mushic-glow 5s ease-in-out infinite", badge: true },
+  "mushic:water-heater":           { shape: "mushic-glow 5s ease-in-out infinite", badge: true },
 
   /* Washing Machine */
-  "mushic:washing-machine-bubble": { icon: "mushic-shake 800ms ease-in-out infinite, mushic-bubble 4s steps(1) infinite", icon_origin: "50% 110%"  },
-  "mushic:washing-machine-empty":  { icon: "mushic-shake 400ms ease-in-out infinite", icon_origin: "50% 110%"   },
-  "mushic:washing-machine-rinse":  { icon: "mushic-shake 800ms ease-in-out infinite, mushic-rinse 1.5s ease-in-out infinite", icon_origin: "50% 110%"  },
-  "mushic:tumble-dryer":           { icon: "mushic-shake 800ms ease-in-out infinite, mushic-dry 2s ease-in infinite", icon_origin: "50% 110%"  },
+  "mushic:washing-machine-bubble": { icon: "mushic-shake 800ms ease-in-out infinite, mushic-bubble 4s steps(1) infinite",     icon_origin: "50% 110%" },
+  "mushic:washing-machine-empty":  { icon: "mushic-shake 400ms ease-in-out infinite",                                         icon_origin: "50% 110%" },
+  "mushic:washing-machine-rinse":  { icon: "mushic-shake 800ms ease-in-out infinite, mushic-rinse 1.5s ease-in-out infinite", icon_origin: "50% 110%" },
+  "mushic:tumble-dryer":           { icon: "mushic-shake 800ms ease-in-out infinite, mushic-dry 2s ease-in infinite",         icon_origin: "50% 110%" },
 };
 
 /* OVERLAY */
@@ -121,12 +121,13 @@ export const AUTO_OVERLAY_ANIMATIONS: Record<
     icon_origin: string;
   }>
 > = {
-  "mushic:ceiling-fan-blades":    { icon: "mushic-blade-rotation 0.6s linear infinite" } ,
-  "mushic:paper":                 { icon: "mushic-paper 5s infinite" } ,
-  "mushic:washing-machine-drum":  { icon: "mushic-rotate 0.5s linear infinite", icon_origin: "51% 60%" },
-  "mushic:washing-machine-waves": { icon: "mushic-wash 5s ease-in-out infinite", icon_origin: "50% 60%" },
   "mushic:alert":                 { icon: "mushic-blink 1.5s ease-in-out infinite -750ms" },
-  "mushic:no-motion":             { icon: "mushic-blink 1.5s ease-in-out infinite" },
+  "mushic:ceiling-fan-blades":    { icon: "mushic-blade-rotation 0.6s linear infinite"    },
+  "mushic:paper":                 { icon: "mushic-paper 5s infinite"                      },
+  "mushic:no-motion":             { icon: "mushic-blink 1.5s ease-in-out infinite"        }, 
+  
+  "mushic:washing-machine-drum":  { icon: "mushic-rotate 0.5s linear infinite",  icon_origin: "51% 60%" },
+  "mushic:washing-machine-waves": { icon: "mushic-wash 5s ease-in-out infinite", icon_origin: "50% 60%" },
 };  
 
 /* BADGE */
@@ -165,11 +166,11 @@ export function getAutoOverlayAnimation(overlayIcon?: string) {
 export function getAutoBadgeAnimation(badgeIcon?: string) {
   if (!badgeIcon) return {};
   
-  const badgeSpecific = AUTO_BADGE_ANIMATIONS[badgeIcon];
-  if (badgeSpecific) return badgeSpecific;
+  const badgeAnim = AUTO_BADGE_ANIMATIONS[badgeIcon];
+  if (badgeAnim) return badgeAnim;
 
   const iconAnim = AUTO_ANIMATIONS[badgeIcon];
-  if (iconAnim?.badge && iconAnim.icon) {
+  if (iconAnim?.badge) {
     const { icon, icon_origin, shape } = iconAnim;
     return { icon, icon_origin, shape };
   }
