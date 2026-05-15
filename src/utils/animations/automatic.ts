@@ -139,7 +139,7 @@ export const AUTO_BADGE_ANIMATIONS: Record<
     shape: string;
   }>
 > = {
-  "mushic:alert-circle": { icon: "mushic-blink 1.2s ease-in-out infinite", shape: "mushic-blink 1.2s ease-in-out infinite" } ,
+  "mushic:alert-circle": { icon: "mushic-blink 1.5s ease-in-out infinite", shape: "mushic-blink 1.5s ease-in-out infinite" } ,
 };
 
 /* --- EXPORT --- */
