@@ -195,8 +195,8 @@ export const mushroomicKeyframes = css`
     75%      { clip-path: circle(21.7% at 75% 58%); }
   }
   @keyframes mushic-wave {
-    0%   { clip-path: path(var(--wave1)); }
-    100% { clip-path: path(var(--wave2)); }
+    0%   { clip-path: path('var(--wave1)'); }
+    100% { clip-path: path('var(--wave2)'); }
   }
   
   /* ANIMATED WASHING MACHINE 4 - RINSE - used for mushic:washing-machine-rinse */
