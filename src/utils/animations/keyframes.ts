@@ -154,13 +154,13 @@ export const mushroomicKeyframes = css`
     60%      { clip-path: circle(21.7% at calc(50% - 0.4px) calc(58% - 0.4px)); }
     80%      { clip-path: circle(21.7% at calc(50% + 0.4px) calc(58% + 0.4px)); }
   }
-  @keyframes mushic-wash {
+  @keyframes mushic-wash-old2 {
     0%, 100% { transform: translateX(20%); }
     30%      { transform: translateX(-15%); }
     45%      { transform: translateX(10%); }
     75%      { transform: translateX(-25%); }
   }
-  @keyframes mushic-wash-clip {
+  @keyframes mushic-wash-clip-old2 {
     0%    { clip-path: circle(21.7% at 30% 58%);                             }
     12.5% { clip-path: circle(21.7% at calc(30% - 0.4px) calc(58% + 0.4px)); }
     25%   { clip-path: circle(21.7% at calc(30% + 0.4px) calc(58% - 0.4px)); }
@@ -174,6 +174,20 @@ export const mushroomicKeyframes = css`
     100%  { clip-path: circle(21.7% at 30% 58%);                             }
   }
   
+  @keyframes mushic-wash {
+    0%    { transform: translateX(20%);    clip-path: circle(21.7% at 30% 58%); }
+    12.5% { transform: translateX(5.4%);   clip-path: circle(21.7% at calc(50% - 5.4% - 0.4px) calc(58% + 0.4px)); }
+    25%   { transform: translateX(-9.2%);  clip-path: circle(21.7% at calc(50% + 9.2% + 0.4px) calc(58% - 0.4px)); }
+    30%   { transform: translateX(-15%);   clip-path: circle(21.7% at calc(65% + 0.4px) calc(58% - 0.4px)); }
+    37.5% { transform: translateX(-2.5%);  clip-path: circle(21.7% at calc(52.5% - 0.4px) calc(58% + 0.4px)); }
+    45%   { transform: translateX(10%);    clip-path: circle(21.7% at calc(40% - 0.4px) calc(58% + 0.4px)); }
+    50%   { transform: translateX(10%);    clip-path: circle(21.7% at calc(40% + 0.4px) calc(58% - 0.4px)); }
+    62.5% { transform: translateX(-10.4%); clip-path: circle(21.7% at calc(50% + 10.4% - 0.4px) calc(58% - 0.4px)); }
+    75%   { transform: translateX(-25%);   clip-path: circle(21.7% at calc(75% + 0.4px) calc(58% + 0.4px)); }
+    87.5% { transform: translateX(-2.5%);  clip-path: circle(21.7% at calc(52.5% - 0.4px) calc(58% - 0.4px)); }
+    100%  { transform: translateX(20%);    clip-path: circle(21.7% at 30% 58%); }
+  }
+
   @keyframes mushic-wash-clip-old {
     0%, 100% { clip-path: circle(21.7% at 30% 58%); }
     30%      { clip-path: circle(21.7% at 65% 58%); }
