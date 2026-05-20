@@ -534,6 +534,41 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       (shapeColorValue && shapeColorValue !== "0") ||
       (shapeOpacityValue && shapeOpacityValue !== "0");
 
+    // --- EARLY HEIGHT (theme-independent) ---
+    let earlyHeight = 0;
+    // Shape size
+    const earlyShape = shapeSize
+      ? parseInt(shapeSize)
+      : 36;
+    earlyHeight += earlyShape;
+    
+    // Padding
+    const earlyPad = this.getValue("card_padding")
+      ? parseInt(this.getValue("card_padding"))
+      : 10;
+    earlyHeight += earlyPad * 2;
+    
+    // Vertical text
+    if (this._config.vertical) {
+      if (primary) {
+        earlyHeight += primarySize * primaryLH;
+      }
+      if (secondary) {
+        earlyHeight += secondarySize * secondaryLH;
+      }
+      if (primary && secondary) {
+        earlyHeight += parseInt(this.getValue("text_gap") || "0");
+      }
+    }
+    
+    // Features (bottom only)
+    if (featuresCount && featurePosition === "bottom") {
+      const fHeight = parseInt(this.getValue("features_height") || "42");
+      const fGap = parseInt(this.getValue("features_gap") || "12");
+      earlyHeight += featuresCount * fHeight + (featuresCount - 1) * fGap;
+    }
+
+    
     // --- AUTO_ANIMATION
     const autoAnim = getAutoAnimations(icon);
     const autoBadgeAnim = getAutoBadgeAnimation(badgeIcon);
@@ -600,6 +635,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--mushic-badge-margin-right": this.getValue("badge_margin_right"),  
     
       // --- CARD STYLING ---
+      "--mushic-card-auto-height": earlyHeight + "px",
       "--mushic-card-height": this.getValue("card_height"),
       "--mushic-card-width": this.getValue("card_width"),
       "--ha-card-background": cardBgCssColor || "var(--mushic-card-bg-color)",
@@ -657,7 +693,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       style["--mushic-screen-left"] = autoAnim.screenMask.left;
     }
 
-  // --- CALCULATE CARD HEIGHT ---
+  // --- CALCULATE CARD HEIGHT (theme-aware) ---
     
     // -- Card Padding (top + bottom)
     const content = this.shadowRoot?.querySelector(".content");
@@ -715,7 +751,9 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
         : contentHeight;
     
     // -- set variable for CSS
-    style["--mushic-card-auto-height"] = finalHeight;
+    if (finalHeight !== earlyHeight + "px") {
+      style["--mushic-card-auto-height"] = finalHeight;
+    }
 
     const features = this._displayedFeatures(this._config);
     const featureContext = this._featureContext(this._config);
