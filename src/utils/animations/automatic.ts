@@ -19,7 +19,7 @@ export const AUTO_OVERLAY_MAP: Record<string, string> = {
   
   "mushic:printer": "mushic:paper",
 
-  "mushic:washing-machine-wash": "mushic:washing-machine-waves",
+  "mushic:washing-machine-wash": "mushic:washing-machine-water",
   "mushic:washing-machine-spin": "mushic:washing-machine-drum",
 };
 
@@ -129,9 +129,8 @@ export const AUTO_OVERLAY_ANIMATIONS: Record<
   "mushic:paper":                 { icon: "mushic-paper 5s infinite"                      },
   "mushic:no-motion":             { icon: "mushic-blink 1.5s ease-in-out infinite"        }, 
   
-  "mushic:washing-machine-drum":  { icon: "mushic-rotate 0.5s linear infinite",    icon_origin: "51% 60%" },
-  "mushic:washing-machine-waves": { icon: "mushic-wash 6.4s ease-in-out infinite", icon_origin: "50% 60%" },
-  "mushic:washing-machine-drum-full":  { icon: "mushic-waves 6.4s ease-in-out infinite",    icon_origin: "50% 60%" },
+  "mushic:washing-machine-drum":  { icon: "mushic-rotate 0.5s linear infinite", icon_origin: "51% 60%" },
+  "mushic:washing-machine-water": { icon: "mushic-wash 5s ease-in-out infinite, mushic-shake 800ms ease-in-out infinite", icon_origin: "50% 60%" },
 };  
 
 /* BADGE */
