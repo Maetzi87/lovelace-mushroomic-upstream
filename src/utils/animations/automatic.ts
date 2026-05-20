@@ -131,6 +131,7 @@ export const AUTO_OVERLAY_ANIMATIONS: Record<
   
   "mushic:washing-machine-drum":  { icon: "mushic-rotate 0.5s linear infinite",    icon_origin: "51% 60%" },
   "mushic:washing-machine-waves": { icon: "mushic-wash 6.4s ease-in-out infinite", icon_origin: "50% 60%" },
+  "mushic:washing-machine-drum-full":  { icon: "mushic-waves 6.4s ease-in-out infinite",    icon_origin: "50% 60%" },
 };  
 
 /* BADGE */
