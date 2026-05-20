@@ -5,16 +5,13 @@ export const mushroomicKeyframes = css`
   @keyframes mushic-blink {
     100% { opacity: 0; }
   }
-  @keyframes mushic-offset-blink {
-    50%  { opacity: 0; }
-  }
   /* ALERT – makes shape blink */
   @keyframes mushic-ping {
     0%   { box-shadow: 0 0 0 0 rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.7); }
     100% { box-shadow: 0 0 5px 7px transparent; }
   }
 
-  /* BATTERY CHARGING ANIMATION – use with mdi:battery-high */
+  /* BATTERY CHARGING ANIMATION – used for mushic:battery-high */
   @keyframes mushic-charge {
     0%  { clip-path: polygon(0% 0%, 0% 100%, 37% 100%, 37% 28%, 65% 28%, 65% 80%, 37% 80%, 37% 100%, 100% 100%, 100% 0%); }
     20% { clip-path: polygon(0% 0%, 0% 100%, 37% 100%, 37% 28%, 65% 28%, 65% 65%, 37% 64%, 37% 100%, 100% 100%, 100% 0%); }
@@ -22,7 +19,7 @@ export const mushroomicKeyframes = css`
     60% { clip-path: polygon(0% 0%, 0% 100%, 37% 100%, 37% 28%, 65% 28%, 65% 28%, 37% 28%, 37% 100%, 100% 100%, 100% 0%); }
   }
   
-  /* SCREEN FLICKER EFFECT - use with :before-element and content:""; - adjust width, height and margin to your needs */
+  /* SCREEN FLICKER EFFECT */
   @keyframes mushic-flicker { 
     0%   { background: linear-gradient(180deg, rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.3) 0%, transparent 30%, transparent 100%);                                   }
     25%  { background: linear-gradient(180deg, transparent 0%, rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.3) 25%, transparent 55%, transparent 100%);                  }
@@ -31,31 +28,31 @@ export const mushroomicKeyframes = css`
     100% { background: linear-gradient(180deg, transparent 0%, transparent 70%, rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.3) 100%);                                   }
   }
   
-  /* HEATING RADIATOR - use with mdi:radiator */
+  /* HEATING RADIATOR - used for mushic:radiator */
   @keyframes mushic-heat {
    0%        { clip-path: inset(50% 0 0 0); }
    95%, 100% { clip-path: inset(0 0 0 0);   }
   }
   
-  /* GLOW EFFEKT - gradient-like shape-animation for any (heating) icon */
+  /* GLOW EFFEKT - gradient-like shape-animation for any (heating) icon - used for mushic:water-boiler, mushic:water-boiler-auto and mushic:water-heater */
   @keyframes mushic-glow {
     0%  { background: var(--mushic-animation-color, red); box-shadow: 0 0 0 0 transparent, 0 0 20px 20px var(--mushic-shape-color, var(--mushic-icon-color)) inset;                          }
     70% { background: var(--mushic-shape-color, var(--mushic-icon-color)); box-shadow: 0 0 5px 7px var(--mushic-animation-color, red), 0 0 0px 0px var(--mushic-animation-color, red) inset; } 
   }
   
-  /* OPENING DOOR – use with mdi:door */
+  /* OPENING DOOR – used for mushic:door */
   @keyframes mushic-door {
     0%, 66% { transform: rotateY(0deg);    transform-origin: 30%; }
     33%     { transform: rotateY(-120deg); transform-origin: 30%; }
   }
 
-  /* SEND ANIMATION – use with mdi:access-point */
+  /* SEND ANIMATION – used for mushic:access-point */
   @keyframes mushic-send {
     0%   { clip-path: circle(13% at 50% 50%); }
     100% { clip-path: circle(50% at 50% 50%); }
   }
   
-  /* RINGING BELL – use with mdi:bell-ring */
+  /* RINGING BELL – used for mushic:bell-ring */
   @keyframes mushic-ring {
     0%   { transform: rotate(0);      clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 85% 50%, 80% 30%, 60% 5%, 40% 5%, 20% 30%, 15% 50%); }
     2%   { transform: rotate(30deg);  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);                                                        }
@@ -83,7 +80,7 @@ export const mushroomicKeyframes = css`
     100% { transform: rotate(0);      clip-path: polygon(0 50%, 0 100%, 100% 100%, 100% 50%, 85% 50%, 80% 30%, 60% 5%, 40% 5%, 20% 30%, 15% 50%); }
   }
   
-  /* ANIMATED VACUUM – use with mdi:robot-vacuum */
+  /* ANIMATED VACUUM – used for mushic:robot-vacuum */
   @keyframes mushic-vacuum {
     0%          { transform: translate(0, 0) rotate(0);           }
     5%, 7%      { transform: rotate(-40deg);                      }
@@ -100,7 +97,7 @@ export const mushroomicKeyframes = css`
     100%        { transform: translate(0%, 0%) rotate(0);         }
   }
 
-  /* ANIMATED CEILING FAN 1 – WIND - use with mushic:center-and-wind */
+  /* ANIMATED CEILING FAN 1 – WIND - used for mushic:ceiling-fan-wind and mushic:ceiling-fan-wind-variant */
   @keyframes mushic-wind-forward {
     0%        { clip-path: inset(0 0% 30% 0); }
     95%, 100% { clip-path: inset(0 0 0 0);    }
@@ -110,7 +107,7 @@ export const mushroomicKeyframes = css`
     100%    { clip-path: inset(0 0% 30% 0);   }
   }
 
-  /* ANIMATED CEILING FAN 2 – ROTATION - use with mushic:blades */
+  /* ANIMATED CEILING FAN 2 – BLADE-ROTATION - used for mushic:ceiling-fan-blades */
   @keyframes mushic-blade-rotation {
     0%  { transform: rotateY(0deg);    }
     25% { transform: rotateY(-90deg);  }
@@ -118,13 +115,13 @@ export const mushroomicKeyframes = css`
     75% { transform: rotateY(-90deg);  }
   }
 
-  /* ANIMATED FAN (or whatever) - makes icon rotate */
+  /* ANIMATED FAN (or whatever) - ROTATION - used for mushic:fan and mushic:washing-machine-drum */
   @keyframes mushic-rotate {
     0%   { transform: rotate(0deg);   }
     100% { transform: rotate(360deg); }
   }
   
-  /* ANIMATED WASHING MACHINE 1 - SHAKE and BUBBLE - use with mdi:washing-machine and mushic:washing-machine-bubble */
+  /* ANIMATED WASHING MACHINE 1 - SHAKE - used for mushic:washing-machine-* */
   @keyframes mushic-shake {
     0%, 100% { transform: translate(0, 0)           rotate(0);     }
     20%      { transform: translate(0.4px, -0.4px)  rotate(-4deg); }
@@ -132,6 +129,7 @@ export const mushroomicKeyframes = css`
     60%      { transform: translate(0.4px, 0.4px)   rotate(-4deg); }
     80%      { transform: translate(-0.4px, -0.4px) rotate(4deg);  }
   }
+  /* ANIMATED WASHING MACHINE 2 - BUBBLE - used for mushic:washing-machine-wash */
   @keyframes mushic-bubble {
     0%, 100%  { clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 34% 74%, 28% 63%, 31% 47%, 43% 37%, 65% 40%, 73% 61%, 63% 77%, 47% 81%, 34% 74%, 35% 100%, 100% 100%, 100% 0%);                            }
     12.5%     { clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 34% 74%, 27% 60%, 33% 46%, 40% 50%, 48% 61%, 58% 56%, 51% 42%, 64% 40%, 74% 61%, 63% 77%, 47% 81%, 34% 74%, 35% 100%, 100% 100%, 100% 0%); }
@@ -142,22 +140,37 @@ export const mushroomicKeyframes = css`
     75%       { clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 34% 74%, 27% 60%, 34% 60%, 43% 57%, 46% 46%, 52% 47%, 58% 53%, 67% 46%, 73% 62%, 63% 77%, 47% 81%, 34% 74%, 35% 100%, 100% 100%, 100% 0%); }
     87.5%     { clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 34% 74%, 27% 60%, 33% 46%, 45% 40%, 57% 52%, 67% 47%, 74% 61%, 63% 77%, 47% 81%, 34% 74%, 35% 100%, 100% 100%, 100% 0%);                   }
   }
-  /* ANIMATED WASHING MACHINE 2 - WASH and RINSE-DRY - use with mushic:waves and mdi:dishwasher or mdi:tumble-dryer */
-  @keyframes mushic-wash {
+  /* ANIMATED WASHING MACHINE 3 - WASH - used for mushic:washing-machine-waves */
+  @keyframes mushic-wash-old {
     0%, 100% { transform: translateX(20%);  clip-path: circle(21.7% at 30% 58%); }
     30%      { transform: translateX(-15%); clip-path: circle(21.7% at 65% 58%); }
     45%      { transform: translateX(10%);  clip-path: circle(21.7% at 40% 58%); }
     75%      { transform: translateX(-25%); clip-path: circle(21.7% at 75% 58%); }
   }
+  @keyframes mushic-wash-clip {
+    0%, 100% { clip-path: circle(21.7% at 50% 58%); }
+    20%      { clip-path: circle(21.7% at calc(50% - 0.4px) calc(58% + 0.4px)); }
+    40%      { clip-path: circle(21.7% at calc(50% + 0.4px) calc(58% - 0.4px)); }
+    60%      { clip-path: circle(21.7% at calc(50% - 0.4px) calc(58% - 0.4px)); }
+    80%      { clip-path: circle(21.7% at calc(50% + 0.4px) calc(58% + 0.4px)); }
+  }
+  @keyframes mushic-wash {
+    0%, 100% { transform: translateX(20%); }
+    30%      { transform: translateX(-15%); }
+    45%      { transform: translateX(10%); }
+    75%      { transform: translateX(-25%); }
+  }
+  /* ANIMATED WASHING MACHINE 4 - RINSE - used for mushic:washing-machine-rinse */
   @keyframes mushic-rinse {
     50%  { clip-path: polygon(0% 100%, 28% 100%, 28% 51%, 36% 40%, 64% 40%, 74% 56.67%, 67.5% 75%, 36% 75%, 28% 58.33%, 28% 100%, 100% 100%, 100% 0%, 0% 0%); }
   }
+  /* ANIMATED WASHING MACHINE 5 - DRY - used for mushic:tumble-dryer */
   @keyframes mushic-dry {
     50%  { clip-path: polygon(0% 100%, 28% 100%, 28% 51%, 36% 40%, 64% 40%, 74% 56.67%, 67.5% 75%, 36% 75%, 28% 58.33%, 28% 100%, 100% 100%, 100% 0%, 0% 0%); }
     100% { clip-path: polygon(0% 100%, 28% 100%, 28% 51%, 36% 40%, 64% 40%, 64% 40%, 64% 40%, 36% 40%, 28% 58.33%, 28% 100%, 100% 100%, 100% 0%, 0% 0%);      }
   }
   
-  /* ANIMATED DISHWASHER - use with mdi:dishwasher */
+  /* ANIMATED DISHWASHER - used for mushic:dishwasher */
   @keyframes mushic-bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0);                    } 
     40%                     { transform: translateY(-1.2px) rotate(5deg);  } 
@@ -168,7 +181,7 @@ export const mushroomicKeyframes = css`
     50%      { clip-path: polygon(0 0, 0 100%, 35% 100%, 36% 74%, 31% 43%, 61% 40%, 71% 69%, 62% 78%, 36% 73%, 35% 100%, 100% 100%, 100% 0);                                         }
  }
 
- /* COURIOUS DOG - use with mushic:frenchie (or any other face-like icon) */
+ /* COURIOUS DOG - used for mushic:frenchie */
  @keyframes mushic-huh {
     0%, 10%, 75%, 100% { transform: rotate(0deg);   }
     15%                { transform: rotate(-25deg); }
@@ -177,13 +190,13 @@ export const mushroomicKeyframes = css`
     65%                { transform: rotate(-8deg);  }
  }
 
- /* AIR-ANIMATION - use with mushic:air-freshener */
+ /* AIR-ANIMATION - used for mushic:air-freshener and mushic:air-freshener-variant */
  @keyframes mushic-air {
     100% { clip-path: inset(0% 0 0 0);  }
     50%  { clip-path: inset(35% 0 0 0); }
  }
 
-/* ANIMATED PURIFIER - use with mdi: air-purifier */
+/* ANIMATED PURIFIER - used for mushic:air-purifier */
  @keyframes mushic-purify {
     0%, 100% { clip-path: inset(0 0 0 0);                                                                }
     25%      { clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0, 98% 32%, 63% 42%, 65% 58%, 100% 43%);  }
@@ -191,7 +204,7 @@ export const mushroomicKeyframes = css`
     50%      { clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0, 78% 38%, 64% 43%, 64% 72%, 100% 73%);  }
  }
  
- /* SIGNAL-ANIMATION - use with mdi:wifi */
+ /* SIGNAL-ANIMATION - used for mushic:wifi */
  @keyframes mushic-good-signal {
     0%  { clip-path: circle(0% at 50% 85%);  }
     20% { clip-path: circle(30% at 50% 85%); }
@@ -208,7 +221,7 @@ export const mushroomicKeyframes = css`
     20% { clip-path: circle(30% at 50% 85%); }
  }
  
- /* ANIMATED PRINTER 1 - use with mdi:printer */
+ /* ANIMATED PRINTER 1 - used for mushic:printer */
  @keyframes mushic-print {
     3%, 31%   { clip-path: polygon(30% 32%, 30% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 0%, 70% 0%, 70% 32%);                                                                           }
     32%, 39%  { clip-path: polygon(0% 0%, 0% 100%, 30% 100%, 30% 15%, 70% 15%, 70% 32%, 30% 32%, 30% 100%, 100% 100%, 100% 0%);                                                     }
@@ -217,7 +230,7 @@ export const mushroomicKeyframes = css`
     57%, 64%  { clip-path: polygon(0% 0%, 0% 100%, 33.4% 100%, 33.4% 27%, 70% 27%, 70% 30%, 33.4% 30%, 33.4% 78%, 66.6% 78%, 66.6% 81%, 33.4% 81%, 33.4% 100%, 100% 100%, 100% 0%); }
     65%, 100% { clip-path: polygon(0% 0%, 0% 100%, 33.4% 100%, 33.4% 78%, 66.6% 78%, 66.6% 90%, 33.4% 90%, 33.4% 100%, 100% 100%, 100% 0%);                                         }
 }
-/* ANIMATED PRINTER 2 - use with mushic:paper */
+/* ANIMATED PRINTER 2 - used for mushic:paper */
 @keyframes mushic-paper {
     0%, 2%    { clip-path: inset(100% 0 0 0);}
     3%, 7%    { transform: translateY(-10%); clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 35% 15%, 65% 15%, 65% 60%, 35% 60%, 3% 100%, 100% 100%, 100% 0%); }
