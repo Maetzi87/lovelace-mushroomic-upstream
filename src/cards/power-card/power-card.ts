@@ -680,7 +680,8 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--ha-card-feature-gap": this.getValue("features_gap") || "var(--mushic-features-gap)",
     };
 
-    // --- SCREEN MASK ---
+    // --- ANIMATION VARIABLES ---
+    // Screen Animation
     if (userIconAnim === "none") {
       style["--mushic-screen-width"] = "0";
       style["--mushic-screen-height"] = "0";
@@ -691,6 +692,11 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       style["--mushic-screen-height"] = autoAnim.screenMask.height;
       style["--mushic-screen-top"] = autoAnim.screenMask.top;
       style["--mushic-screen-left"] = autoAnim.screenMask.left;
+    }
+    // Wash Animation
+    if (overlayIcon === "mushic:washing-machine-drum-full") {
+      style["--wave1"] = "M91.67% 63.33% C79.17% 80% 66.67% 46.67% 54.17% 63.33% 41.67% 80% 33.33% 46.67% 20.83% 63.33% S0% 59.17% 0% 59.17% L0% 30% 91.67% 30% Z";
+      style["--wave2"] = "M91.67% 63.33% C79.17% 80% 66.67% 46.67% 54.17% 63.33% 41.67% 80% 33.33% 46.67% 20.83% 63.33% S0% 59.17% 0% 59.17% L0% 30% 91.67% 30% Z";
     }
 
   // --- CALCULATE CARD HEIGHT (theme-aware) ---
