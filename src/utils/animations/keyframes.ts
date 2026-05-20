@@ -161,6 +161,20 @@ export const mushroomicKeyframes = css`
     75%      { transform: translateX(-25%); }
   }
   @keyframes mushic-wash-clip {
+    0%    { clip-path: circle(21.7% at 30% 58%);                             }
+    12.5% { clip-path: circle(21.7% at calc(30% - 0.4px) calc(58% + 0.4px)); }
+    25%   { clip-path: circle(21.7% at calc(30% + 0.4px) calc(58% - 0.4px)); }
+    30%   { clip-path: circle(21.7% at calc(65% + 0.4px) calc(58% - 0.4px)); }
+    37.5% { clip-path: circle(21.7% at calc(65% - 0.4px) calc(58% + 0.4px)); }
+    45%   { clip-path: circle(21.7% at calc(40% - 0.4px) calc(58% + 0.4px)); }
+    50%   { clip-path: circle(21.7% at calc(40% + 0.4px) calc(58% - 0.4px)); }
+    62.5% { clip-path: circle(21.7% at calc(40% - 0.4px) calc(58% - 0.4px)); }
+    75%   { clip-path: circle(21.7% at calc(75% + 0.4px) calc(58% + 0.4px)); }
+    87.5% { clip-path: circle(21.7% at calc(75% - 0.4px) calc(58% - 0.4px)); }
+    100%  { clip-path: circle(21.7% at 30% 58%);                             }
+  }
+  
+  @keyframes mushic-wash-clip-old {
     0%, 100% { clip-path: circle(21.7% at 30% 58%); }
     30%      { clip-path: circle(21.7% at 65% 58%); }
     45%      { clip-path: circle(21.7% at 40% 58%); }
