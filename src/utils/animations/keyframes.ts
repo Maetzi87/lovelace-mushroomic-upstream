@@ -140,63 +140,11 @@ export const mushroomicKeyframes = css`
     75%       { clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 34% 74%, 27% 60%, 34% 60%, 43% 57%, 46% 46%, 52% 47%, 58% 53%, 67% 46%, 73% 62%, 63% 77%, 47% 81%, 34% 74%, 35% 100%, 100% 100%, 100% 0%); }
     87.5%     { clip-path: polygon(0% 0%, 0% 100%, 35% 100%, 34% 74%, 27% 60%, 33% 46%, 45% 40%, 57% 52%, 67% 47%, 74% 61%, 63% 77%, 47% 81%, 34% 74%, 35% 100%, 100% 100%, 100% 0%);                   }
   }
-  /* ANIMATED WASHING MACHINE 3 - WASH - used for mushic:washing-machine-waves */
-  @keyframes mushic-wash-old {
-    0%, 100% { transform: translateX(20%);  clip-path: circle(21.7% at 30% 58%); }
-    30%      { transform: translateX(-15%); clip-path: circle(21.7% at 65% 58%); }
-    45%      { transform: translateX(10%);  clip-path: circle(21.7% at 40% 58%); }
-    75%      { transform: translateX(-25%); clip-path: circle(21.7% at 75% 58%); }
-  }
-  @keyframes mushic-shake-clip {
-    0%, 100% { clip-path: circle(21.7% at 50% 58%); }
-    20%      { clip-path: circle(21.7% at calc(50% - 0.4px) calc(58% + 0.4px)); }
-    40%      { clip-path: circle(21.7% at calc(50% + 0.4px) calc(58% - 0.4px)); }
-    60%      { clip-path: circle(21.7% at calc(50% - 0.4px) calc(58% - 0.4px)); }
-    80%      { clip-path: circle(21.7% at calc(50% + 0.4px) calc(58% + 0.4px)); }
-  }
-  @keyframes mushic-wash-old2 {
-    0%, 100% { transform: translateX(20%); }
-    30%      { transform: translateX(-15%); }
-    45%      { transform: translateX(10%); }
-    75%      { transform: translateX(-25%); }
-  }
-  @keyframes mushic-wash-clip-old2 {
-    0%    { clip-path: circle(21.7% at 30% 58%);                             }
-    12.5% { clip-path: circle(21.7% at calc(30% - 0.4px) calc(58% + 0.4px)); }
-    25%   { clip-path: circle(21.7% at calc(30% + 0.4px) calc(58% - 0.4px)); }
-    30%   { clip-path: circle(21.7% at calc(65% + 0.4px) calc(58% - 0.4px)); }
-    37.5% { clip-path: circle(21.7% at calc(65% - 0.4px) calc(58% + 0.4px)); }
-    45%   { clip-path: circle(21.7% at calc(40% - 0.4px) calc(58% + 0.4px)); }
-    50%   { clip-path: circle(21.7% at calc(40% + 0.4px) calc(58% - 0.4px)); }
-    62.5% { clip-path: circle(21.7% at calc(40% - 0.4px) calc(58% - 0.4px)); }
-    75%   { clip-path: circle(21.7% at calc(75% + 0.4px) calc(58% + 0.4px)); }
-    87.5% { clip-path: circle(21.7% at calc(75% - 0.4px) calc(58% - 0.4px)); }
-    100%  { clip-path: circle(21.7% at 30% 58%);                             }
-  }
   
+  /* ANIMATED WASHING MACHINE 3 - WASH - used for mushic:washing-machine-drum-full */
   @keyframes mushic-wash {
-    0%    { transform: translateX(20%);    clip-path: circle(21.7% at 30% 58%); }
-    12.5% { transform: translateX(5.4%);   clip-path: circle(21.7% at calc(50% - 5.4% - 0.4px) calc(58% + 0.4px)); }
-    25%   { transform: translateX(-9.2%);  clip-path: circle(21.7% at calc(50% + 9.2% + 0.4px) calc(58% - 0.4px)); }
-    30%   { transform: translateX(-15%);   clip-path: circle(21.7% at calc(65% + 0.4px) calc(58% - 0.4px)); }
-    37.5% { transform: translateX(-2.5%);  clip-path: circle(21.7% at calc(52.5% - 0.4px) calc(58% + 0.4px)); }
-    45%   { transform: translateX(10%);    clip-path: circle(21.7% at calc(40% - 0.4px) calc(58% + 0.4px)); }
-    50%   { transform: translateX(10%);    clip-path: circle(21.7% at calc(40% + 0.4px) calc(58% - 0.4px)); }
-    62.5% { transform: translateX(-10.4%); clip-path: circle(21.7% at calc(50% + 10.4% - 0.4px) calc(58% - 0.4px)); }
-    75%   { transform: translateX(-25%);   clip-path: circle(21.7% at calc(75% + 0.4px) calc(58% + 0.4px)); }
-    87.5% { transform: translateX(-2.5%);  clip-path: circle(21.7% at calc(52.5% - 0.4px) calc(58% - 0.4px)); }
-    100%  { transform: translateX(20%);    clip-path: circle(21.7% at 30% 58%); }
-  }
-
-  @keyframes mushic-wash-clip-old {
-    0%, 100% { clip-path: circle(21.7% at 30% 58%); }
-    30%      { clip-path: circle(21.7% at 65% 58%); }
-    45%      { clip-path: circle(21.7% at 40% 58%); }
-    75%      { clip-path: circle(21.7% at 75% 58%); }
-  }
-  @keyframes mushic-wave {
-    0%   { clip-path: path('var(--wave1)'); }
-    100% { clip-path: path('var(--wave2)'); }
+    0%, 100%   { clip-path: polygon(100% 100%, 20% 100%, 20% 66.5%, 23.33% 65.96%, 26.67% 64.5%, 30% 62.5%, 33.33% 60.5%, 36.67% 59.04%, 40% 58.5%, 43.33% 59.04%, 46.67% 60.5%, 50% 62.5%, 53.33% 64.5%, 56.67% 65.96%, 60% 66.5%, 63.33% 65.96%, 66.67% 64.5%, 70% 62.5%, 73.33% 60.5%, 76.67% 59.04%, 80% 58.5%, 83.33% 59.04%, 86.67% 60.5%, 90% 62.5%, 93.33% 64.5%, 96.67% 65.96%, 100% 66.5%, 100% 65.96%, 100% 64.5%, 100% 62.5%, 100% 60.5%, 100% 59.04%, 100% 58.5%); }
+    50%        { clip-path: polygon(80% 100%, 0% 100%, 0% 66.5%, 0% 65.96%, 0% 64.5%, 0% 62.5%, 0% 60.5%, 0% 59.04%, 0% 58.5%, 3.33% 59.04%, 6.67% 60.5%, 10% 62.5%, 13.33% 64.5%, 16.67% 65.96%, 20% 66.5%, 23.33% 65.96%, 26.67% 64.5%, 30% 62.5%, 33.33% 60.5%, 36.67% 59.04%, 40% 58.5%, 43.33% 59.04%, 46.67% 60.5%, 50% 62.5%, 53.33% 64.5%, 56.67% 65.96%, 60% 66.5%, 63.33% 65.96%, 66.67% 64.5%, 70% 62.5%, 73.33% 60.5%, 76.67% 59.04%, 80% 58.5%); }
   }
   
   /* ANIMATED WASHING MACHINE 4 - RINSE - used for mushic:washing-machine-rinse */
