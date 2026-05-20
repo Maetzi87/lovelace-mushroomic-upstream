@@ -147,7 +147,7 @@ export const mushroomicKeyframes = css`
     45%      { transform: translateX(10%);  clip-path: circle(21.7% at 40% 58%); }
     75%      { transform: translateX(-25%); clip-path: circle(21.7% at 75% 58%); }
   }
-  @keyframes mushic-wash-clip {
+  @keyframes mushic-shake-clip {
     0%, 100% { clip-path: circle(21.7% at 50% 58%); }
     20%      { clip-path: circle(21.7% at calc(50% - 0.4px) calc(58% + 0.4px)); }
     40%      { clip-path: circle(21.7% at calc(50% + 0.4px) calc(58% - 0.4px)); }
@@ -160,6 +160,13 @@ export const mushroomicKeyframes = css`
     45%      { transform: translateX(10%); }
     75%      { transform: translateX(-25%); }
   }
+  @keyframes mushic-wash-clip {
+    0%, 100% { clip-path: circle(21.7% at 30% 58%); }
+    30%      { clip-path: circle(21.7% at 65% 58%); }
+    45%      { clip-path: circle(21.7% at 40% 58%); }
+    75%      { clip-path: circle(21.7% at 75% 58%); }
+  }
+  
   /* ANIMATED WASHING MACHINE 4 - RINSE - used for mushic:washing-machine-rinse */
   @keyframes mushic-rinse {
     50%  { clip-path: polygon(0% 100%, 28% 100%, 28% 51%, 36% 40%, 64% 40%, 74% 56.67%, 67.5% 75%, 36% 75%, 28% 58.33%, 28% 100%, 100% 100%, 100% 0%, 0% 0%); }
