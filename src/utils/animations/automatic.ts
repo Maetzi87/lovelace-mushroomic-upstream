@@ -130,7 +130,7 @@ export const AUTO_OVERLAY_ANIMATIONS: Record<
   "mushic:no-motion":             { icon: "mushic-blink 1.5s ease-in-out infinite"        }, 
   
   "mushic:washing-machine-drum":  { icon: "mushic-rotate 0.5s linear infinite", icon_origin: "51% 60%" },
-  "mushic:washing-machine-water": { icon: "mushic-wash 5s ease-in-out infinite, mushic-shake 800ms ease-in-out infinite", icon_origin: "50% 60%" },
+  "mushic:washing-machine-water": { icon: "mushic-wash 5s ease-in-out infinite, mushic-shake 800ms ease-in-out infinite", icon_origin: "50% 110%" },
 };  
 
 /* BADGE */
