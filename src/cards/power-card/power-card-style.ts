@@ -9,7 +9,6 @@ export const powerCardStyles = [
       :host {
         --tile-color: var(--state-inactive-color);
         -webkit-tap-highlight-color: transparent;
-        --mushic-final-animation-color: var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color))));
       }
       
       ha-card {
