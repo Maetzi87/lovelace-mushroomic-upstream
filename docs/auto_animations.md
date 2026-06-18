@@ -1,6 +1,6 @@
 # 💫 Auto-Animations for [Mushroomic Icons](https://github.com/Maetzi87/mushroomic-icons)
 
-Many **Mushroomic Icons** include built‑in automatic animations when used with **Mushroomic Power Card**.</br>
+Many **Mushroomic Icons** include built‑in animations when used with **Mushroomic Power Card**.</br>
 - Icons marked as **Colorable** allow customizing of **animation color** via `animation_color` and `badge_animation_color`. </br>
 This color is used for shadow-effects and screen-flicker, the default color is `shape_color` /  `badge_color`. </br>
 - Icons marked as **Badge** also show animation when used in badge.
