@@ -18,15 +18,20 @@ Icons with a ✔ at **Badge** also show animation when used in badge.
 
 ## ⏰ Alert Animations
 
-Alert animations **work out of the box** if the Mushroomic Icon is used, you **don't need additional code**. </br>
-The "Code behind Auto-Animation" can be used to customize the animation or use it for different icons.
+Alert animations **work out of the box** if the Mushroomic Icon is used - you **don't need additional code**. </br>
+The "Code behind Auto-Animation" is provided for **customization** and/or to apply the animation to different icons. </br>
+**Badges** use `badge_icon_animation`(≙ icon_animation) and `badge_animation`(≙ shape_animation). </br>
+Badges do not support overlay icons.
 
 | Animation | Icons                                                           | Colorable             | Badge | Disable animation | Code behind Auto-Animation |
 | --------- |-----------------------------------------------------------------|-----------------------|---------------- |-------------------| ---|
-| ![mushic:fire/water](examples/auto-animations/gif/fire-water.gif) | - mushic:fire </br>- mushic:water  | ✔  | ✔</br><sub> (without overlay icon)</sub> | <pre>icon_animation: none </br>shape_animation: none </br>overlay_icon: none </br>overlay_animation: none</pre> | <pre><sub>icon_animation: "mushic-blink 1.5s ease-in-out infinite" </br>shape_animation: "mushic-ping 1.5s infinite, mushic-blink 1.5s ease-in-out infinite" </br>overlay_icon: mushic:alert </br>overlay_animation: "mushic-blink 1.5s ease-in-out infinite -750ms"</sub></pre> |
-| ![mushic:bell-ring](examples/auto-animations/gif/bell-ring.gif) | mushic:bell-ring  | ❌ | ✔ | `icon_animation: none` |
+| ![mushic:fire](examples/auto-animations/gif/fire.gif) ![mushic:water](examples/auto-animations/gif/water.gif) | - mushic:fire </br>- mushic:water  | ✔  | ✔ | <pre>icon_animation: none </br>shape_animation: none </br>overlay_icon: none </br>overlay_animation: none</pre> | <pre><sub>icon_animation: "mushic-blink 1.5s ease-in-out infinite" </br>shape_animation: "mushic-ping 1.5s infinite, mushic-blink 1.5s ease-in-out infinite" </br>overlay_icon: mushic:alert </br>overlay_animation: "mushic-blink 1.5s ease-in-out infinite -750ms"</sub></pre> |
+| ![mushic:bell-ring](examples/auto-animations/gif/bell-ring.gif) | mushic:bell-ring  | ❌ | ✔ | `icon_animation: none` | <pre><sub>icon_animation: "mushic-ring 4s linear infinite"</br>icon_origin: "50% 15%"</sub></pre> |
 | ![mushic:door](examples/auto-animations/gif/door.gif) | mushic:door  | ❌  | ✔ | `icon_animation: none` |
 
+<sub> 
+<sup>1</sup>Badge has no overlay icon, only </sub>
+<br><br>
 
 [**Alert animations code examples** →](examples/auto-animations/examples.md#alert-animations)
 
