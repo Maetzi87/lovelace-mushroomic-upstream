@@ -1,9 +1,10 @@
 # 💫 Auto-Animations for [Mushroomic Icons](https://github.com/Maetzi87/mushroomic-icons)
 
 Many **Mushroomic Icons** include built‑in animations when used with **Mushroomic Power Card**.</br>
-- Icons marked as **Colorable** allow customizing of **animation color** via `animation_color` and `badge_animation_color`. </br>
-This color is used for shadow-effects and screen-flicker, the default color is `shape_color` /  `badge_color`. </br>
-- Icons marked as **Badge** also show animation when used in badge.
+
+- Icons marked with **Badge** also show animation when used in badge.
+- **Colorable** Icons use `animation_color` / `badge_animation_color`. </br>
+This color is used for shadow-effects and screen-flicker, the default value is `shape_color` /  `badge_color`. </br>
 
 </br>
 
@@ -11,9 +12,9 @@ This color is used for shadow-effects and screen-flicker, the default color is `
 
 ![Screen Animation](examples/auto-animations/gif/screen-animation.gif)
 
-| Icons                                                           | Colorable             | Badge | Disable animation |
+| Icons                                                           | Badge             | Colorable | Disable animation |
 |-----------------------------------------------------------------|-----------------------|----------------|-------------------|
-| - mushic:cellphone </br>- mushic:laptop </br>- mushic:monitor </br>- mushic:tablet </br>- mushic:television </br>- mushic:television-classic | ✔ | ❌ | `icon_animation: none` |
+| - mushic:cellphone </br>- mushic:laptop </br>- mushic:monitor </br>- mushic:tablet </br>- mushic:television </br>- mushic:television-classic | ❌ | ✔ | `icon_animation: none` |
 
 [**Screen animation code examples** →](examples/auto-animations/examples.md#screen-animation)
 
