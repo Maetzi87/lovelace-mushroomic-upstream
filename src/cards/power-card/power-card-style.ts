@@ -161,8 +161,8 @@ export const powerCardStyles = [
          inset: 0;
          border-radius: 50%;
          box-shadow: 
-         0 0 0 0 rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.7),
-         0 0 0 0 rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.7) inset;
+         0 0 0 0 rgba(from var(--mushic-final-animation-color) r g b / 0.7),
+         0 0 0 0 rgba(from var(--mushic-final-animation-color) r g b / 0.7) inset;
          animation: var(--mushic-shape-animation);
       }
       
@@ -265,6 +265,7 @@ export const powerCardStyles = [
         justify-content: center;
         pointer-events: none;
         animation: var(--mushic-badge-animation);
+        --mushic-final-animation-color: var(--mushic-badge-animation-color, var(--mushic-badge-color, var(--state-inactive-color)));
         z-index: 4;
       }
       .mushic-badge ha-icon {

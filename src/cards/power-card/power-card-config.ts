@@ -104,6 +104,7 @@ export type TemplateCardConfig = LovelaceCardConfig & {
 
   // --- ANIMATIONS ---
   animation_color?: string;
+  badge_animation_color?: string;
   icon_animation?: string;
   shape_animation?: string;
   badge_animation?: string;
@@ -222,6 +223,7 @@ export const templateCardConfigStruct = assign(
 
     // --- ANIMATIONS ---
     animation_color: optional(string()),
+    badge_animation_color: optional(string()),
     icon_animation: optional(string()),
     shape_animation: optional(string()),
     badge_animation: optional(string()),

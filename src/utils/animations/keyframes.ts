@@ -7,7 +7,7 @@ export const mushroomicKeyframes = css`
   }
   /* ALERT – makes shape blink */
   @keyframes mushic-ping {
-    0%   { box-shadow: 0 0 0 0 rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.7); }
+    0%   { box-shadow: 0 0 0 0 rgba(from var(--mushic-final-animation-color) r g b / 0.7); }
     100% { box-shadow: 0 0 5px 7px transparent; }
   }
 
@@ -21,11 +21,11 @@ export const mushroomicKeyframes = css`
   
   /* SCREEN FLICKER EFFECT */
   @keyframes mushic-flicker { 
-    0%   { background: linear-gradient(180deg, rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.3) 0%, transparent 30%, transparent 100%);                                   }
-    25%  { background: linear-gradient(180deg, transparent 0%, rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.3) 25%, transparent 55%, transparent 100%);                  }
-    50%  { background: linear-gradient(180deg, transparent 0%, transparent 20%, rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.3) 50%, transparent 80%, transparent 100%); }
-    75%  { background: linear-gradient(180deg, transparent 0%, transparent 45%, rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.3) 75%, transparent 100%);                  }
-    100% { background: linear-gradient(180deg, transparent 0%, transparent 70%, rgba(from var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color)))) r g b / 0.3) 100%);                                   }
+    0%   { background: linear-gradient(180deg, rgba(from var(--mushic-final-animation-color) r g b / 0.3) 0%, transparent 30%, transparent 100%);                                   }
+    25%  { background: linear-gradient(180deg, transparent 0%, rgba(from var(--mushic-final-animation-color) r g b / 0.3) 25%, transparent 55%, transparent 100%);                  }
+    50%  { background: linear-gradient(180deg, transparent 0%, transparent 20%, rgba(from var(--mushic-final-animation-color) r g b / 0.3) 50%, transparent 80%, transparent 100%); }
+    75%  { background: linear-gradient(180deg, transparent 0%, transparent 45%, rgba(from var(--mushic-final-animation-color) r g b / 0.3) 75%, transparent 100%);                  }
+    100% { background: linear-gradient(180deg, transparent 0%, transparent 70%, rgba(from var(--mushic-final-animation-color) r g b / 0.3) 100%);                                   }
   }
   
   /* HEATING RADIATOR - used for mushic:radiator */
@@ -36,8 +36,8 @@ export const mushroomicKeyframes = css`
   
   /* GLOW EFFEKT - gradient-like shape-animation for any (heating) icon - used for mushic:water-boiler, mushic:water-boiler-auto and mushic:water-heater */
   @keyframes mushic-glow {
-    0%  { background: var(--mushic-animation-color, red); box-shadow: 0 0 0 0 transparent, 0 0 20px 20px var(--mushic-shape-color, var(--mushic-icon-color)) inset;                          }
-    70% { background: var(--mushic-shape-color, var(--mushic-icon-color)); box-shadow: 0 0 5px 7px var(--mushic-animation-color, red), 0 0 0px 0px var(--mushic-animation-color, red) inset; } 
+    0%  { background: var(--mushic-final-animation-color, red); box-shadow: 0 0 0 0 transparent, 0 0 20px 20px var(--mushic-shape-color, var(--mushic-icon-color)) inset;                          }
+    70% { background: var(--mushic-shape-color, var(--mushic-icon-color)); box-shadow: 0 0 5px 7px var(--mushic-final-animation-color, red), 0 0 0px 0px var(--mushic-final-animation-color, red) inset; } 
   }
   
   /* OPENING DOOR – used for mushic:door */

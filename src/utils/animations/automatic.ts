@@ -75,10 +75,11 @@ export const AUTO_ANIMATIONS: Record<
   },
 
   /* -- ALERT -- */
-  "mushic:bell-ring": { icon: "mushic-ring 4s linear infinite", icon_origin: "50% 15%",  badge: true },
-  "mushic:door":      { icon: "mushic-door 6s ease-in-out infinite", icon_origin: "30%", badge: true },
-  "mushic:fire":      alertAnimation,
-  "mushic:water":     alertAnimation,
+  "mushic:bell-ring":    { icon: "mushic-ring 4s linear infinite", icon_origin: "50% 15%",  badge: true },
+  "mushic:door":         { icon: "mushic-door 6s ease-in-out infinite", icon_origin: "30%", badge: true },
+  "mushic:alert-circle": { icon: "mushic-blink 1.5s ease-in-out infinite", shape: "mushic-blink 1.5s ease-in-out infinite", badge: true },  
+  "mushic:fire":         alertAnimation,
+  "mushic:water":        alertAnimation,
 
   /* -- AIR -- */
   "mushic:air-freshener":         { icon: "mushic-air 3s ease-in-out infinite",   badge: true }, 
@@ -142,7 +143,7 @@ export const AUTO_BADGE_ANIMATIONS: Record<
     shape: string;
   }>
 > = {
-  "mushic:alert-circle": { icon: "mushic-blink 1.5s ease-in-out infinite", shape: "mushic-blink 1.5s ease-in-out infinite" } ,
+/* currently no badge-only-animations */
 };
 
 /* --- EXPORT --- */

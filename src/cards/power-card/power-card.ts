@@ -143,6 +143,7 @@ const TEMPLATE_KEYS = [
 
   // --- ANIMATIONS ---
   "animation_color",
+  "badge_animation_color",
   
   "icon_animation",
   "icon_origin",
@@ -670,7 +671,9 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--mushic-badge-icon-origin": this.getValue("badge_icon_origin") || autoBadgeAnim.icon_origin,
       "--mushic-overlay-animation": this._resolveAnim(this.getValue("overlay_animation"), autoOverlayAnim.icon),
       "--mushic-overlay-origin": this.getValue("overlay_origin") || autoOverlayAnim.icon_origin,
-      "--mushic-animation-color": this.getValue("animation_color"),
+      "--mushic-badge-animation-color": this.getValue("badge_animation_color"),
+      "--mushic-final-animation-color": this.getValue("animation_color")  || "var(--mushic-animation-color, var(--mushic-shape-color, var(--mushic-icon-color, var(--state-inactive-color))))",
+
 
       // --- FEATURES ---
       "--mushic-features-count": featuresCount,
@@ -692,11 +695,6 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       style["--mushic-screen-height"] = autoAnim.screenMask.height;
       style["--mushic-screen-top"] = autoAnim.screenMask.top;
       style["--mushic-screen-left"] = autoAnim.screenMask.left;
-    }
-    // Wash Animation
-    if (overlayIcon === "mushic:washing-machine-drum-full") {
-      style["--wave1"] = "M91.67% 63.33% C79.17% 80% 66.67% 46.67% 54.17% 63.33% 41.67% 80% 33.33% 46.67% 20.83% 63.33% S0% 59.17% 0% 59.17% L0% 30% 91.67% 30% Z";
-      style["--wave2"] = "M91.67% 63.33% C79.17% 80% 66.67% 46.67% 54.17% 63.33% 41.67% 80% 33.33% 46.67% 20.83% 63.33% S0% 59.17% 0% 59.17% L0% 30% 91.67% 30% Z";
     }
 
   // --- CALCULATE CARD HEIGHT (theme-aware) ---
