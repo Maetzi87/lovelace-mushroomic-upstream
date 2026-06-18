@@ -143,6 +143,7 @@ const TEMPLATE_KEYS = [
 
   // --- ANIMATIONS ---
   "animation_color",
+  "badge_animation_color",
   
   "icon_animation",
   "icon_origin",
@@ -671,6 +672,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--mushic-overlay-animation": this._resolveAnim(this.getValue("overlay_animation"), autoOverlayAnim.icon),
       "--mushic-overlay-origin": this.getValue("overlay_origin") || autoOverlayAnim.icon_origin,
       "--mushic-animation-color": this.getValue("animation_color"),
+      "--mushic-badge-animation-color": this.getValue("badge_animation_color"),
 
       // --- FEATURES ---
       "--mushic-features-count": featuresCount,
