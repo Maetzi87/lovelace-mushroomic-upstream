@@ -1,8 +1,11 @@
 # 💫 Auto-Animations for [Mushroomic Icons](https://github.com/Maetzi87/mushroomic-icons)
 
-Some **Mushroomic Icons** include built‑in automatic animations when used inside **Mushroomic Power Card**.</br>
-Icons marked as **Colorable** allow customizing the animation color via `animation_color`.</br>
-Icons with a ✔ at **Badge** also show animation when used in badge.
+Many **Mushroomic Icons** include built‑in automatic animations when used with **Mushroomic Power Card**.</br>
+- Icons marked as **Colorable** allow customizing of **animation color** via `animation_color` and `badge_animation_color`. </br>
+This color is used for shadow-effects and screen-flicker, the default color is `shape_color` /  `badge_color`. </br>
+- Icons marked as **Badge** also show animation when used in badge.
+
+</br>
 
 ## 📺 Screen Animation
 
@@ -14,14 +17,25 @@ Icons with a ✔ at **Badge** also show animation when used in badge.
 
 [**Screen animation code examples** →](examples/auto-animations/examples.md#screen-animation)
 
+</br>
+
 ---
+
+</br>
+
 
 ## ⏰ Alert Animations
 
-Alert animations **work out of the box** if the Mushroomic Icon is used - you **don't need additional code**. </br>
+All **Auto-Animations work out of the box** if the Mushroomic Icon is used - you **don't need additional code**. </br>
 </br>
-The "Code behind Auto-Animation" is provided for **customization** and/or to apply the animation to different icons. </br>
-**Badges** use `badge_icon_animation` (≙ `icon_animation`), `badge_animation` (≙ `shape_animation`) and `badge_icon_origin` (≙ `icon_origin`).
+The **"Code behind Auto-Animation"** is provided for **customization** and/or to apply the animation to different icons. </br>
+
+To customize **Badge-Animation** use:
+- `badge_icon_animation`  (≙ `icon_animation`)
+- `badge_animation`       (≙ `shape_animation`)
+- `badge_icon_origin`     (≙ `icon_origin`).
+  </br>
+
 Badges do not support overlay icons.
 
 | Animation | Icons                                                           | Colorable             | Badge | Disable animation | Code behind Auto-Animation |
