@@ -77,7 +77,7 @@ export const powerCardStyles = [
         gap: var(--mushic-content-gap, 10px);
         overflow: hidden !important;
         flex: var(--mushic-flex-content, 1);
-        justify-content: var(--mushic-align-content, flex-start);
+        justify-content: var(--mushic-justify-content, flex-start);
       }
 
       .vertical {
