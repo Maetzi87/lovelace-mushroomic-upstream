@@ -119,6 +119,7 @@ const TEMPLATE_KEYS = [
   "card_height",
   "card_width",
   "card_bg_color",
+  "align_content",
   
   "border",
   "border_width",
@@ -519,6 +520,10 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
     const borderCssColor = borderColor ? computeCssColor(borderColor) : undefined;
     const rippleColor = this.getValue("ripple_color");
     const rippleCssColor = rippleColor ? computeCssColor(rippleColor) : undefined;
+    
+    const alignContent = this.getValue("align_content");
+    const justifyContent = alignContent === "center" ? "center" : alignContent === "right" ? "flex-end" : "flex-start";
+    const flexContent = alignContent ? "none" : "1";
 
     // --- FEATURES ---
     const featuresColor = this.getValue("features_color");
@@ -650,7 +655,8 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--mushic-content-gap": this.getValue("content_gap"),
       "--ha-card-box-shadow": this.getValue("card_shadow") || "var(--mushic-card-shadow)",
       "--mushic-focus-shadow": this.getValue("focus_shadow"),
-
+      "--mushic-align-content": alignContent,
+      "--mushic-flex-content": flexContent,
       
       // --- OVERLAY ---
       "--mushic-overlay-icon": overlayIcon,
