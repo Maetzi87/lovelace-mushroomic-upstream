@@ -59,8 +59,8 @@ export const powerCardStyles = [
         display: flex;
         flex-direction: column;
         flex: 1;
-        
       }
+      
       .container.horizontal {
         flex-direction: row;
       }
@@ -71,12 +71,13 @@ export const powerCardStyles = [
         flex-direction: row;
         align-items: center;
         padding: var(--mushic-card-padding, 10px);
-        flex: 1;
         min-width: 0;
         box-sizing: border-box;
         pointer-events: none;
         gap: var(--mushic-content-gap, 10px);
         overflow: hidden !important;
+        flex: var(--mushic-content-flex, 1);
+        justify-content: var(--mushic-content-align, flex-start);
       }
 
       .vertical {
