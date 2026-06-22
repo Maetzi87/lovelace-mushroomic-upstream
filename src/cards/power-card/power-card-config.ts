@@ -92,6 +92,9 @@ export type TemplateCardConfig = LovelaceCardConfig & {
   vertical?: boolean;
   ripple_color?: string;
 
+  align_content?: string;
+  align_icon?: string;
+
   // --- OVERLAY ---
   overlay_icon?: string;
   overlay_color?: string;
@@ -210,6 +213,9 @@ export const templateCardConfigStruct = assign(
     card_shadow: optional(string()),
     vertical: optional(boolean()),
     ripple_color: optional(string()),
+
+    align_content: optional(string()),
+    align_icon: optional(string()),
 
     // --- OVERLAY ---
     overlay_icon: optional(string()),
