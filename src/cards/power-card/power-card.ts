@@ -120,6 +120,7 @@ const TEMPLATE_KEYS = [
   "card_width",
   "card_bg_color",
   "align_content",
+  "align_icon",
   
   "border",
   "border_width",
