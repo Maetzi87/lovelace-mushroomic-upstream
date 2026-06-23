@@ -522,7 +522,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
     const rippleColor = this.getValue("ripple_color");
     const rippleCssColor = rippleColor ? computeCssColor(rippleColor) : undefined;
     
-    const alignContent = this.getValue("align_content");
+    const alignContent = this._config.align_content ?? "";
     const justifyContent = alignContent === "center" ? "center" : alignContent === "right" ? "flex-end" : "flex-start";
     const flexContent = alignContent ? "none" : "1";
 
