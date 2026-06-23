@@ -521,11 +521,6 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
     const borderCssColor = borderColor ? computeCssColor(borderColor) : undefined;
     const rippleColor = this.getValue("ripple_color");
     const rippleCssColor = rippleColor ? computeCssColor(rippleColor) : undefined;
-    
-    const alignContent = this._config.align_content ?? "";
-    const justifyContent = alignContent === "center" ? "center" : alignContent === "right" ? "flex-end" : "flex-start";
-    const flexContent = alignContent ? "none" : "1";
-    const infoWidth = alignContent ? "auto" : "100%";
 
     // --- FEATURES ---
     const featuresColor = this.getValue("features_color");
@@ -777,8 +772,15 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "feature-only": featureOnly,
     });
 
+    const alignContent = this._config.align_content ?? "left";
+    const alignIcon = this._config.align_icon ?? "";
     const contentClasses = classMap({
       vertical: Boolean(this._config.vertical),
+      "content-left": alignContent === "left",
+      "content-center": alignContent === "center",
+      "content-right": alignContent === "right",
+      "icon-right": alignIcon === "right",
+      "icon-left": alignIcon === "left" || !alignIcon,
     });
 
     const { haVersion } = this.hass.connection;
