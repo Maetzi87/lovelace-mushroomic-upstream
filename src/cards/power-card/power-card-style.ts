@@ -82,21 +82,28 @@ export const powerCardStyles = [
       .content.icon-right {
         flex-direction: row-reverse;
       }
-
+      .content.content-center {
+        justify-content: center;
+      }
+      .content.content-right {
+        justify-content: flex-end;
+      }
+      
       .vertical {
         flex-direction: column;
         justify-content: center;
       }
+      
       .content.vertical.icon-left ha-tile-icon {
         align-self: flex-start;
       }
-      
       .content.vertical.icon-right ha-tile-icon {
         align-self: flex-end;
       }
       .content.vertical.icon-center ha-tile-icon {
-        align-self: flex-end;
+        align-self: center;
       }
+      
       .vertical .mushic-info {
         width: 100%;
         flex: none;
