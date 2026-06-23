@@ -292,7 +292,7 @@ export const powerCardStyles = [
  /* --- TEXT CONTAINER --- */     
       .mushic-info {
         position: relative;
-        width: 100%;
+        width: var(--mushic-info-width, 100%);
         min-width: 0;
         transition: background-color 180ms ease-in-out;
         box-sizing: border-box;
