@@ -525,6 +525,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
     const alignContent = this._config.align_content ?? "";
     const justifyContent = alignContent === "center" ? "center" : alignContent === "right" ? "flex-end" : "flex-start";
     const flexContent = alignContent ? "none" : "1";
+    const infoWidth = alignContent ? "auto" : "100%";
 
     // --- FEATURES ---
     const featuresColor = this.getValue("features_color");
@@ -658,6 +659,7 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "--mushic-focus-shadow": this.getValue("focus_shadow"),
       "--mushic-justify-content": justifyContent,
       "--mushic-flex-content": flexContent,
+      "--mushic-info-width": infoWidth,
       
       // --- OVERLAY ---
       "--mushic-overlay-icon": overlayIcon,
