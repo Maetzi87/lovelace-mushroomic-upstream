@@ -77,13 +77,24 @@ export const powerCardStyles = [
         gap: var(--mushic-content-gap, 10px);
         overflow: hidden !important;
         flex: var(--mushic-flex-content, 1);
-        justify-content: var(--mushic-justify-content, flex-start);
+        justify-content: flex-start;
+      }
+      .content.icon-right {
+        flex-direction: row-reverse;
       }
 
       .vertical {
         flex-direction: column;
         justify-content: center;
       }
+      .content.vertical.icon-left ha-tile-icon {
+        align-self: flex-start;
+      }
+      
+      .content.vertical.icon-right ha-tile-icon {
+        align-self: flex-end;
+      }
+
       .vertical .mushic-info {
         width: 100%;
         flex: none;
@@ -292,12 +303,20 @@ export const powerCardStyles = [
  /* --- TEXT CONTAINER --- */     
       .mushic-info {
         position: relative;
-        width: var(--mushic-info-width, 100%);
+        width: 100%;
         min-width: 0;
         transition: background-color 180ms ease-in-out;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+      }
+
+      .content.content-center .mushic-info {
+        width: auto;
+      }
+      
+      .content.content-right .mushic-info {
+        width: auto;
       }
       
       /* PRIMARY */
