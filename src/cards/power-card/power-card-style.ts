@@ -94,13 +94,13 @@ export const powerCardStyles = [
         justify-content: center;
       }
       
-      .content.vertical.icon-left ha-tile-icon {
+      .content.icon-left ha-tile-icon {
         align-self: flex-start;
       }
-      .content.vertical.icon-right ha-tile-icon {
+      .content.icon-right ha-tile-icon {
         align-self: flex-end;
       }
-      .content.vertical.icon-center ha-tile-icon {
+      .content.icon-center ha-tile-icon {
         align-self: center;
       }
       
