@@ -94,7 +94,9 @@ export const powerCardStyles = [
       .content.vertical.icon-right ha-tile-icon {
         align-self: flex-end;
       }
-
+      .content.vertical.icon-center ha-tile-icon {
+        align-self: flex-end;
+      }
       .vertical .mushic-info {
         width: 100%;
         flex: none;
