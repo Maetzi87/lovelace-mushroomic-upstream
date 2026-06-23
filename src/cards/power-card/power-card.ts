@@ -769,8 +769,9 @@ export class MushroomicPowerCard extends LitElement implements LovelaceCard {
       "feature-only": featureOnly,
     });
 
-    const alignContent = this._config.align_content ?? "left";
-    const alignIcon = this._config.align_icon ?? "";
+    const alignContent = this.getValue("align_content") || "left";
+    const alignIcon = this.getValue("align_icon") || "";
+    
     const contentClasses = classMap({
       vertical: Boolean(this._config.vertical),
       "content-left": alignContent === "left",
